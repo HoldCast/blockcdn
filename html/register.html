@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-dpr="1">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>BCDN</title>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="../resource/comm.css">
+    <link rel="stylesheet" href="../resource/layer.css">
+    <link rel="stylesheet" href="../resource/user.css">
+    <style>
+        input, textarea, select, button {
+            text-rendering: auto;
+            color: initial;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            display: inline-block;
+            text-align: start;
+            margin: 0em;
+            font-size: 13.3333px;
+        !important;
+        }
+
+        input, textarea, select, button, meter, progress {
+            -webkit-writing-mode: horizontal-tb;
+        }
+    </style>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <script type="application/javascript">
+        /*<![CDATA[*/
+        var remPercent = 0;
+        (function (doc, win) {
+            var docEl = doc.documentElement, isIOS = navigator.userAgent.match(/iphone|ipod|ipad/gi),
+                    dpr = win.devicePixelRatio,
+                    scale = 1 / dpr, resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    widthBase = 1200;
+            docEl.dataset.dpr = win.devicePixelRatio;
+            if (navigator.userAgent.match(/iphone/gi) && screen.width == 375 && win.devicePixelRatio == 2) {
+                docEl.classList.add('iphone6')
+            }
+            if (navigator.userAgent.match(/iphone/gi) && screen.width == 414 && win.devicePixelRatio == 3) {
+                docEl.classList.add('iphone6p')
+            }
+            var metaEl = doc.createElement('meta');
+            metaEl.name = 'viewport';
+            metaEl.content = 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale;
+            docEl.firstElementChild.appendChild(metaEl);
+
+            var recalc = function () {
+                var width = docEl.clientWidth;
+                if (width / dpr > widthBase) {
+                    width = widthBase * dpr;
+                }
+                if (dpr != 1) {
+                    //scale = scale-0.1;
+                }
+                docEl.style.fontSize = (100 * (width / widthBase) * (scale)) + 'px';
+            };
+
+
+            recalc();
+            if (!doc.addEventListener)
+                return;
+            win.addEventListener('resize', recalc, false);
+        })(document, window);
+
+        /*]]>*/
+    </script>
+
+    <link rel="stylesheet" href="../resource/user.css">
+    <link rel="stylesheet" href="../resource/layer.css" id="layuicss-skinlayercss">
+</head>
+<body>
+
+<div class="container-full header flex" id="dhgHeader">
+    <h1 class="flex-center"><a href="http://dhgchain.com/">
+        <img attr="DHG" class="logo" src="../resource/logo.png"></a></h1>
+    <div class="flex-grow flex-right">
+        <a class="nav-item " href="http://dhgchain.com/">
+            <i class="nav-split top"></i>
+            <span>首页</span>
+            <i class="nav-split bottom"></i>
+        </a>
+        <a target="_blank" class="nav-item " href="http://dhgchain.com/fileupload/pdf/DHG-White-Paper-zh_CN.pdf">
+            <i class="nav-split top"></i>
+            <span>白皮书</span>
+            <i class="nav-split bottom"></i>
+        </a>
+        <a class="nav-item " href="http://dhgchain.com/news/list.html">
+            <i class="nav-split top"></i>
+            <span>新闻报道</span>
+            <i class="nav-split bottom"></i>
+        </a>
+        <a class="nav-item " href="http://dhgchain.com/ico.html">
+            <i class="nav-split top"></i>
+            <span>ICO</span>
+            <i class="nav-split bottom"></i>
+        </a>
+
+    </div>
+    <div class="login-tabs">
+        <a href="http://dhgchain.com/user/login.html" class="login-tab">登录</a>
+        <a href="http://dhgchain.com/user/register.html" class="login-tab">注册</a>
+    </div>
+    <!--
+    <div class="lan-tabs">
+        <div class="lan-tab">
+            <i class="lan-tab-zh_CN"></i>
+            <i class="lan-tab-direction"></i>
+        </div>
+        <div class="lan-switch">
+            <div id="zh_CN" class="lan-tab lan-tab-hover" data-lan="zh_CN">
+                <span class="lan-des">简体中文</span>
+                <i class="lan-tab-zh_CN"></i>
+            </div>
+            <div id="zh_TW" class="lan-tab lan-tab-hover" data-lan="zh_CN">
+                <span class="lan-des">繁体中文</span>
+                <i class="lan-tab-zh_TW"></i>
+            </div>
+            <div id="en_US" class="lan-tab lan-tab-hover" data-lan="zh_CN">
+                <span class="lan-des">English</span>
+                <i class="lan-tab-en_US"></i>
+            </div>
+
+
+        </div>
+    </div>
+    -->
+</div>
+
+<div class="user-content container-full flex-center" style="height: 594px;">
+    <div class="content-box">
+        <div class="logo-box  flex-center">
+            <img src="../resource/logo.png" height="31" width="90">
+        </div>
+        <div class="submit-box">
+            <div>
+                <img src="../resource/user-email.png">
+                <input type="text" style="font-size:10px;" id="register-email" placeholder="请输入邮箱地址">
+            </div>
+            <!--<input id="register-imgcode" class="form-control login-ipt" type="text" placeholder="请输入图片验证码" th:placeholder="#{user.page13}"/>
+            <img class="btn btn-imgcode register-imgmsg" th:src="@{/servlet/ValidateImageServlet.html}"/>-->
+            <div>
+                <input type="text" id="register-email-code" placeholder="请输入验证码">
+                <button id="btn-sendemailcode" data-msgtype="203" data-tipsid="register-email"
+                        style="text-align: center"
+                        class="btn btn-sendemailcode register-msg">获取验证码
+                </button>
+            </div>
+            <div>
+                <img src="../resource/user-password.png">
+                <input type="password" id="register-password" placeholder="请输入密码">
+            </div>
+            <div>
+                <img src="../resource/user-password.png">
+                <input type="password" id="register-confirmpassword" placeholder="请输入确认密码">
+            </div>
+            <button id="register-submit" style="text-align: center">注册</button>
+            <input id="regType" type="hidden" value="1">
+        </div>
+        <a href="http://dhgchain.com/user/login.html" class="user-login flex-right">直接登录 &gt;&gt;</a>
+    </div>
+</div>
+
+<div class="container-full footer flex-center" style="position: absolute; width: 100%; left: 0px; bottom: 0px;">
+    <span class="copyright">CopyRight 2016-2017 dhgchain.com All Rights Reserved.</span>
+</div>
+<script type="text/javascript" src="../resource/jquery.min.js"></script>
+<script type="text/javascript" src="../resource/layer.js"></script>
+<script type="text/javascript" src="../resource/util.js"></script>
+<script type="text/javascript" src="../resource/comm.js"></script>
+<script type="text/javascript" src="../resource/language_zh_CN.js"></script>
+<script type="text/javascript" src="../resource/register.js"></script>
+<script type="text/javascript" src="../resource/msg.js"></script>
+</body>
+</html>

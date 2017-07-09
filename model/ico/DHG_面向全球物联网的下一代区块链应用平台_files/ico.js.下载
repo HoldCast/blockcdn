@@ -1,0 +1,136 @@
+var ico = {
+    layerIndex: 0,
+    icoPrice: 0,
+    payId: 0,
+    payShow: function (ele) {
+        var isLogin = $("#isLogin").val();
+        if (isLogin !== "true") {
+            window.location.href = "/user/login.html?forwardUrl=/ico.html";
+            return;
+        }
+        var payId = $(ele).data().coinid
+            , icoId = $("#icoId").val()
+            , url = "/icopayinfo.html"
+            , param = {payid: payId, icoid: icoId}
+            , callback = function (result) {
+            if (result.code === 300) {
+                util.layerAlert("", result.msg, 2);
+            }
+            var data = result.data;
+            var content = '<div class="ico-dialog">'
+                + '<div class="title">'
+                + '<i class="icon"></i><span>'
+                + util.getLan("ico.tips.1", data.walletShortName, data.icoPrice, data.icoShortName)
+                + '</span><i class="close"></i>'
+                + '</div>'
+                + '<div class="coin-icon" style="background: url(' + data.payLogo + ');background-size: 100%"></div>'
+                + '<div class="coin-balance">' + util.getLan("ico.tips.2", data.walletShortName) + '</div>'
+                + '<div class="coin-total">' + data.walletTotal + '</div>'
+                + '<a class="recharge-btn" href="/deposit/coin_deposit.html?symbol=' + payId + '">'
+                + util.getLan("ico.tips.3") + '</a>'
+                + '<div class="ico-amount">'
+                + '<span class="num-txt">' + util.getLan("ico.tips.4", data.walletShortName) + '</span>'
+                + '<input class="num-amount" id="icoAmount" />'
+                //+ '<span class="num-txt">' + data.walletShortName + '</span>'
+                + '</div>'
+                + '<div class="ico-amount tips">'
+                + '<span class="num-txt">' + util.getLan("ico.tips.5", data.icoShortName) + '</span>'
+                + '<span class="num-amount" id="icoGain">0</span>'
+               // + '<span class="num-txt">' + data.icoShortName + '</span>'
+                + '</div>'
+                + '<button class="ico-pay-btn">' + util.getLan("ico.tips.6") + '</button>'
+                + '</div>';
+            ico.payId = payId;
+            ico.icoPrice = data.icoPrice;
+            ico.layerIndex = layer.open({type: 1, title: false, content: content, area: '7.9rem', closeBtn: 0});
+            $(".ico-dialog .close").unbind("click").on("click", function () {
+                layer.close(ico.layerIndex);
+            });
+            $(".ico-dialog .ico-pay-btn").unbind("click").on("click", function () {
+                ico.paySubmit(this);
+            });
+            $("#icoAmount").unbind("keypress").on("keypress", function (event) {
+                return util.goIngKeypress(this, event, 4);
+            }).unbind("keyup").on("keyup", function (event) {
+                var icoAmount = this.value;
+                if (isNaN(icoAmount)) {
+                    $("#icoGain").html(0);
+                    return;
+                }
+                $("#icoGain").html(util.numFormat(util.accMul(icoAmount, ico.icoPrice), 4));
+            });
+        };
+        util.network({url: url, param: param, success: callback});
+    },
+    paySubmit: function (ele) {
+        var url = "/icoPay.html"
+            , icoAmount = $("#icoAmount").val()
+            , icoId = $("#icoId").val();
+        if (isNaN(icoAmount) || icoAmount=="") {
+            util.layerAlert("", util.getLan("ico.tips.7"), 2);
+            return;
+        }
+        var param = {icoId: icoId, payCoinId: ico.payId, icoAmount: icoAmount}
+            , callback = function (result) {
+            if (result.code === 200) {
+                util.layerAlert("", result.msg, 1, function () {
+                    layer.close(ico.layerIndex);
+                });
+            } else {
+                util.layerAlert("", result.msg, 2);
+            }
+        };
+        util.network({btn: ele, url: url, param: param, success: callback});
+    },
+    icoInfoRefresh: function () {
+        var icoId = $("#icoId").val()
+            , url = "/icorefresh.html"
+            , param = {id: icoId}
+            , callback = function (result) {
+            if (result.data === 300) {
+                return;
+            }
+            var data = result.data;
+            $("#icoCompleteNum").html(util.numFormat(data.icoAmount,2));
+            $("#icoTimeNum").html(data.icoDays);
+            $("#progressBar").css("width", data.icoProgress + "%");
+            $("#srOnly").css("left", data.icoProgress + "%").html(data.icoProgress + "%");
+            if(data.icoPeopleCount && data.icoPeopleCount > 0) {
+                $("#icoPeople").html(data.icoPeopleCount);
+            }
+            for (var i = 0; i < data.coinList.length; i++) {
+                var coin = data.coinList[i];
+                $("#infoItemNum" + coin.id).html(coin.payInfo.icoPeople);
+                $("#infoItemAmount" + coin.id).html(util.numFormat(coin.payInfo.icoAmount,2));
+                $("#infoItemConvert" + coin.id).html('≈'+coin.approximate + 'BTC');
+            }
+            var recordHtml = "";
+            if(data.status && data.status !== 1){
+                for (var j = 0; j < data.recordData.length; j++) {
+                    var list = data.recordData[j];
+                    recordHtml += '<tr>'
+                        + '<td>GMT ' + list.gmtCreate_s + '</td>'
+                        + '<td>' + list.payCoinName + '</td>'
+                        + '<td>' + list.payAmount + '</td>'
+                        + '<td>' + list.sendAmount + '</td>'
+                        + '</tr>'
+                }
+                $(".ranking-table tbody").remove();
+                $(".ranking-table").append(recordHtml);
+            }
+
+            //$(".ico-state").text(util.getLan("ico.page.state"+data.status));
+        };
+        util.network({url: url, param: param, success: callback});
+        setTimeout(ico.icoInfoRefresh, 5000);
+    },
+    getLocalTime: function (nS) {
+        return new Date(parseInt(nS) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ");
+    }
+};
+$(function () {
+    $(".pay-btn button").on("click", function () {
+        ico.payShow(this);
+    });
+    ico.icoInfoRefresh();
+});

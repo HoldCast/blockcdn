@@ -1,0 +1,319 @@
+body {
+    font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;
+    font-size: 0.14rem;
+    line-height: 1.42857143;
+    background-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.container-full {
+    width: 100%;
+    min-width: 12rem;
+    overflow: hidden;
+}
+
+.container {
+    margin: 0 auto;
+    position: relative;
+    width: 12rem;
+    height: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.flex-grow {
+    flex-grow: 2;
+}
+
+.flex-full {
+    width: 100%;
+}
+
+.flex-half {
+    width: 50%;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-direction {
+    flex-direction: column;
+}
+
+.warning-icon{
+    width: 0.17rem;
+    height: 0.14rem;
+    background:url("../img/comm/warning-icon.png");
+    background-size: 100%;
+    margin: 0 0.06rem;
+}
+
+/*******************【header】****************/
+.header {
+    height: 0.72rem;
+    background: rgba(255, 255, 255, .12);
+    border-bottom: 1px solid rgba(255, 255, 255, .23);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    box-shadow: 0 0.03rem 0.07rem 0 rgba(255, 255, 255, .12);
+    overflow: initial;
+    min-height: inherit !important;
+}
+.header.gary{
+    box-shadow: 0 3px 7px 0 rgba(150, 150, 150, .12);
+}
+@media screen and (min-width: 1400px) {
+    .header {
+        padding: 0 1rem;
+    }
+}
+
+.header .logo {
+    max-height: 100%;
+    float: left;
+    width: .9rem;
+    height: .31rem;
+}
+
+.header .nav-item {
+    padding: 0.05rem;
+    margin-right: 0.6rem;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.16rem;
+    position: relative;
+}
+.header.gary .nav-item {
+    color: #1d2132;
+}
+.header .nav-item:last-child {
+    margin-right: 0;
+}
+
+.header .nav-item:hover, .header .nav-item.active {
+    color: #fff;
+}
+.header.gary .nav-item:hover, .header.gary .nav-item.active {
+    color: #1d2132;
+}
+
+.header .nav-item:hover .nav-split, .header .nav-item.active .nav-split {
+    height: 0.16rem;
+    width: 1px;
+    background: rgba(255, 255, 255, .62);
+    position: absolute;
+    left: 50%;
+    margin-left: -.5px;
+    opacity: 0;
+    transition: all .3s;
+}
+.header.gary .nav-item:hover .nav-split, .header.gary .nav-item.active .nav-split {
+    background: rgba(26, 38, 115, .62);
+}
+
+.header .nav-item:hover .nav-split.top, .header .nav-item.active .nav-split.top {
+    top: -0.2rem;
+    opacity: 1;
+}
+
+.header .nav-item:hover .nav-split.bottom, .header .nav-item.active .nav-split.bottom {
+    bottom: -0.2rem;
+    opacity: 1;
+}
+
+.language-box{
+    width: 1rem;
+    height: 0.3rem;
+    position: absolute;
+    top:0;
+    right: 0.1rem;
+}
+
+.lan-tabs {
+    padding: 0.01rem 0.1rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.lan-tabs .lan-tab {
+    display: flex;
+    align-items: center;
+    padding: 0 0.05rem;
+    transition: all 0.3s;
+}
+.lan-tabs .lan-tab-hover {
+    padding:0 0.1rem;
+}
+.lan-tabs .lan-tab-hover:hover {
+    padding:0 0.1rem;
+    background: rgba(195, 33, 22, .25);
+}
+
+.lan-tabs .lan-tab i {
+    width: 0.31rem;
+    height: 0.22rem;
+    display: inline-block;
+}
+
+.lan-tabs .lan-tab-direction{
+}
+
+.lan-tabs .lan-tab .lan-tab-zh_CN {
+    background: url("../img/comm/lan_zh_CN.png");
+    background-size: 100% 100%;
+}
+
+.lan-tabs .lan-tab .lan-tab-en_US {
+    background: url("../img/comm/lan_en_US.png");
+    background-size: 100% 100%;
+}
+
+.lan-tabs .lan-tab .lan-tab-zh_TW {
+    background: url("../img/comm/lan_zh_TW.png");
+    background-size: 100% 100%;
+}
+.lan-tabs .lan-tab .lan-tab-ja_JP {
+    background: url("../img/comm/lan_ja_JP.png");
+    background-size: 100% 100%;
+}
+.lan-tabs .lan-tab .lan-tab-ko_KR {
+    background: url("../img/comm/lan_ko_KR.png");
+    background-size: 100% 100%;
+}
+.lan-tabs .lan-tab .lan-tab-ru_RU {
+    background: url("../img/comm/lan_ru_RU.png");
+    background-size: 100% 100%;
+}
+
+.lan-tabs .lan-des {
+    width: 0.65rem;
+    height: 0.3rem;
+    color: #9b9ba0;
+    line-height: 0.3rem;
+    font-size: 0.14rem;
+    white-space:nowrap;
+}
+
+.lan-tabs .lan-switch {
+    position: absolute;
+    top: .71rem;
+    right: 0;
+    background: #fff;
+    border-radius: 0px 0px 2px 2px;
+    box-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.4);
+    display: none;
+    padding: 0.1rem 0;
+}
+
+.lan-tabs:hover{
+    background: #fff;
+}
+
+.lan-tabs:hover .lan-switch {
+    display: block;
+}
+
+.lan-tabs:hover .lan-tab-direction {
+    background-position:-0.68rem 0.04rem !important;
+}
+.login-tabs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: .6rem;
+}
+.login-tabs .login-tab{
+    padding: .1rem .18rem;
+    text-decoration: none;
+    font-size: .12rem;
+    color: #fff;
+    border: 1px solid #fff;
+}
+.login-tabs .login-tab:first-child{
+    border-right:none;
+}
+/*******************【footer】****************/
+.footer {
+    height: 1.25rem;
+    background: #181a24;
+    min-height: inherit;
+}
+
+.footer .copyright {
+    color: #5e6b80;
+    font-size: 0.12rem;
+}
+
+.pagination{
+    width: 100%;
+    height: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    border-top:1px dashed #aaa;
+}
+
+.pagination li{
+    margin: 0.1rem;
+}
+
+.pagination li a{
+    text-decoration: none;
+    font-size: 0.18rem;
+    color: #787878;
+    padding: 2px 0.1rem;
+}
+
+.pagination .active a, .pagination li:hover a{
+    color: #2a40f5 !important;
+    background-color: #ddd;
+}

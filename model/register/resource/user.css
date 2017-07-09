@@ -1,0 +1,668 @@
+.user-banner {
+    width: 100%;
+    height: 4.65rem;
+    background: url("../img/user/banner.jpg") 50% 50%;
+    padding-top: 1.75rem;
+}
+
+.user-plist {
+    background: url("../img/user/user_plist.png") no-repeat;
+    display: inline-block;
+}
+
+.user-top {
+
+}
+
+.user-face {
+    width: 0.52rem;
+    height: 0.56rem;
+    background-position: 0 0;
+}
+
+.user-balance {
+    height: 0.6rem;
+    font-size: 0.22rem;
+    min-width: 5.2rem;
+    color:#5555fc;
+}
+
+.user-balance-amount {
+    height: 0.7rem;
+    font-size: 0.4rem;
+    color: #fff;
+    min-width: 5.2rem;
+    border-bottom: 1px solid #fff;
+}
+
+.user-login-name {
+    height: 0.7rem;
+    font-size: 0.2rem;
+    color: #fff;
+}
+
+.user-split {
+    height: 0.65rem;
+    background: #030335;
+}
+
+.user-split-content {
+    width: 12rem;
+    height: 0.65rem;
+    background: #030335;
+}
+
+.user-lastTime{
+    width: 100%;
+    height: 0.68rem;
+    color: #fff;
+    font-size: 0.16rem;
+    border-right: 1px solid #4f4f72;
+}
+
+.user-logout{
+    width: 100%;
+    height: 0.68rem;
+    color: #fff;
+    font-size: 0.16rem;
+    text-decoration: none;
+    padding-right: 0.5rem;
+}
+
+.user-content-box{
+    display: flex;
+    padding: 0.66rem 0;
+}
+
+.user-left-menu{
+    width: 3.2rem;
+    height: 100%;
+    align-items: flex-start;
+}
+
+.user-left-menu a{
+    width: 2.96rem;
+    height: 0.8rem;
+    float: left;
+    line-height: 0.8rem;
+    text-align: left;
+    padding: 0 0 0 0.7rem;
+    font-size: 0.18rem;
+    color:#030335;
+    border: 1px dotted #8989a1;
+    border-left: none;
+    border-right: none;
+    text-decoration: none;
+    background: url("../img/user/left-menu-bg.jpg") no-repeat 0 -0.85rem;
+    margin: -1px 0 0 0;
+}
+
+.user-left-menu a:hover,.user-left-menu a.active{
+    background-position: 0 -0.03rem;
+}
+
+.user-content-right{
+    width: 8.8rem;
+    align-items: flex-start;
+}
+
+.user-content-right table{
+    width: 100%;
+    font-size: 0.16rem;
+    color:#1129ee;
+    text-align: center;
+    margin: -0.03rem 0 0 0;
+}
+
+.user-content-right table thead{
+    background-color: #a2a2b5;
+    color: #030335;
+    height: 0.76rem;
+    border: 1px solid #181846;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user-content-right table thead th{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-content-right table tbody{
+    color: #030335;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-content-right table tbody tr{
+    height: 0.76rem;
+    line-height: 0.76rem;
+}
+.user-content-right table tbody tr:hover{
+    background: #f2f2f5;
+}
+
+#txtCode{
+    padding: 0 1.68rem 0 1rem;
+}
+
+.modify-password-box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:  url("../img/user/user-password-bg.png") repeat-x;
+    padding:0.8rem 0 0.5rem;
+    border: 1px solid #c0c0cc;
+}
+
+.modify-password-box input{
+    width: 4.82rem;
+    height: 0.62rem;
+    display: flex;
+    margin: 0 0 0.43rem 0;
+    outline: none;
+}
+
+.modify-password-box input[type="password"]{
+    border: 1px solid #181846;
+    background-color: #a2a2b5;
+    color: #000;
+    font-size: 0.18rem;
+    padding-left: 0.2rem;
+}
+
+.modify-password-box input[type="password"]::-webkit-input-placeholder { /* WebKit browsers */
+    color: #030335;
+}
+.modify-password-box input[type="password"]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #030335;
+}
+.modify-password-box input[type="password"]::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #030335;
+}
+.modify-password-box input[type="password"]:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #030335;
+}
+
+.modify-password-box input[type="password"]:focus{
+    border: 1px solid #12dc2a;
+
+}
+
+.modify-password-box input[type="button"]{
+    border:1px solid #1129ee;
+    background-color: #1129ee;
+    color: #fff;
+    font-size: 0.18rem;
+    padding-left: 0.2rem;
+    cursor: pointer;
+}
+
+.modify-password-box input[type="button"]:hover {
+    border: 1px solid #2a40f5;
+    background-color: #2a40f5;
+}
+
+.recharge-box{
+    width: 8.75rem;
+    height: auto;
+    padding-left: 0.16rem;
+}
+
+.recharge-box .nav-box{
+    width: 8.6rem;
+    height: 0.52rem;
+    border: 1px solid #030335;
+    margin-bottom: 0.28rem;
+}
+
+.recharge-box .nav-box a{
+    width: 100%;
+    height: 0.5rem;
+    text-decoration: none;
+    background-color: #b3b3c2;
+    font-size: 0.16rem;
+    color: #030335;
+}
+
+.recharge-box .nav-box a.active{
+    background-color: #eaeaee !important;
+}
+
+.recharge-box .nav-box a.endLine{
+    border-right: 1px solid #030335;
+}
+
+.recharge-box .nav-box a img{
+    width: 0.29rem;
+    height: 0.29rem;
+    margin-right: 0.06rem;
+}
+
+.recharge-box .address-box{
+    width: 8.6rem;
+    min-height: 1rem;
+    height: auto;
+    border: 1px solid #c0c0cc;
+    background-color: #f7f7f9;
+    margin-bottom: 0.26rem;
+}
+
+.recharge-box .address-box .top-box{
+    width: 8.6rem;
+    min-height: 3.48rem;
+}
+
+.recharge-box .address-box .qr-dode-big-box{
+    width: 2.95rem;
+    height: 2.98rem;
+    background: url("../img/user/qr_code_bg.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.recharge-box .address-box #qrCodeBox{
+    width: 1.8rem;
+    height: 1.8rem;
+    background: rgba(255,255,255,1);
+}
+
+.recharge-box .address-box p.hint{
+    width: 8.6rem;
+    height: 0.5rem;
+    font-size: 0.16rem;
+    color: #030335;
+}
+
+.recharge-box .address-box p.recharge-address{
+    min-width: 5.8rem;
+    height: 0.6rem;
+    background-color: #b3b3c2;
+    border: 1px solid #030335;
+    font-size: 0.18rem;
+    color:#030335;
+    margin-bottom: 0.56rem;
+}
+
+.recharge-box .recharge-record{
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.2rem;
+}
+
+
+.recharge-box .recharge-record table{
+    width: 100%;
+    font-size: 0.16rem;
+    color:#1129ee;
+    text-align: center;
+    margin: -3px 0 0 0;
+}
+
+.recharge-box .recharge-record table thead{
+    background-color: #a2a2b5;
+    color: #030335;
+    height: 0.76rem;
+    border: 1px solid #181846;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.recharge-box .recharge-record table thead th{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recharge-box .recharge-record table tbody{
+    color: #030335;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recharge-box .recharge-record table tbody tr{
+    height: 0.76rem;
+    line-height: 0.76rem;
+}
+
+.recharge-box .recharge-record table tbody tr p{
+    width: 2.2rem;
+    line-height: 0.26rem;
+    word-break: break-all;
+}
+
+.financial-record{
+    width: 0.32rem;
+    height: 0.32rem;
+    display: inline-block;
+}
+.financial-record.num{
+    background-position: 0.06rem -0.8rem;
+}
+.financial-record.coin{
+    background-position: -0.66rem -0.8rem;
+}
+.financial-record.time{
+    background-position: -1.4rem -0.8rem;
+}
+
+.ico-record-icon{
+    width: 0.32rem;
+    height: 0.32rem;
+    display: inline-block;
+}
+.ico-record-icon.num{
+    background-position: 0.06rem -0.8rem;
+}
+.ico-record-icon.coin{
+    background-position: -0.66rem -0.8rem;
+}
+.ico-record-icon.time{
+    background-position: -1.4rem -0.8rem;
+}
+
+/******[withdraw]**********/
+.withdraw-nav{
+    height: .55rem;
+    width: 100%;
+    border: solid 1px #030335;
+    margin-bottom: .35rem;
+}
+.withdraw-nav a{
+    color: #030335;
+    font-size: .16rem;
+    text-decoration: none;
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #b3b3c2;
+    border-right: solid 1px #030335;
+}
+.withdraw-nav a:last-child{
+    border-right: none;
+}
+.withdraw-nav a.active{
+    background:#eaeaee;
+}
+.withdraw-nav a img{
+    width: .27rem;
+    height: .27rem;
+    margin-right: .1rem;
+}
+
+.withdraw-box{
+    width: 100%;
+    background:  url("../img/user/user-password-bg.png") repeat-x;
+    padding:0.8rem 0 0.5rem;
+    margin-top: -1px;
+    border: 1px solid #c0c0cc;
+}
+
+.withdraw-box .input-box{
+    width: 4.82rem;
+    height: 0.62rem;
+    position: relative;
+    margin: 0 0 0.43rem 0;
+    font-size: 0.18rem;
+    color: #030335;
+}
+
+.withdraw-box .input-box span{
+    position: absolute;
+    left: 0.2rem;
+    top: 0.2rem;
+}
+
+.withdraw-box .input-box span.end{
+    left: 4.3rem;
+}
+
+.withdraw-box input{
+    width: 4.82rem;
+    height: 0.62rem;
+    display: flex;
+}
+
+.withdraw-box input[type="text"]{
+    outline: none;
+    border: 1px solid #46466b;
+    background-color: #a2a2b5;
+    padding: 0 0.2rem 0 1rem;
+    text-align: right;
+    font-size: 0.18rem;
+    color: #030335;
+}
+
+.withdraw-box input[type="text"].pushInput{
+    padding: 0 0.6rem 0 1rem;
+}
+
+.withdraw-box .push-box{
+    height: 1.25rem !important;
+}
+
+.withdraw-box .detail-box{
+    width: 100%;
+    height: 0.62rem;
+    background: #fff;
+    border: 1px dashed #000;
+    border-top:none;
+    position: relative;
+}
+
+.withdraw-box .detail-box p{
+    height: 0.65rem;
+    padding-right: 0.6rem;
+    color: #f00;
+}
+
+#btnSendEmailCode{
+    width: 1.48rem;
+    height: 0.6rem;
+    position: absolute;
+    right: 1px;
+    outline: none;
+    border: none;
+    background-color: #a2a2b5;
+    cursor: pointer;
+    border-left: 1px dashed #46466b;
+}
+
+.withdraw-box input[type="text"]:focus{
+    border: 1px solid #12dc2a;
+
+}
+
+.withdraw-box input[type="button"]{
+    outline: none;
+    border:1px solid #1129ee;
+    background-color: #1129ee;
+    color: #fff;
+    font-size: 0.18rem;
+    padding-left: 0.2rem;
+    cursor: pointer;
+}
+
+.withdraw-box input[type="button"]:hover {
+    border: 1px solid #2a40f5;
+    background-color: #2a40f5;
+}
+.withdraw-record{
+    padding-top: .3rem;
+}
+
+.withdraw-record tr th a{
+    text-decoration: none;
+    color: #030335;
+}
+
+.user-content{
+    background:#020120 url("../img/user/user_register.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
+.user-content .content-box{
+    width: 3.6rem;
+    height: 4.4rem;
+}
+
+.user-content .content-box .logo-box{
+    width: 100%;
+    height: 0.88rem;
+    align-items: flex-start !important;
+}
+
+.user-content .content-box .logo-box img{
+    width: 0.9rem;
+    height: 0.31rem;
+}
+
+.user-content .content-box .submit-box{
+    width: 100%;
+    padding-top: 0.25rem;
+    border: 1px dashed #213954;
+    border-left: none;
+    border-right: none;
+}
+
+.user-content .content-box .submit-box div{
+    position: relative;
+    width: 100%;
+    height: 0.67rem;
+}
+
+.user-content .content-box .submit-box img{
+    width: 0.2rem;
+    height: 0.2rem;
+    position: absolute;
+    top: 0.12rem;
+    left: 0.16rem;
+}
+
+.user-content .content-box .submit-box input{
+    width: 100%;
+    height: 0.42rem;
+    border: 1px solid #0e24c3;
+    outline: none;
+    background-color: #061749;
+    padding-left: 0.5rem;
+    color: #fff;
+}
+
+.user-content .content-box .submit-box input:focus{
+    border: 1px solid #fff;
+}
+
+
+.user-content .content-box .submit-box input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #9ac0f4;
+}
+.user-content .content-box .submit-box input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #9ac0f4;
+}
+.user-content .content-box .submit-box input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #9ac0f4;
+}
+.user-content .content-box .submit-box input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #9ac0f4;
+}
+
+#btn-sendemailcode{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.2rem;
+}
+
+.user-content .content-box .submit-box button{
+    width: 100%;
+    height: 0.42rem;
+    border: none;
+    outline: none;
+    background-color: #1129ee;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 0.3rem;
+}
+
+.user-content .content-box .submit-box button:hover{
+    background-color: #2c3fda;
+}
+
+.user-content .content-box .user-login{
+    width: 100%;
+    font-size: 0.14rem;
+    color: #657b90;
+    height: 0.38rem;
+    text-decoration: none;
+}
+.user-content .content-box .user-login:hover{
+    color: #2d76bb;
+}
+
+
+/****findback****/
+.findbackbg{
+    background: #FFF url("../img/user/user-findback.png") no-repeat;
+    height:8.25rem;
+    align-items:center;
+}
+
+.findbacktitle{
+    font-size:0.24rem;
+    color:#020229;
+}
+
+.findbackbg .content-box .submit-box .sendemailcode{
+    width: 30%;
+    margin-bottom:0;
+    background: #7e83a1;
+    border: 1px solid #020229;
+    color:#020229;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.findbackbg .content-box .submit-box .div-email{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height:0.42rem;
+    margin-bottom: 0.25rem;
+}
+
+.findbackbg .content-box .submit-box .input-email{
+    width:100%;
+}
+
+
+.findbackbg .content-box .submit-box input{
+    background: #7e83a1;
+    border: 1px solid #020229;
+    padding-left: 0.2rem;
+    color:#020229;
+}
+
+.findbackbg .content-box .submit-box input::-webkit-input-placeholder {color:#020229;}
+.findbackbg .content-box .submit-box input:-moz-placeholder {color:#020229;}
+.findbackbg .content-box .submit-box input::-moz-placeholder {color:#020229;}
+.findbackbg .content-box .submit-box input:-ms-input-placeholder {color:#020229;}
+
+
+.comm-dialog{width: 100%;display: flex;justify-content: center;flex-direction: column;align-items: center;border: 0.03rem solid rgba(21,27,50,.4);}
+.comm-dialog .title{width: 100%;height: .83rem;display: flex;justify-content: center;align-items: center;background: #030335;color: #fff;font-size: .16rem;position: relative}
+.comm-dialog .title .close{background: url("../img/comm/plist_close.png");background-size: 100%;width: .36rem;height: .36rem;position: absolute;top: 50%;right: .25rem;margin-top: -.18rem;cursor: pointer}
+.comm-dialog .content{ padding-top:.9rem; }
+.comm-dialog .grid-item{width: 4.3rem;line-height: .55rem;border-top: 1px dotted #030335;display: flex;}
+.comm-dialog .grid-item:last-child{border-bottom: 1px dotted #030335;}
+.comm-dialog .grid-item span{color:#030335;font-size: .16rem;padding:0 .2rem;width: 50%;height: 100%;text-align: right}
+.comm-dialog .grid-item span:first-child{border-right: 1px dotted #030335;text-align: left}
+.comm-dialog .grid-item span.blod{color: #be0524;font-weight: bold}
+.comm-dialog .pay-btn{width: 4.3rem;line-height: .5rem;text-align: center;font-size: .18rem;color: #fff;background: #1129ee;cursor: pointer;outline: none;border: none;margin-top: .35rem;margin-bottom: .9rem;}

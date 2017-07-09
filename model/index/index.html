@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<!-- saved from url=(0020)http://dhgchain.com/ -->
+<html lang="en" data-dpr="1" style="font-size: 100px;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <title>DHG|面向全球物联网的下一代区块链应用平台</title>
+    <meta name="Keywords" content="DHG，ICO，区块链，物联网，应用平台，数值货币，比特币，莱特币，以太坊">
+    <meta name="Description"
+          content="是一个区块链技术综合应用平台，融合区块链发展至今的众多前沿技术，例如UTXO、侧链、SPV验证、混合挖矿以及智能合约等，并不断探索完成区块链底层协议，构建物联网发展雏形。">
+    <link rel="stylesheet" href="resource/comm.css">
+    <link rel="stylesheet" href="resource/layer.css">
+    <script type="application/javascript">
+        /*<![CDATA[*/
+        var remPercent = 0;
+        (function (doc, win) {
+            var docEl = doc.documentElement, isIOS = navigator.userAgent.match(/iphone|ipod|ipad/gi),
+                    dpr = win.devicePixelRatio,
+                    scale = 1 / dpr, resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    widthBase = 1200;
+            docEl.dataset.dpr = win.devicePixelRatio;
+            if (navigator.userAgent.match(/iphone/gi) && screen.width == 375 && win.devicePixelRatio == 2) {
+                docEl.classList.add('iphone6')
+            }
+            if (navigator.userAgent.match(/iphone/gi) && screen.width == 414 && win.devicePixelRatio == 3) {
+                docEl.classList.add('iphone6p')
+            }
+            var metaEl = doc.createElement('meta');
+            metaEl.name = 'viewport';
+            metaEl.content = 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale;
+            docEl.firstElementChild.appendChild(metaEl);
+            var recalc = function () {
+                var width = docEl.clientWidth;
+                if (width / dpr > widthBase) {
+                    width = widthBase * dpr;
+                }
+                if (dpr != 1) {
+                    //scale = scale - 0.1;
+                }
+                docEl.style.fontSize = (100 * (width / widthBase) * (scale)) + 'px';
+            };
+            recalc();
+            if (!doc.addEventListener)
+                return;
+            win.addEventListener(resizeEvt, recalc, false);
+        })(document, window);
+
+        /*]]>*/
+    </script>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+
+    <link rel="stylesheet" href="resource/index.css">
+    <link rel="stylesheet" href="resource/fullpage.css">
+    <link rel="stylesheet" href="resource/video-js.css">
+
+    <script type="text/javascript" src="resource/jquery.min.js.下载"></script>
+    <script type="text/javascript" src="resource/jquery.fullPage.min.js.下载"></script>
+</head>
+<body>
+
+<div class="container-full header flex" id="dhgHeader">
+    <h1 class="flex-center"><a href="http://dhgchain.com/"><img attr="DHG" class="logo" src="resource/logo.png"></a>
+    </h1>
+    <div class="flex-grow flex-right">
+        <a class="nav-item active" href="http://dhgchain.com/;jsessionid=BED0B77D14F7D356EB3CDA2DF6A319ED">
+            <i class="nav-split top"></i>
+            <span>首页</span>
+            <i class="nav-split bottom"></i>
+        </a>
+        <a target="_blank" class="nav-item "
+           href="http://dhgchain.com/fileupload/pdf/DHG-White-Paper-zh_CN.pdf;jsessionid=BED0B77D14F7D356EB3CDA2DF6A319ED">
+            <i class="nav-split top"></i>
+            <span>白皮书</span>
+            <i class="nav-split bottom"></i>
+        </a>
+        <a class="nav-item " href="http://dhgchain.com/news/list.html;jsessionid=BED0B77D14F7D356EB3CDA2DF6A319ED">
+            <i class="nav-split top"></i>
+            <span>新闻报道</span>
+            <i class="nav-split bottom"></i>
+        </a>
+        <a class="nav-item " href="http://dhgchain.com/ico.html;jsessionid=BED0B77D14F7D356EB3CDA2DF6A319ED">
+            <i class="nav-split top"></i>
+            <span>ICO</span>
+            <i class="nav-split bottom"></i>
+        </a>
+
+    </div>
+    <div class="login-tabs">
+        <a href="http://dhgchain.com/user/login.html" class="login-tab">登录</a>
+        <a href="http://dhgchain.com/user/register.html" class="login-tab">注册</a>
+    </div>
+    <div class="lan-tabs">
+        <div class="lan-tab">
+            <i class="lan-tab-zh_CN"></i>
+            <i class="lan-tab-direction"></i>
+        </div>
+        <div class="lan-switch">
+            <div id="zh_CN" class="lan-tab lan-tab-hover" data-lan="zh_CN">
+                <span class="lan-des">简体中文</span>
+                <i class="lan-tab-zh_CN"></i>
+            </div>
+            <div id="zh_TW" class="lan-tab lan-tab-hover" data-lan="zh_CN">
+                <span class="lan-des">繁体中文</span>
+                <i class="lan-tab-zh_TW"></i>
+            </div>
+            <div id="en_US" class="lan-tab lan-tab-hover" data-lan="zh_CN">
+                <span class="lan-des">English</span>
+                <i class="lan-tab-en_US"></i>
+            </div>
+            <div id="ja_JP" class="lan-tab lan-tab-hover" data-lan="zh_CN">
+                <span class="lan-des">日本語の</span>
+                <i class="lan-tab-ja_JP"></i>
+            </div>
+            <div id="ko_KR" class="lan-tab lan-tab-hover" data-lan="zh_CN">
+                <span class="lan-des">한국어</span>
+                <i class="lan-tab-ko_KR"></i>
+            </div>
+            <div id="ru_RU" class="lan-tab lan-tab-hover" data-lan="zh_CN">
+                <span class="lan-des">русский</span>
+                <i class="lan-tab-ru_RU"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<a href="/user/login.html" style="position: absolute;top: 0;left: 20px;z-index: 10000;color:#f00">登录</a>
+<a href="/user/register.html" style="position: absolute;top: 0;left: 100px;z-index: 10000;color:#f00">注册</a>-->
+<div id="dhgFull">
+
+    <div class="section container-full" id="page1">
+        <div class="container flex-center flex-direction">
+            <div class="display-box">
+                <i class="logo"></i>
+                <i class="subtitle"></i>
+            </div>
+        </div>
+    </div>
+    <div class="section container-full" id="page10">
+        <div class="container flex-center flex-direction">
+            <div class="display-box">
+                <div class="title-box violet">
+                    <p>下载</p>
+                </div>
+                <div class="content-box">
+                    <div class="download-box flex-center">
+                        <div class="item-box small flex-center" style="left: 100px;" data-index="1" data-position="0">
+                            <div class="icon-box sound-code"></div>
+                            <div class="message-box flex-center flex-direction" style="display: none">
+                                <a href="http://dhgchain.com/" class="flex-center">立即下载</a>
+                            </div>
+                            <div class="hint-box flex-center">源码</div>
+                        </div>
+                        <div class="item-box flex-center" style="left: 256px;" data-index="2" data-position="1">
+                            <div class="icon-box linux"></div>
+                            <div class="message-box flex-center flex-direction">
+                                <a onclick="event.stopPropagation();" target="_blank" class="flex-center"
+                                   href="http://dhgchain.com/fileupload/download/dhgd-linux-v1.0.1.zip;jsessionid=BED0B77D14F7D356EB3CDA2DF6A319ED">立即下载</a>
+                            </div>
+                            <div class="hint-box flex-center">Linux</div>
+                        </div>
+                        <div class="item-box activate flex-center" style="left: 430px;" data-index="3"
+                             data-position="2">
+                            <div class="icon-box windows"></div>
+                            <div class="message-box flex-center flex-direction">
+                                <a onclick="event.stopPropagation();" target="_blank" class="flex-center"
+                                   href="http://dhgchain.com/fileupload/download/dhg-win-v1.0.1.zip;jsessionid=BED0B77D14F7D356EB3CDA2DF6A319ED">立即下载</a>
+                            </div>
+                            <div class="hint-box flex-center">Windows</div>
+                        </div>
+                        <div class="item-box flex-center" style="left:660px;" data-index="4" data-position="3">
+                            <div class="icon-box android"></div>
+                            <div class="message-box flex-center flex-direction" style="display: none">
+                                <a href="http://dhgchain.com/" class="flex-center">立即下载</a>
+                            </div>
+                            <div class="hint-box flex-center">Android</div>
+                        </div>
+
+                        <div class="item-box small flex-center" style="left: 850px;" data-index="5" data-position="4">
+                            <div class="icon-box mac"></div>
+                            <div class="message-box flex-center flex-direction" style="display: none">
+                                <a href="http://dhgchain.com/" class="flex-center">立即下载</a>
+                            </div>
+                            <div class="hint-box flex-center">Mac</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            /*<![CDATA[*/
+            jQuery(function () {
+                var positionArray = [100, 256, 430, 660, 850]
+                jQuery("#page10 .item-box").click(function () {
+                    var index = jQuery(this).data().index;
+                    var activateIndex = jQuery("#page10 .activate").data().index;
+                    if (index === activateIndex) {
+                        return;
+                    }
+                    var itemList = jQuery("#page10 .item-box");
+                    var activatePos = jQuery("#page10 .activate").data().position;
+                    var clickPos = jQuery(this).data().position;
+                    var step = Math.abs(clickPos - activatePos);
+                    if (step > 2) step = 2;
+                    for (var st = 0; st < step; st++) {
+                        if (clickPos > activatePos) {
+                            for (var i = 4; i >= 0; i--) {
+                                var position = jQuery(itemList[i]).data().position;
+                                jQuery(itemList[i]).removeClass("activate").removeClass("small");
+                                position -= 1;
+                                if (position < 0) {
+                                    position = 4;
+                                }
+                                if (position === 0 || position === 4) {
+                                    jQuery(itemList[i]).addClass("small");
+                                } else if (position === 2) {
+                                    jQuery(itemList[i]).addClass("activate");
+                                }
+                                jQuery(itemList[i]).data().position = position;
+                                jQuery(itemList[i]).animate({left: positionArray[position] + "px"}, 300);
+                            }
+                        } else if (clickPos < activatePos) {
+                            for (var i = 0; i < 5; i++) {
+                                var position = jQuery(itemList[i]).data().position;
+                                jQuery(itemList[i]).removeClass("activate").removeClass("small");
+                                position += 1;
+                                if (position > 4) {
+                                    position = 0;
+                                }
+                                if (position === 0 || position === 4) {
+                                    jQuery(itemList[i]).addClass("small");
+                                } else if (position === 2) {
+                                    jQuery(itemList[i]).addClass("activate");
+                                }
+                                jQuery(itemList[i]).data().position = position;
+                                jQuery(itemList[i]).animate({left: positionArray[position] + "px"}, 300);
+                            }
+                        }
+                    }
+
+
+                })
+            })
+            /*]]>*/
+        </script>
+    </div>
+
+    <div class="section container-full" id="page2">
+        <div class="container flex-center flex-direction">
+            <div class="display-box">
+                <div class="title-box gray">
+                    <p>区块链发展</p>
+                </div>
+                <div class="content">
+                    <div class="develop">
+                        <div class="top">
+                            <span class="item-1">币</span>
+                            <span class="item-2">链</span>
+                            <span class="item-3">网</span>
+                        </div>
+                        <div class="bottom flex-center">
+                            <span class="item-1 flex-center flex-direction"><span>BTC, LTC,</span><span>达世币, Zcash</span></span>
+                            <span class="item-2 flex-center flex-direction"><span>侧链，以太坊，</span><span>超级账本</span></span>
+                            <span class="item-3 flex-center flex-direction">DHG</span>
+                        </div>
+                    </div>
+                    <div class="des flex-center">
+                        <p>DHG(Distributed Hybrid
+                            Global)是一个区块链技术综合应用平台，融合区块链发展至今的众多前沿技术，例如UTXO、侧链、SPV验证、混合挖矿以及智能合约等，并不断探索完善区块链底层协议，顺应区块链发展潮流，在虚拟币和区块链发展基础上，定义下一代区块链网络协议，同时也是物联网的基础协议。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section container-full" id="page3">
+        <div class="container flex-center flex-direction">
+            <div class="display-box">
+                <div class="title-box white">
+                    <p>技术创新</p>
+                </div>
+                <div class="content flex-center">
+                    <div class="innovate-item">
+                        <div class="item flex-center">
+                            <i class="border top"></i>
+                            <i class="border bottom"></i>
+                            <i class="border right"></i>
+                            <i class="item-1"></i>
+                        </div>
+                        <i class="hover"></i>
+                        <span class="des">侧链</span>
+                    </div>
+                    <div class="innovate-item">
+                        <div class="item flex-center">
+                            <i class="border top"></i>
+                            <i class="border bottom"></i>
+                            <i class="border right"></i>
+                            <i class="item-2"></i>
+                        </div>
+                        <span class="hover"></span>
+                        <span class="des">双向挂钩</span>
+                    </div>
+                    <div class="innovate-item">
+                        <div class="item flex-center">
+                            <i class="border top"></i>
+                            <i class="border bottom"></i>
+                            <i class="border right"></i>
+                            <i class="item-3"></i>
+                        </div>
+                        <span class="hover"></span>
+                        <span class="des">混合挖矿</span>
+                    </div>
+                    <div class="innovate-item">
+                        <div class="item flex-center">
+                            <i class="border top"></i>
+                            <i class="border bottom"></i>
+                            <i class="item-4"></i>
+                        </div>
+                        <span class="hover"></span>
+                        <span class="des">智能合约</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section container-full" id="page4">
+        <div class="container flex-center flex-direction">
+            <div class="display-box">
+                <div class="title-box violet">
+                    <p>应用场景</p>
+                </div>
+                <div class="content-box">
+                    <div class="apply-item">
+                        <div class="left-box">
+                            <p class="title">= 数字资产 =</p>
+                            <p class="describe">
+                                资产数字化后可量化，可自由流通，买卖，抵押，因而将会催生巨大价值。DHG将提供多种资产数字化方法，可以通过侧链开通一个应用，并同时发行一种数字资产，也可以通过智能合约构造资产。</p>
+                        </div>
+                        <div class="right-box item1"></div>
+                    </div>
+
+                    <div class="apply-item">
+                        <div class="right-box item2"></div>
+                        <div class="left-box">
+                            <p class="title">= 数字身份 =</p>
+                            <p class="describe">
+                                DHG区块网可用于数字身份，食品，药品，工艺品，文物等领域，以证明数据及产品所有权问题。区块链在产品供应链溯源领域同样具备天然的优势，不可篡改的区块链记录可清晰的标记产品流通轨迹。</p>
+                        </div>
+                    </div>
+
+                    <div class="apply-item">
+                        <div class="left-box">
+                            <p class="title">= 社会治理 =</p>
+                            <p class="describe">
+                                传统领域，身份认证，健康管理，公证，司法仲裁，投票，借贷等，使用中心化系统都会存在造假问题。区块链天然的具备公开透明，不可伪造的属性。DHG的侧链机制将可以对数据进行分级处理。</p>
+                        </div>
+                        <div class="right-box item3"></div>
+                    </div>
+
+                    <div class="apply-item">
+                        <div class="right-box item4"></div>
+                        <div class="left-box">
+                            <p class="title">= 去中心化应用(DAPP) =</p>
+                            <p class="describe">
+                                在去中心化运算及去中心化数据存储的基础之上，可发展去中心化应用，DAPP也是物联网的发展基础。DHG最终可提供两种搭建DAPP的方式，即通过侧链的方式实现，或者通过智能合约的方式实现。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section container-full" id="page5">
+        <div class="container flex-center flex-direction">
+            <div class="display-box">
+                <div class="title-box violet">
+                    <p>我们的团队</p>
+                </div>
+                <div class="content-box">
+                    <div class="team-item">
+                        <div class="imgBox">
+                            <img src="resource/page_5_7.png">
+                            <div class="shade"></div>
+                            <p class="name">Daniel Gibson</p>
+                            <!--<p class="company" th:utext="#{index.page30}">区块链设计者</p>-->
+                        </div>
+                        <p class="describe"><span>首席设计师</span><span
+                                class="desc">ASDR团队创始人之一。曾长期作为IBM区块链项目ADEPT的核心…</span></p>
+                        <p class="item-item-left-box flex-center">
+                            ASDR团队创始人之一。曾长期作为IBM区块链项目ADEPT的核心设计者，后参与IBM与三星联合开展的物联网系统研发。在一次区块链爱好者Meetup上与日本GHDA团队相识，共同发起DHG项目。拥有15年软件编程经验，精通比特币、区块链技术、对侧链、智能合约有深入研究，亲自参与并设计了多个区块链项目。</p>
+                    </div>
+                    <div class="splitBox"></div>
+                    <div class="team-item">
+                        <div class="imgBox">
+                            <img src="resource/page_5_6.png">
+                            <div class="shade"></div>
+                            <p class="name">Anthony Fraser</p>
+                            <!--<p class="company" th:utext="#{index.page33}">核心开发者</p>-->
+                        </div>
+                        <p class="describe"><span>核心开发者</span><span class="desc">前Google资深研究员，主要负责AI项目研发，在神经网络模型…</span>
+                        </p>
+                        <p class="item-item-left-box flex-center">
+                            前Google资深研究员，主要负责AI项目研发，在神经网络模型上颇有建树。从小就展现出在程序方面的天赋，12岁即从事软件开发，19岁参加全球ACM程序设计大赛位列前三名，精通C/C++、Python、Ruby、Go等多项语言，花费了大量时间研究比特币源码。</p>
+                    </div>
+                    <div class="splitBox"></div>
+                    <div class="team-item">
+                        <div class="imgBox">
+                            <img src="resource/page_5_5.png">
+                            <div class="shade"></div>
+                            <p class="name">Dwight D. Aldrich</p>
+                            <!--<p class="company" th:utext="#{index.page36}">市场应用专家</p>-->
+                        </div>
+                        <p class="describe"><span>市场应用专家</span><span class="desc">先后服务于硅谷多家软件公司，2010年加入Airbnb…</span>
+                        </p>
+                        <p class="item-item-right-box flex-center">
+                            先后服务于硅谷多家软件公司，2010年加入Airbnb，先后负责大洋洲、欧洲区市场推广。擅长计算机数据模型的市场化应用。他本人也是数字货币资深爱好者。</p>
+                    </div>
+                    <div class="splitBox"></div>
+                    <div class="team-item">
+                        <div class="imgBox">
+                            <img src="resource/page_5_8.png">
+                            <div class="shade"></div>
+                            <p class="name">Yamashita Naoya</p>
+                            <!--<p class="company" th:utext="#{index.page39}">分布式专家</p>-->
+                        </div>
+                        <p class="describe"><span>分布式专家</span><span class="desc">曾独立设计并开发一套P2P音乐分享系统，2010年…</span></p>
+                        <p class="item-item-right-box flex-center">
+                            曾独立设计并开发一套P2P音乐分享系统，2010年开始接触比特币，先后对比特币，NXT，以太坊等系统的P2P实现方式做过系统研究，同时也是顶尖国家大数据组织ODPI成员。</p>
+                    </div>
+
+                    <div class="team-item">
+                        <div class="imgBox">
+                            <img src="resource/page_5_9.png">
+                            <div class="shade"></div>
+                            <p class="name">Dewey Feng</p>
+                            <!--<p class="company" th:utext="#{index.page42}">开发者</p>-->
+                        </div>
+                        <p class="describe"><span>开发者</span><span class="desc">加拿大籍华人，是一名经验丰富的开发者，酷爱软件开源精神…</span></p>
+                        <p class="item-item-left-box flex-center">
+                            加拿大籍华人，是一名经验丰富的开发者，酷爱软件开源精神，以自由开发者身份开发并维护过很多项目。自从接触比特币后，系统研究了非对称密码，博弈论等应用数学分支，并自学金融，尤其奥派经济学。</p>
+                    </div>
+                    <div class="splitBox"></div>
+                    <div class="team-item">
+                        <div class="imgBox">
+                            <img src="resource/page_5_10.png">
+                            <div class="shade"></div>
+                            <p class="name">Nakajima Saburo</p>
+                            <!-- <p class="company" th:utext="#{index.page45}">区块链技术狂热爱好者</p>-->
+                        </div>
+                        <p class="describe"><span>区块链爱好者</span><span class="desc">“中本聪”的忠实追随者。曾做过比特币职业矿工、区块链媒体…</span>
+                        </p>
+                        <p class="item-item-left-box flex-center">
+                            “中本聪”的忠实追随者。曾做过比特币职业矿工、区块链媒体评论员、数字货币社区意见领袖，对区块链的分析精准、犀利。</p>
+                    </div>
+                    <div class="splitBox"></div>
+                    <div class="team-item">
+                        <div class="imgBox">
+                            <img src="resource/page_5_11.png">
+                            <div class="shade"></div>
+                            <p class="name">Dean Li</p>
+                            <!-- <p class="company" th:utext="#{index.page48}">产品经理</p>-->
+                        </div>
+                        <p class="describe"><span>产品经理</span><span class="desc">曾在多家区块链初创公司任职，对于用户需求有非常深入…</span></p>
+                        <p class="item-item-right-box flex-center">
+                            曾在多家区块链初创公司任职，对于用户需求有非常深入的掌握，擅长于将高冷的计算机技术与用户的实际需求相结合。</p>
+                    </div>
+                    <div class="splitBox"></div>
+                    <div class="team-item">
+                        <div class="imgBox">
+                            <img src="resource/page_5_12.png">
+                            <div class="shade"></div>
+                            <p class="name">Takeda Jun</p>
+                            <!--<p class="company" th:utext="#{index.page51}">学术指导</p>-->
+                        </div>
+                        <p class="describe"><span>学术指导</span><span class="desc">从事区块链研究长达5年，对数字资产的场景化应用及数据链…</span></p>
+                        <p class="item-item-right-box flex-center">
+                            从事区块链研究长达5年，对数字资产的场景化应用及数据链模型结构有非常深入的研究，长期研究物联网，同时，他也是一名出色的桥牌玩家。</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="section container-full" id="page9">
+        <div class="container flex-center flex-direction">
+            <div class="display-box">
+                <div class="title-box violet">
+                    <p>视频介绍</p>
+                </div>
+                <div class="content-box">
+                    <div class="video-box">
+                        <video id="my-video" class="video-js" controls="controls" preload="auto" width="760"
+                               height="430" poster="front/img/index/page9/video-bg.jpg" data-setup="{}">
+                            <source src="/fileupload/video/dhg_video.mp4" type="video/mp4">
+                            <p class="vjs-no-js">
+
+                            </p>
+                        </video>
+                        <script type="text/javascript">
+                            $(function () {
+                                var myPlayer = videojs('my-video');
+                                videojs("my-video").ready(function () {
+                                    var myPlayer = this;
+                                    myPlayer.pause();
+                                });
+                            })
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section container-full" id="page6">
+        <div class="container flex-center flex-direction">
+            <div class="display-box">
+                <div class="title-box white">
+                    <p>大咖评价</p>
+                </div>
+                <div class="content-box">
+                    <div class="dk-item ">
+                        <p class="name"><i class="peuters"></i></p>
+                        <p class="describe">= 路透社 =</p>
+                        <p class="content flex-center">
+                            “区块链掀起全球研发热潮，DHG设计理念则更加前沿，它将在数字资产、数据确权、区块链金融、社会治理等应用场景发挥其重要价值”</p>
+                    </div>
+                    <div class="dk-leftBorder">
+                        <div class="other-line"></div>
+                    </div>
+                    <div class="dk-item">
+                        <p class="name"><i class="press"></i></p>
+                        <p class="describe">= 美国联合通讯社 =</p>
+                        <p class="content flex-center">“DHG提出了涵盖侧链技术、混合挖矿、SPV验证方式、智能合约的下一代区块链应用平台，即3.0“网”时代”</p>
+                    </div>
+                    <div class="dk-leftBorder">
+                        <div class="other-line"></div>
+                    </div>
+                    <div class="dk-item">
+                        <p class="name"><i class="wwd"></i></p>
+                        <p class="describe">= 世界网络日报 =</p>
+                        <p class="content flex-center">“DHG拥抱物联网，它将开启区块链技术的3.0时代”</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section container-full" id="page7">
+        <div class="container flex-center flex-direction">
+            <div class="display-box">
+                <div class="title-box white">
+                    <p>新闻报道</p>
+                </div>
+                <div class="content flex">
+                    <div class="news">
+                        <a class="news-title"
+                           href="http://dhgchain.com/news/list.html;jsessionid=BED0B77D14F7D356EB3CDA2DF6A319ED">行业资讯</a>
+                        <a class="news-body flex-center"
+                           href="http://dhgchain.com/news/detail.html;jsessionid=BED0B77D14F7D356EB3CDA2DF6A319ED?id=2">
+                            <span class="body-left flex-center flex-direction">
+                                <span>09</span>
+                                <span>06</span>
+                                <span>2017</span>
+                            </span>
+                            <span class="body-right flex-grow">
+                                <p class="body-title">DHG即将面世 区块链技术开启...</p>
+                                <p class="body-content">美日跨国区块链核心研发团队DHG刚刚宣布，区块链技术综合应用平台DHG...</p>
+                            </span>
+                        </a>
+                        <a class="news-body flex-center"
+                           href="http://dhgchain.com/news/detail.html;jsessionid=BED0B77D14F7D356EB3CDA2DF6A319ED?id=3">
+                            <span class="body-left flex-center flex-direction">
+                                <span>09</span>
+                                <span>06</span>
+                                <span>2017</span>
+                            </span>
+                            <span class="body-right flex-grow">
+                                <p class="body-title">极低的储蓄率和养老金问题使日本...</p>
+                                <p class="body-content">日本长期以来对个人储蓄账户实行近乎零的利率。与此同时日本人非常担忧国家...</p>
+                            </span>
+                        </a>
+                        <a class="news-body flex-center"
+                           href="http://dhgchain.com/news/detail.html;jsessionid=BED0B77D14F7D356EB3CDA2DF6A319ED?id=4">
+                            <span class="body-left flex-center flex-direction">
+                                <span>09</span>
+                                <span>06</span>
+                                <span>2017</span>
+                            </span>
+                            <span class="body-right flex-grow">
+                                <p class="body-title">南京市将在公共服务部门引入区块...</p>
+                                <p class="body-content">2017年的数博会在贵阳成功举办，本届数博会首次引入区块链版块，并举行...</p>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="news-split"></div>
+                    <div class="news">
+                        <a class="news-title"
+                           href="http://dhgchain.com/news/list.html;jsessionid=BED0B77D14F7D356EB3CDA2DF6A319ED">DHG公告</a>
+                        <a class="news-body flex-center"
+                           href="http://dhgchain.com/news/detail.html;jsessionid=BED0B77D14F7D356EB3CDA2DF6A319ED?id=23">
+                            <span class="body-left flex-center flex-direction">
+                                <span>06</span>
+                                <span>07</span>
+                                <span>2017</span>
+                            </span>
+                            <span class="body-right flex-grow">
+                                <p class="body-title">关于DHG近期上线交易平台及产...</p>
+                                <p class="body-content">尊敬的用户：感谢您对DHG项目的关注与参与！北京时间7月6日晚18时（...</p>
+                            </span>
+                        </a>
+                        <a class="news-body flex-center"
+                           href="http://dhgchain.com/news/detail.html;jsessionid=BED0B77D14F7D356EB3CDA2DF6A319ED?id=22">
+                            <span class="body-left flex-center flex-direction">
+                                <span>01</span>
+                                <span>07</span>
+                                <span>2017</span>
+                            </span>
+                            <span class="body-right flex-grow">
+                                <p class="body-title">关于DHG钱包发布及上线交易平...</p>
+                                <p class="body-content">关于DHG钱包发布及上线交易平台的公告&nbsp;尊敬的用户：感谢您对DHG项目...</p>
+                            </span>
+                        </a>
+                        <a class="news-body flex-center"
+                           href="http://dhgchain.com/news/detail.html;jsessionid=BED0B77D14F7D356EB3CDA2DF6A319ED?id=21">
+                            <span class="body-left flex-center flex-direction">
+                                <span>25</span>
+                                <span>06</span>
+                                <span>2017</span>
+                            </span>
+                            <span class="body-right flex-grow">
+                                <p class="body-title">关于DHG项目钱包发布的公告</p>
+                                <p class="body-content">尊敬的用户：感谢您对DHG项目的关注与参与！根据项目进度，DHG钱包将...</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!--<th:block th:include="front/comm/layout :: footer"></th:block>-->
+<!--<script type="text/javascript" src="resource/index.js"></script>-->
+<script type="text/javascript" src="resource/video.min.js.下载"></script>
+</body>
+</html>
