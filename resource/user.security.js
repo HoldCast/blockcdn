@@ -3,6 +3,7 @@ var security = {
         var oldPwd = util.trim($("#loginpass-oldpass").val());
 		var newPwd = util.trim($("#loginpass-newpass").val());
 		var confirmPwd = util.trim($("#loginpass-confirmpass").val());
+		var user_name = '通过页面获取'; //通过页面获取
         if (oldPwd == "") {
             util.layerAlert("", util.getLan("comm.tips.11"),2);
             return;
@@ -21,12 +22,18 @@ var security = {
 			return;
 		}
 		var url = "/user/modify_passwd.html";
+		//data={"user_name":"sdfds@qq.com","old_password":"sdfsfdsf","new_password":"sfdssdfs","confirm_password":"sfdssfds"}
 		var param = {
-            oldPwd : oldPwd,
-            newPwd : newPwd,
-            confirmPwd : newPwd,
-			identityCode : ''
+			user_name:　user_name,
+			old_password : oldPwd,
+			new_password : newPwd,
+			confirm_password : newPwd,
+            //oldPwd : oldPwd,
+            //newPwd : newPwd,
+            //confirmPwd : newPwd,
+			//identityCode : ''
 		};
+		console.log('修改密码参数:',param);
 		var callback = function(data) {
 			if (data.code == 200) {
                 util.layerAlert("", util.getLan("comm.tips.25"), 1);

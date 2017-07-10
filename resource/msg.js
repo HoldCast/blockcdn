@@ -66,43 +66,48 @@ var newEmail = {
                 return;
             }
         }
-        debugger;
         //var url = "/user/send_reg_email.html";
         var url = "../request/send_reg_email.html";
         var param = {
-            type: type,
-            msgtype: this.msgtype,
-            address: address
+            //type: type,
+            //msgtype: this.msgtype,
+            //address: address
+            email: address
         };
-        /******/
-        alert('此处调试1545');
-        button.disabled = true;
-        for (var num = 1; num <= that.secs; num++) {
-            window.setTimeout("email.updateNumber(" + num + ",'" + button_id + "',2)", num * 1000);
-        }
-        return;
-        /******/
         var callback = function (data) {
-            debugger
-            data.code = 200;    //调试需要
-            if (data.code == 200) {
+            console.log(111,data);
+            //if (data.code == 200) {
+            if (data.status === 0) {
                 button.disabled = true;
                 for (var num = 1; num <= that.secs; num++) {
                     window.setTimeout("email.updateNumber(" + num + ",'" + button_id + "',2)", num * 1000);
                 }
             } else {
-                util.layerAlert("", data.msg, 2);
+                //util.layerAlert("", data.msg, 2);
+                util.layerAlert("", data.message, 2);
             }
         };
-        util.network({
+        $.ajax({
+            url: url,
+            type: 'post',
+            dataType: 'json',
+            data: param,
+            success: function (json){
+                console.log('获取验证码成功:',json);
+                callback(json);
+            },
+            error: function (){
+                console.log('msg  ajax err');
+                util.layerAlert('','获取验证码调试',2);
+                callback({status:0})
+            }
+        });
+        /*util.network({
             btn: button,
             url: url,
             param: param,
             success: callback,
-            error: function(){
-                alert('2err');
-            }
-        });
+        });*/
     },
     updateNumber: function (num, button_id, isVoice) {
         var button = document.getElementById(button_id);

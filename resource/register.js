@@ -103,15 +103,19 @@ var reg = {
             }
             var intro_user = $("#register-intro").val();
             var url = "/register.html";
+            //data={"email":"98@qq.com","password":"sfdsfdsfsd","confirm_password":"sdsfssf","vcode":"sdsd"}
             var param = {
-                regName: regUserName,
+                //regName: regUserName,
+                email: regUserName,
                 password: pwd,
-                regType: regType,
-                vcode: 0,
-                pcode: 0,
-                ecode: regEmailCode,
-                areaCode: 0,
-                intro_user: intro_user
+                confirm_password: pwd,
+                //regType: regType,
+                //vcode: 0,
+                //pcode: 0,
+                //ecode: regEmailCode,
+                vcode: regEmailCode,
+                //areaCode: 0,
+                //intro_user: intro_user
             };
             var callback = function (data) {
                 if (data.code == 200) {
@@ -127,6 +131,7 @@ var reg = {
                     }
                 }
             };
+            console.log('注册参数:', param);
             util.network({btn: ele, url: url, param: param, success: callback,});
         }
     },

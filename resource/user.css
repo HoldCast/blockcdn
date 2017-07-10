@@ -153,7 +153,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background:  url("../resource/user-password-bg.png") repeat-x;
+    /*background:  url("../resource/user-password-bg.png") repeat-x;*/
     padding:0.8rem 0 0.5rem;
     border: 1px solid #c0c0cc;
 }
@@ -397,7 +397,7 @@
 
 .withdraw-box{
     width: 100%;
-    background:  url("../resource/user-password-bg.png") repeat-x;
+    /*background:  url("../resource/user-password-bg.png") repeat-x;*/
     padding:0.8rem 0 0.5rem;
     margin-top: -1px;
     border: 1px solid #c0c0cc;

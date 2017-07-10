@@ -29,11 +29,16 @@ var login = {
 			if ($("#forwardUrl") != null) {
 				forwardUrl = $("#forwardUrl").val();
 			}
+			//data={"user_name":"2322@qq.com","password":"sdsfsfs","nonce_str":"sdfdsdfs"}
 			var param = {
-				loginName : uName,
+				user_name : uName,
 				password : pWord,
-				type : longLogin
+				nonce_str : Math.random()
+				//loginName : uName,
+				//password : pWord,
+				//type : longLogin
 			};
+			console.log('登录参数:',param);
 			var callback = function(data) {
 				if (data.code == 200) {
 					if (util.trim(forwardUrl) == "") {
