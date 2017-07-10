@@ -13,13 +13,15 @@ var email = {
                 return;
             }
         }
+        //data={"email":sdsfd@qq.com}
         //var url = "/user/send_reg_email.html";
         var url = "../request/send_reg_email.html";
         var param = {
-            type: type,
-            msgtype: this.msgtype,
-            address: address
+            //type: type,
+            //msgtype: this.msgtype,
+            email: address
         };
+        console.log('找回密码发送验证码:',param);
         var callback = function (data) {
             if (data.code == 200) {
                 button.disabled = true;

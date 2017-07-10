@@ -42,6 +42,7 @@ var reset = {
             password : pwd,
             confirm : rePwd
         };
+        console.log('找回密码提交数据:', param);
         var callback = function(data) {
             if (data.code == 200) {
                 util.layerAlert("", data.msg, 1);
