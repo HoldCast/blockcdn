@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-dpr="1">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>BCDN</title>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <link rel="icon" href="../resource/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../resource/comm.css">
+    <link rel="stylesheet" href="../resource/layer.css">
+    <link rel="stylesheet" href="../resource/user.css">
+    <style>
+        input, textarea, select, button {
+            text-rendering: auto;
+            color: initial;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            display: inline-block;
+            text-align: start;
+            margin: 0em;
+            font-size: 13.3333px;
+        !important;
+        }
+
+        input, textarea, select, button, meter, progress {
+            -webkit-writing-mode: horizontal-tb;
+        }
+        .ico-switch{
+            height: 2em;
+            line-height:2em;
+        }
+        .ico-switch input{
+            width: 1.2em !important;
+            height: 1.2em !important;
+            display: inline-block !important;
+        }
+        .ico-switch span{
+            display: inline-block !important;
+            height: 1.2em !important;
+            line-height: 1.2em !important;
+        }
+
+
+    </style>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <script type="application/javascript">
+        /*<![CDATA[*/
+        var remPercent = 0;
+        (function (doc, win) {
+            var docEl = doc.documentElement, isIOS = navigator.userAgent.match(/iphone|ipod|ipad/gi),
+                    dpr = win.devicePixelRatio,
+                    scale = 1 / dpr, resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    widthBase = 1200;
+            docEl.dataset.dpr = win.devicePixelRatio;
+            if (navigator.userAgent.match(/iphone/gi) && screen.width == 375 && win.devicePixelRatio == 2) {
+                docEl.classList.add('iphone6')
+            }
+            if (navigator.userAgent.match(/iphone/gi) && screen.width == 414 && win.devicePixelRatio == 3) {
+                docEl.classList.add('iphone6p')
+            }
+            var metaEl = doc.createElement('meta');
+            metaEl.name = 'viewport';
+            metaEl.content = 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale;
+            docEl.firstElementChild.appendChild(metaEl);
+
+            var recalc = function () {
+                var width = docEl.clientWidth;
+                if (width / dpr > widthBase) {
+                    width = widthBase * dpr;
+                }
+                if (dpr != 1) {
+                    //scale = scale-0.1;
+                }
+                docEl.style.fontSize = (100 * (width / widthBase) * (scale)) + 'px';
+            };
+
+
+            recalc();
+            if (!doc.addEventListener)
+                return;
+            win.addEventListener('resize', recalc, false);
+        })(document, window);
+
+        /*]]>*/
+    </script>
+    <link rel="stylesheet" href="../resource/user.css">
+    <link rel="stylesheet" href="../resource/layer.css" id="layuicss-skinlayercss">
+</head>
+<body>
+<div class="container-full user-banner">
+    <div class="container flex-center">
+        <div class="user-top flex-center flex-direction">
+            <i class="user-face user-plist"></i>
+            <span class="user-balance flex-center">账户余额（DHG）</span>
+            <span class="user-balance-amount flex-center">0</span>
+            <span class="user-login-name flex-center">用户名:u21767@163.com</span>
+        </div>
+    </div>
+</div>
+<div class="container-full user-split flex-center">
+    <div class="user-split-content flex-center">
+        <span class="user-lastTime flex-left">上次登录时间:2017-07-09 08:37:48</span>
+        <span class="user-lastTime flex-center">UID:19374</span>
+        <a class="user-logout flex-right" href="http://dhgchain.com/user/logout.html">退出登录 &gt;&gt;</a>
+    </div>
+</div>
+<div class="container user-content-box">
+    <div class="flex-left flex-direction user-left-menu">
+        <a href="ico.html" class="active">ICO锁定</a>
+        <a href="index.html">个人资产</a>
+        <a href="deposit.html">充值</a>
+        <a href="withdraw.html">提现</a>
+        <a href="http://dhgchain.com/financial/push.html">Push</a>
+        <a href="http://dhgchain.com/financial/finances.html">超级节点</a>
+        <a href="http://dhgchain.com/user/modifyPassword.html">修改密码</a>
+    </div>
+
+    <div class="flex-right  user-content-right flex-direction">
+        <div class="flex-direction withdraw-box flex-center">
+            <div class="ico-switch">
+                <label><input type="radio" name="ico-switch" id="bthRadio"><span>BTH</span></label>
+                <label><input type="radio" name="ico-switch" id="ethRadio"><span>ETH</span></label>
+            </div>
+            <div class="input-box flex-center">
+                <span>余额</span>
+                <input type="text" id="btcbalance" readonly="readonly" value="0.0000">
+            </div>
+            <div class="input-box flex-center">
+                <span>数量</span>
+                <input type="text" id="txtFinancesCount">
+            </div>
+
+            <input type="button" id="pushSubmit" class="flex-center" value="提交">
+        </div>
+        <div class="withdraw-record">
+            <table>
+                <thead>
+                <tr class="flex-center">
+                    <th width="350"><i class="ico-record-icon user-plist time"></i><span>时间</span></th>
+                    <th width="150"><i class="ico-record-icon user-plist coin"></i><span>币种</span></th>
+                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>支持数量</span></th>
+                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>获得DHG</span></th>
+                    <!--<th width="100"><i class="ico-record-icon user-plist num"></i><span th:utext="#{user.ico.record.page5}">状态</span></th>-->
+                </tr>
+                </thead>
+                <tbody class="flex-direction">
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+<div class="container-full footer flex-center" style="position: static;">
+    <span class="copyright">CopyRight 2016-2017 dhgchain.com All Rights Reserved.</span>
+</div>
+<script type="text/javascript" src="../resource/jquery.min.js"></script>
+<script type="text/javascript" src="../resource/layer.js"></script>
+<script type="text/javascript" src="../resource/util.js"></script>
+<script type="text/javascript" src="../resource/comm.js"></script>
+<script type="text/javascript" src="../resource/language_zh_CN.js"></script>
+<script type="text/javascript" src="../resource/login.js"></script>
+<script type="text/javascript" src="../resource/msg.js"></script>
+</body>
+</html>
