@@ -68,8 +68,6 @@ var newEmail = {
                 return;
             }
         }
-        //var url = "/user/send_reg_email.html";
-        var url = "../request/send_reg_email.html";
         var param = {
             //type: type,
             //msgtype: this.msgtype,
@@ -77,7 +75,7 @@ var newEmail = {
             email: address
         };
         var callback = function (data) {
-            console.log(111,data);
+            console.log('发送验证码:',data);
             //if (data.code == 200) {
             if (data.status === 0) {
                 button.disabled = true;
@@ -89,27 +87,13 @@ var newEmail = {
                 util.layerAlert("", data.message, 2);
             }
         };
-        $.ajax({
-            url: url,
-            type: 'post',
-            dataType: 'json',
-            data: param,
-            success: function (json){
-                console.log('获取验证码成功:',json);
-                callback(json);
-            },
-            error: function (){
-                console.log('msg  ajax err');
-                util.layerAlert('','获取验证码调试',2);
-                callback({status:0})
-            }
-        });
-        /*util.network({
+
+        util.network({
             btn: button,
-            url: url,
+            url: vCodeUrl,
             param: param,
             success: callback,
-        });*/
+        });
     },
     updateNumber: function (num, button_id, isVoice) {
         var button = document.getElementById(button_id);

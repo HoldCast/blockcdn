@@ -102,8 +102,6 @@ var reg = {
                 return;
             }
             var intro_user = $("#register-intro").val();
-            var url = "/register.html";
-            //data={"email":"98@qq.com","password":"sfdsfdsfsd","confirm_password":"sdsfssf","vcode":"sdsd"}
             var param = {
                 //regName: regUserName,
                 email: regUserName,
@@ -132,7 +130,7 @@ var reg = {
                 }
             };
             console.log('注册参数:', param);
-            util.network({btn: ele, url: url, param: param, success: callback,});
+            util.network({btn: ele, url: registerUrl, param: param, success: callback,});
         }
     },
     areaCodeChange: function (ele, setEle) {
