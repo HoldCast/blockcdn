@@ -36,11 +36,12 @@ var reset = {
         }
 
         var url = "/validate/reset_password.html";
+
         var param = {
-            email : email,
-            emailCode : emailCode,
+            user_name : email,
+            vcode : emailCode,
             password : pwd,
-            confirm : rePwd
+            confirm_password : rePwd
         };
 
         var callback = function(data) {
@@ -55,7 +56,7 @@ var reset = {
 		util.network({
 			btn : btnele,
 			url : rPassWordUrl,
-			param : param,
+			param : {data: JSON.stringify(param)},
 			success : callback,
 		});
 	},

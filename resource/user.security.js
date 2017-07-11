@@ -3,7 +3,7 @@ var security = {
         var oldPwd = util.trim($("#loginpass-oldpass").val());
 		var newPwd = util.trim($("#loginpass-newpass").val());
 		var confirmPwd = util.trim($("#loginpass-confirmpass").val());
-		var user_name = '通过页面获取'; //通过页面获取
+		var user_name = '125427446@qq.com'; //通过页面获取
         if (oldPwd == "") {
             util.layerAlert("", util.getLan("comm.tips.11"),2);
             return;
@@ -33,21 +33,21 @@ var security = {
             //confirmPwd : newPwd,
 			//identityCode : ''
 		};
-		console.log('修改密码参数:',param);
 		var callback = function(data) {
-			if (data.code == 200) {
+			console.log('修改密码参数:',data);
+			if (data.code == 0) {
                 util.layerAlert("", util.getLan("comm.tips.25"), 1);
 				window.setTimeout(function() {
 					window.location.href = window.location.href;
 				}, 1000);
 			} else {
-                util.layerAlert("", data.msg, 2);
+                util.layerAlert("", data.message, 2);
 			}
 		};
 		util.network({
 			btn : ele,
-			url : url,
-			param : param,
+			url : cPassWordUrl,
+			param : {data: JSON.stringify(param)},
 			success : callback,
 		});
 	}
