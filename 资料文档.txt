@@ -1,0 +1,12 @@
+项目说明:
+
+1.接口地址: http://211.149.175.73:8089/welcome
+
+2.前台登录: http://211.149.175.73/user/html/login.html
+
+3.管理后台：
+http://211.149.175.73/administration/index.html
+账号：administrator
+密码：cdn27232858
+
+4.ftp地址: 211.149.175.73  blockcdn blockcdn@2017 2211
