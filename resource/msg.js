@@ -19,11 +19,13 @@ var email = {
         var param = {
             //type: type,
             //msgtype: this.msgtype,
-            email: address
+            email: address,
+            sessionid: 'sessionid'
         };
-        console.log('找回密码发送验证码:',param);
+
         var callback = function (data) {
-            if (data.code == 200) {
+            console.log('找回密码发送验证码:',data);
+            if (data.code === 0) {
                 button.disabled = true;
                 for (var num = 1; num <= that.secs; num++) {
                     window.setTimeout("email.updateNumber(" + num + ",'" + button_id + "',2)", num * 1000);
@@ -34,12 +36,9 @@ var email = {
         };
         util.network({
             btn: button,
-            url: url,
-            param: param,
-            success: callback,
-            error: function(){
-                alert('1err');
-            }
+            url: vCodeUrl,
+            param: {data: JSON.stringify(param),sessionid: 'sessionid'},
+            success: callback
         });
     },
     updateNumber: function (num, button_id, isVoice) {

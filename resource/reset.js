@@ -42,18 +42,19 @@ var reset = {
             password : pwd,
             confirm : rePwd
         };
-        console.log('找回密码提交数据:', param);
+
         var callback = function(data) {
-            if (data.code == 200) {
-                util.layerAlert("", data.msg, 1);
-                window.location.href="/user/login.html"
+            console.log('找回密码提交数据:', data);
+            if (data.code === 0) {
+                util.layerAlert("", data.message, 1);
+                //window.location.href="/user/login.html"
             } else {
-                util.layerAlert("", data.msg, 2);
+                util.layerAlert("", data.message, 2);
             }
         }
 		util.network({
 			btn : btnele,
-			url : url,
+			url : rPassWordUrl,
 			param : param,
 			success : callback,
 		});

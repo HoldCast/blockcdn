@@ -104,7 +104,7 @@ var reg = {
             var intro_user = $("#register-intro").val();
             var param = {
                 //regName: regUserName,
-                email: regUserName,
+                user_name: regUserName,
                 password: pwd,
                 confirm_password: pwd,
                 //regType: regType,
@@ -116,21 +116,21 @@ var reg = {
                 //intro_user: intro_user
             };
             var callback = function (data) {
-                if (data.code == 200) {
+                console.log('注册:',data);
+                if (data.status === 0) {
                     util.layerAlert("", util.getLan("user.tips.35"), 1, function () {
                         window.location = '/ico.html';
                     });
                 } else {
                     // 注册失败
-                    util.layerAlert("", data.msg, 2);
+                    util.layerAlert("", data.message, 2);
                     if (data.code == -20) {
                         $("#register-imgcode").val("");
                         $(".btn-imgcode").click();
                     }
                 }
             };
-            console.log('注册参数:', param);
-            util.network({btn: ele, url: registerUrl, param: param, success: callback,});
+            util.network({btn: ele, url: registerUrl, param: {data:JSON.stringify(param)}, success: callback,});
         }
     },
     areaCodeChange: function (ele, setEle) {

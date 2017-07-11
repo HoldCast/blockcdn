@@ -40,21 +40,26 @@ var login = {
 			};
 			console.log('登录参数:',param);
 			var callback = function(data) {
-				if (data.code == 200) {
+				if (data.status == 0) {
+					util.layerAlert("", '登陆成功!', 1, function () {
+						window.location = '/ico.html';
+					});
+					/*
 					if (util.trim(forwardUrl) == "") {
 						window.location.href = "/ico.html";
 					} else {
 						window.location.href = forwardUrl;
 					}
+					*/
 				} else {
-                    util.layerAlert("", data.msg, 2);
+                    util.layerAlert("", data.message, 2);
 					$("#login-password").val("");
 				}
 			};
 			util.network({
 				btn : $("#login-submit")[0],
-				url : url,
-				param : param,
+				url : logInUrl,
+				param : {data:  JSON.stringify(param)},
 				success : callback,
 				enter : true,
 			});
