@@ -38,11 +38,16 @@ var login = {
 				//password : pWord,
 				//type : longLogin
 			};
-			console.log('登录参数:',param);
+
 			var callback = function(data) {
+				console.log('登录参数:',data);
 				if (data.status == 0) {
+					localStorage.sessionid = data.data.sessionid;
+					localStorage.token = data.data.token;
+					localStorage.create_time = data.data['user']['create_time'];
+					localStorage.user_name = data.data['user']['user_name'];
 					util.layerAlert("", '登陆成功!', 1, function () {
-						window.location = '/ico.html';
+						window.location = 'ico.html';
 					});
 					/*
 					if (util.trim(forwardUrl) == "") {

@@ -119,7 +119,7 @@ var reg = {
                 console.log('注册:',data);
                 if (data.status === 0) {
                     util.layerAlert("", util.getLan("user.tips.35"), 1, function () {
-                        window.location = '/ico.html';
+                        window.location = 'ico.html';
                     });
                 } else {
                     // 注册失败

@@ -3,7 +3,6 @@ var security = {
         var oldPwd = util.trim($("#loginpass-oldpass").val());
 		var newPwd = util.trim($("#loginpass-newpass").val());
 		var confirmPwd = util.trim($("#loginpass-confirmpass").val());
-		var user_name = '125427446@qq.com'; //通过页面获取
         if (oldPwd == "") {
             util.layerAlert("", util.getLan("comm.tips.11"),2);
             return;
@@ -24,7 +23,7 @@ var security = {
 		var url = "/user/modify_passwd.html";
 		//data={"user_name":"sdfds@qq.com","old_password":"sdfsfdsf","new_password":"sfdssdfs","confirm_password":"sfdssfds"}
 		var param = {
-			user_name:　user_name,
+			user_name:　localStorage.user_name,
 			old_password : oldPwd,
 			new_password : newPwd,
 			confirm_password : newPwd,
@@ -35,11 +34,11 @@ var security = {
 		};
 		var callback = function(data) {
 			console.log('修改密码参数:',data);
-			if (data.code == 0) {
+			if (data.status == 0) {
                 util.layerAlert("", util.getLan("comm.tips.25"), 1);
-				window.setTimeout(function() {
+				/*window.setTimeout(function() {
 					window.location.href = window.location.href;
-				}, 1000);
+				}, 1000);*/
 			} else {
                 util.layerAlert("", data.message, 2);
 			}
@@ -47,7 +46,13 @@ var security = {
 		util.network({
 			btn : ele,
 			url : cPassWordUrl,
-			param : {data: JSON.stringify(param)},
+			param : {
+				data: JSON.stringify(param),
+				sessionid:localStorage.sessionid,
+				token: localStorage.token,
+				timestamp:localStorage.timestamp,
+				user_name: localStorage.user_name,
+			},
 			success : callback,
 		});
 	}

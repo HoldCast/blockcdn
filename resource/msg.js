@@ -20,18 +20,18 @@ var email = {
             //type: type,
             //msgtype: this.msgtype,
             email: address,
-            sessionid: 'sessionid'
+            type: 2
         };
 
         var callback = function (data) {
             console.log('找回密码发送验证码:',data);
-            if (data.code === 0) {
+            if (data.status == 0) {
                 button.disabled = true;
                 for (var num = 1; num <= that.secs; num++) {
                     window.setTimeout("email.updateNumber(" + num + ",'" + button_id + "',2)", num * 1000);
                 }
             } else {
-                util.layerAlert("", data.msg, 2);
+                util.layerAlert("", data.message, 2);
             }
         };
         util.network({

@@ -518,8 +518,9 @@
 }
 
 .user-content .content-box .logo-box img{
-    width: 0.9rem;
-    height: 0.31rem;
+    width: 2.5rem;
+    /*height: 0.31rem;*/
+    height: auto;
 }
 
 .user-content .content-box .submit-box{

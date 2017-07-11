@@ -116,8 +116,9 @@ body {
 .header .logo {
     max-height: 100%;
     float: left;
-    width: .9rem;
-    height: .31rem;
+    /*width: .9rem;*/
+    width: 2.5rem;
+    height: auto;
 }
 
 .header .nav-item {
