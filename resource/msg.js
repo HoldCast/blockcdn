@@ -72,7 +72,7 @@ var newEmail = {
             //type: type,
             //msgtype: this.msgtype,
             //address: address
-            email: address
+            data: JSON.stringify({email: address})
         };
         var callback = function (data) {
             console.log('发送验证码:',data);
