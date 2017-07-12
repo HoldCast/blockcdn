@@ -90,37 +90,78 @@
     <div class="user-split-content flex-center">
         <span class="user-lastTime flex-left">上次登录时间:2017-07-09 08:37:48</span>
         <span class="user-lastTime flex-center">UID:19374</span>
-        <a class="user-logout flex-right" href="http://dhgchain.com/user/logout.html">退出登录 &gt;&gt;</a>
+        <a class="user-logout flex-right" href="logout.html">退出登录 &gt;&gt;</a>
     </div>
 </div>
 
 <div class="container user-content-box">
 
     <div class="flex-left flex-direction user-left-menu">
-        <a href="" >我的ICO记录</a>
-        <a href="">个人资产</a>
-        <a href="">充值</a>
-        <a href="" class="active">提现</a>
-        <a href="">Push</a>
-        <a href="">超级节点</a>
-        <a href="">修改密码</a>
+        <a href="ico.html" class="active">ICO锁定</a>
+        <a href="assets.html">个人资产</a>
+        <a href="deposit.html">充值</a>
+        <a href="withdraw.html">提现</a>
+        <a href="exchange.html">BCDN兑换</a>
+        <a href="modifyPassword.html">修改密码</a>
     </div>
 
-    <div class="flex-right user-content-right">
-        <table>
-            <thead>
-            <tr class="flex-center">
-                <th width="350"><i class="ico-record-icon user-plist time"></i><span>时间</span></th>
-                <th width="150"><i class="ico-record-icon user-plist coin"></i><span>币种</span></th>
-                <th width="180"><i class="ico-record-icon user-plist num"></i><span>支持数量</span></th>
-                <th width="180"><i class="ico-record-icon user-plist num"></i><span>获得DHG</span></th>
-                <!--<th width="100"><i class="ico-record-icon user-plist num"></i><span th:utext="#{user.ico.record.page5}">状态</span></th>-->
-            </tr>
-            </thead>
-            <tbody class="flex-direction">
+    <div class="flex-right  user-content-right flex-direction">
+        <div class="withdraw-nav flex-center">
 
-            </tbody>
-        </table>
+            <a class="active" href="http://dhgchain.com/withdraw/coin_withdraw.html?symbol=1">
+                <img src="./withdraw_files/201706101049017_CI0f8.png">
+                <span>BTC提现</span>
+            </a>
+
+
+            <a href="http://dhgchain.com/withdraw/coin_withdraw.html?symbol=2">
+                <img src="./withdraw_files/201706101049002_dKxmV.png">
+                <span>DHG提现</span>
+            </a>
+
+
+            <a href="http://dhgchain.com/withdraw/coin_withdraw.html?symbol=4">
+                <img src="./withdraw_files/201706101048037_uvtGO.png">
+                <span>ETH提现</span>
+            </a>
+
+        </div>
+        <div class="flex-direction withdraw-box flex-center">
+            <div class="input-box flex-center">
+                <span>账户余额</span>
+                <input type="text" id="txtBalance" readonly="readonly" value="0.0000">
+            </div>
+            <div class="input-box flex-center">
+                <span>提现地址</span>
+                <input type="text" id="txtText">
+            </div>
+            <div class="input-box flex-center">
+                <span>提现数量</span>
+                <input type="text" id="txtAmount">
+            </div>
+            <div class="input-box flex-center">
+                <span>邮箱验证码</span>
+                <input type="text" id="txtCode">
+                <button id="btnSendEmailCode" data-msgtype="203" data-tipsid="register-email">获取验证码</button>
+            </div>
+            <input type="button" id="btnSubmit" class="flex-center" value="提交提现订单">
+        </div>
+        <div class="withdraw-record">
+            <table>
+                <thead>
+                <tr class="flex-center">
+                    <th width="200"><i class="ico-record-icon user-plist time"></i><span>时间</span></th>
+                    <th width="150"><i class="ico-record-icon user-plist num"></i><span>提现数量</span></th>
+                    <th width="328"><i class="ico-record-icon user-plist num"></i><span>地址</span></th>
+                    <th width="100"><i class="ico-record-icon user-plist num"></i><span>状态</span></th>
+                    <th width="100"><i class="ico-record-icon user-plist num"></i><span>操作</span></th>
+                </tr>
+                </thead>
+                <tbody class="flex-direction">
+
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -134,5 +175,6 @@
 <script type="text/javascript" src="../resource/language_zh_CN.js"></script>
 <script type="text/javascript" src="../resource/login.js"></script>
 <script type="text/javascript" src="../resource/msg.js"></script>
+<script type="text/javascript" src="../resource/withdraw.js"></script>
 </body>
 </html>

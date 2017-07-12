@@ -2,7 +2,7 @@
 <html lang="en" data-dpr="1">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>ICO锁定</title>
+    <title>BCDN兑换</title>
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <link rel="icon" href="../resource/favicon.ico" type="image/x-icon"/>
@@ -93,43 +93,39 @@
 </div>
 <div class="container user-content-box">
     <div class="flex-left flex-direction user-left-menu">
-        <a href="ico.html" class="active">ICO锁定</a>
-        <a href="assets.html">个人资产</a>
+        <a href="ico.html">ICO锁定</a>
+        <a href="index.html">个人资产</a>
         <a href="deposit.html">充值</a>
         <a href="withdraw.html">提现</a>
-        <a href="exchange.html">BCDN兑换</a>
+        <a href="exchange.html" class="active">BCDN兑换</a>
         <a href="modifyPassword.html">修改密码</a>
     </div>
 
     <div class="flex-right  user-content-right flex-direction">
         <div class="flex-direction withdraw-box flex-center">
             <div class="input-box flex-center">
-                <span>余额</span>
-                <input type="text" id="btcbalance" readonly="readonly" value="0.0000">
+                <span>兑换码</span>
+                <input type="text" id="bcdnCoupon">
             </div>
-            <div class="input-box flex-center">
-                <span>数量</span>
-                <input type="text" id="txtFinancesCount">
-            </div>
-
-            <input type="button" id="pushSubmit" class="flex-center" value="提交">
+            <input type="button" id="pushSubmit" class="flex-center" value="确认">
         </div>
         <div class="withdraw-record">
             <table>
                 <thead>
                 <tr class="flex-center">
-                    <th width="350"><i class="ico-record-icon user-plist time"></i><span>时间</span></th>
-                    <th width="150"><i class="ico-record-icon user-plist coin"></i><span>币种</span></th>
-                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>支持数量</span></th>
-                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>获得DHG</span></th>
-                    <!--<th width="100"><i class="ico-record-icon user-plist num"></i><span th:utext="#{user.ico.record.page5}">状态</span></th>-->
+                    <th width="240"><i class="ico-record-icon user-plist time"></i><span>时间</span></th>
+                    <th width="400"><i class="ico-record-icon user-plist num"></i><span>兑换码</span></th>
+                    <th width="240"><i class="ico-record-icon user-plist num"></i><span>获得BCDN</span></th>
                 </tr>
                 </thead>
                 <tbody class="flex-direction">
-
+                <tr>
+                    <th width="240">2017-07-12 20:00:00</th>
+                    <th width="400">1A1LJX2ktiLpZWgQKoik</th>
+                    <th width="240">99</th>
+                </tr>
                 </tbody>
             </table>
-
         </div>
     </div>
 </div>
@@ -143,5 +139,6 @@
 <script type="text/javascript" src="../resource/language_zh_CN.js"></script>
 <script type="text/javascript" src="../resource/login.js"></script>
 <script type="text/javascript" src="../resource/msg.js"></script>
+<script type="text/javascript" src="../resource/exchange.js"></script>
 </body>
 </html>
