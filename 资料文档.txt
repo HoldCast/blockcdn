@@ -5,7 +5,7 @@
 2.前台登录: http://211.149.175.73/user/html/login.html
 
 3.管理后台：
-http://211.149.175.73/administration/index.html
+访问地址  http://211.149.175.73/administration/index.html
 账号：administrator
 密码：cdn27232858
 

@@ -4,7 +4,8 @@ var logInUrl = "http://211.149.175.73:8089/login";//网站用户登陆
 var logOutUrl = "http://211.149.175.73:8089/user/logOut";// 用户退出
 var cPassWordUrl = "http://211.149.175.73:8089/user/changePassWord";// 修改密码
 var rPassWordUrl = "http://211.149.175.73:8089/resetPassword";// 重置密码
-var getBcdnCouponUrl = "http://211.149.175.73:8089/bcdnCoupon";// 兑换码兑换
+var exchangeUrl = "http://211.149.175.73:8089/coupon/exchange";// 前台兑换优惠券
+var queryCouponUrl = "http://211.149.175.73:8089/coupon/queryCouponByUser";// 前台个人中心查看自己的优惠券;
 
 
 $(function() {
