@@ -12,8 +12,7 @@ var push = {
         var callback = function (result) {
             console.log('兑换码:', result);
             if (result.status == 0) {
-                util.layerAlert("", result.message, 1, function () {
-                    console.log('成功后执行?');
+                util.layerAlert("", '兑换成功', 1, function () {
                     getCoupon();
                 });
             } else {
@@ -110,7 +109,7 @@ var push = {
         };
         util.network({btn: ele, url: url, param: param, success: callback});
     }
-}
+};
 $(function () {
     $("#pushPrice").on("keypress", function (event) {
         return util.goIngKeypress(this, event, util.PUSH_COIN_SCALE);
@@ -146,7 +145,6 @@ $(function () {
     $("#pushCoinId").on("change", function () {
         push.getUserBalance(this);
     });
-
     getCoupon();//获取优惠券
 });
 
@@ -165,13 +163,22 @@ function getCoupon() {
 
         },
         success: function (result) {
+            console.log('获取兑换券:', result);
             if (result.status == 0) {
-                util.layerAlert("", result.message, 1, function () {
-                    //添加优惠券到列表
-                });
+                $('#bcdnCouponList').empty();
+                var users = result.data.users;
+                for (var i=0;i<users.length;i++) {
+                    var user = users[i];
+                    var trHtml = '<tr>' +
+                        '<th width="240">'+user.ext_time+'</th>' +
+                        '<th width="400">'+user.bcdn_coupon+'</th>' +
+                        '<th width="240">'+user.money+'</th>' +
+                        '</tr>';
+                    $('#bcdnCouponList').append(trHtml);
+                }
             }
             else if (result.status == 431 || result.status == 402) {
-                util.layerAlert("", result.message, 2, function(){
+                util.layerAlert("", result.message, 2, function () {
                     location.href = 'login.html';
                 });
             }
@@ -180,12 +187,6 @@ function getCoupon() {
                 util.layerAlert("", result.message, 2);
             }
             console.log('获取优惠券:', result);
-            var trHtml = '<tr>' +
-                '<th width="240">2017-07-12 20:00:01</th>' +
-                '<th width="400">1A1LJX2ktiLpZWgQKoik</th>' +
-                '<th width="240">99</th>' +
-                '</tr>';
-            $('#bcdnCouponList').append(trHtml);
         }
     })
 }

@@ -56,7 +56,7 @@
                     width = widthBase * dpr;
                 }
                 if (dpr != 1) {
-                    //scale = scale-0.1;
+                    scale = scale-0.1;
                 }
                 docEl.style.fontSize = (100 * (width / widthBase) * (scale)) + 'px';
             };
@@ -97,18 +97,17 @@
 <div class="container user-content-box">
 
     <div class="flex-left flex-direction user-left-menu">
-        <a href="ico.html" class="active">ICO锁定</a>
+        <a href="ico.html">ICO锁定</a>
         <a href="assets.html">个人资产</a>
         <a href="deposit.html">充值</a>
-        <a href="withdraw.html">提现</a>
+        <a href="withdraw.html" class="active">提现</a>
         <a href="exchange.html">BCDN兑换</a>
         <a href="modifyPassword.html">修改密码</a>
     </div>
 
     <div class="flex-right  user-content-right flex-direction">
         <div class="withdraw-nav flex-center">
-
-            <a class="active" href="http://dhgchain.com/withdraw/coin_withdraw.html?symbol=1">
+            <a  href="javascript:">
                 <img src="../resource/201706101049017_CI0f8.png">
                 <span>BTC提现</span>
             </a>
@@ -120,7 +119,7 @@
             </a>-->
 
 
-            <a href="http://dhgchain.com/withdraw/coin_withdraw.html?symbol=4">
+            <a href="javascript:" class="active">
                 <img src="../resource/201706101048037_uvtGO.png">
                 <span>ETH提现</span>
             </a>
