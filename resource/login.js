@@ -45,6 +45,7 @@ var login = {
 					localStorage.sessionid = data.data.sessionid;
 					localStorage.token = data.data.token;
 					localStorage.create_time = data.data['user']['create_time'];
+					localStorage.login_time = new Date().getTime();
 					localStorage.user_name = data.data['user']['user_name'];
 					util.layerAlert("", '登陆成功!', 1, function () {
 						window.location = 'ico.html';

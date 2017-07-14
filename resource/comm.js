@@ -29,7 +29,7 @@ $(function() {
 	});
 	util.lrFixFooter($(".footer"));
 
-	var   d = new   Date(parseInt(localStorage.create_time));
+	var   d = new   Date(parseInt(localStorage.login_time));
 	$('#userName').text(localStorage.user_name);
 	$('#uid').text(localStorage.user_name);
 	$('#createTime').text(formatDate(d));

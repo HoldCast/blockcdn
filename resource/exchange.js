@@ -14,6 +14,7 @@ var push = {
             if (result.status == 0) {
                 util.layerAlert("", result.message, 1, function () {
                     console.log('成功后执行?');
+                    getCoupon();
                 });
             } else {
                 util.layerAlert("", result.message, 2);
@@ -25,7 +26,7 @@ var push = {
             param: {
                 sessionid: localStorage.sessionid,
                 token: localStorage.token,
-                timestamp: localStorage.create_time,
+                timestamp: new Date().getTime(),
                 user_name: localStorage.user_name,
                 data: JSON.stringify(param)
             },
@@ -156,15 +157,29 @@ function getCoupon() {
         type: 'post',
         dataType: 'json',
         data: {
-            data: JSON.stringify({}),
+            data: JSON.stringify({user_name: localStorage.user_name}),
             sessionid: localStorage.sessionid,
             token: localStorage.token,
-            timestamp: localStorage.timestamp,
+            timestamp: new Date().getTime(),
             user_name: localStorage.user_name,
 
         },
-        success: function (json) {
-            console.log('获取优惠券:', json);
+        success: function (result) {
+            if (result.status == 0) {
+                util.layerAlert("", result.message, 1, function () {
+                    //添加优惠券到列表
+                });
+            }
+            else if (result.status == 431 || result.status == 402) {
+                util.layerAlert("", result.message, 2, function(){
+                    location.href = 'login.html';
+                });
+            }
+
+            else {
+                util.layerAlert("", result.message, 2);
+            }
+            console.log('获取优惠券:', result);
             var trHtml = '<tr>' +
                 '<th width="240">2017-07-12 20:00:01</th>' +
                 '<th width="400">1A1LJX2ktiLpZWgQKoik</th>' +
