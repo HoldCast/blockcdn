@@ -2,7 +2,7 @@
 <html lang="en" data-dpr="1">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>BCDN</title>
+    <title>提现</title>
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <link rel="icon" href="../resource/favicon.ico" type="image/x-icon"/>
@@ -28,22 +28,6 @@
         input, textarea, select, button, meter, progress {
             -webkit-writing-mode: horizontal-tb;
         }
-        .ico-switch{
-            height: 2em;
-            line-height:2em;
-        }
-        .ico-switch input{
-            width: 1.2em !important;
-            height: 1.2em !important;
-            display: inline-block !important;
-        }
-        .ico-switch span{
-            display: inline-block !important;
-            height: 1.2em !important;
-            line-height: 1.2em !important;
-        }
-
-
     </style>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
     <script type="application/javascript">
@@ -86,74 +70,92 @@
 
         /*]]>*/
     </script>
+
     <link rel="stylesheet" href="../resource/user.css">
     <link rel="stylesheet" href="../resource/layer.css" id="layuicss-skinlayercss">
 </head>
 <body>
+
 <div class="container-full user-banner">
     <div class="container flex-center">
         <div class="user-top flex-center flex-direction">
             <i class="user-face user-plist"></i>
-            <span class="user-balance flex-center">账户余额（DHG）</span>
-            <span class="user-balance-amount flex-center">0</span>
-            <span class="user-login-name flex-center">用户名:u21767@163.com</span>
+            <span class="user-balance flex-center">账户余额（<span id="iconType">BCDN</span>）</span>
+            <span class="user-balance-amount flex-center" id="iconNumber">0</span>
+            <span class="user-login-name flex-center">用户名:<span id="userName"></span></span>
         </div>
     </div>
 </div>
 <div class="container-full user-split flex-center">
     <div class="user-split-content flex-center">
-        <span class="user-lastTime flex-left">上次登录时间:2017-07-09 08:37:48</span>
-        <span class="user-lastTime flex-center">UID:19374</span>
-        <a class="user-logout flex-right" href="http://dhgchain.com/user/logout.html">退出登录 &gt;&gt;</a>
+        <span class="user-lastTime flex-left">上次登录时间: <span id="createTime"></span></span>
+        <span class="user-lastTime flex-center" id="uid"></span>
+        <a class="user-logout flex-right" href="login.html">退出登录 &gt;&gt;</a>
     </div>
 </div>
 <div class="container user-content-box">
+
     <div class="flex-left flex-direction user-left-menu">
-        <a href="ico.html" class="active">ICO锁定</a>
-        <a href="index.html">个人资产</a>
-        <a href="deposit.html">充值</a>
+        <a href="ico.html">ICO锁定</a>
+        <a href="assets.html">个人资产</a>
+        <a href="deposit.html" class="active">充值</a>
         <a href="withdraw.html">提现</a>
-        <a href="http://dhgchain.com/financial/push.html">Push</a>
-        <a href="http://dhgchain.com/financial/finances.html">超级节点</a>
-        <a href="http://dhgchain.com/user/modifyPassword.html">修改密码</a>
+        <a href="exchange.html">BCDN兑换</a>
+        <a href="modifyPassword.html">修改密码</a>
     </div>
 
-    <div class="flex-right  user-content-right flex-direction">
-        <div class="flex-direction withdraw-box flex-center">
-            <div class="ico-switch">
-                <label><input type="radio" name="ico-switch" id="bthRadio"><span>BTH</span></label>
-                <label><input type="radio" name="ico-switch" id="ethRadio"><span>ETH</span></label>
-            </div>
-            <div class="input-box flex-center">
-                <span>余额</span>
-                <input type="text" id="btcbalance" readonly="readonly" value="0.0000">
-            </div>
-            <div class="input-box flex-center">
-                <span>数量</span>
-                <input type="text" id="txtFinancesCount">
-            </div>
-
-            <input type="button" id="pushSubmit" class="flex-center" value="提交">
+    <div class="recharge-box">
+        <div class="nav-box flex-center">
+            <a href="deposit.html?symbol=1" class="flex-center    ">
+                <img src="../resource/201706101049017_CI0f8.png"><span>BTC充值</span>
+            </a>
+            <!--<a href="http://dhgchain.com/deposit/coin_deposit.html?symbol=2" class="flex-center  endLine  ">
+                <img src="./deposit_files/201706101049002_dKxmV.png"><span>DHG充值</span>
+            </a>-->
+            <a href="deposit.html?symbol=4" class="flex-center   active ">
+                <img src="../resource/201706101048037_uvtGO.png"><span>ETH充值</span>
+            </a>
+            <!--<a href="/" class="flex-center endLine">BTC充值</a>
+            <a href="/" class="flex-center endLine">BTC充值</a>
+            <a href="/" class="flex-center">BTC充值</a>-->
         </div>
-        <div class="withdraw-record">
+        <div class="address-box flex-center flex-direction">
+            <div class="top-box flex-center">
+                <div class="qr-dode-big-box flex-center">
+                    <div id="qrCodeBox" class="flex-center">
+
+                        <canvas width="150" height="150"></canvas></div>
+                </div>
+            </div>
+            <p class="hint flex-center">
+                <i class="warning-icon"></i>
+                <span>这是您的专属ETH充值地址</span>
+            </p>
+            <p class="recharge-address flex-center">0xbfd7615772ffcf24f12982aa503a673228072ae7</p>
+        </div>
+        <div class="recharge-record">
             <table>
                 <thead>
                 <tr class="flex-center">
-                    <th width="350"><i class="ico-record-icon user-plist time"></i><span>时间</span></th>
-                    <th width="150"><i class="ico-record-icon user-plist coin"></i><span>币种</span></th>
-                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>支持数量</span></th>
-                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>获得DHG</span></th>
-                    <!--<th width="100"><i class="ico-record-icon user-plist num"></i><span th:utext="#{user.ico.record.page5}">状态</span></th>-->
+                    <th width="212"><i class="financial-record user-plist time"></i><span>时间</span></th>
+                    <th width="212"><i class="financial-record user-plist num"></i><span>充值数量</span></th>
+                    <th width="212"><i class="financial-record user-plist num"></i><span>地址</span></th>
+                    <th width="212"><i class="financial-record user-plist num"></i><span>状态</span></th>
                 </tr>
                 </thead>
                 <tbody class="flex-direction">
-
+                <tr>
+                    <th width="212">2017-06-16 05:49:05</th>
+                    <th width="212">42.01</th>
+                    <th width="212"><p>0xbfd7615772ffcf24f12982aa503a673228072ae7</p></th>
+                    <th width="212">充值成功</th>
+                </tr>
                 </tbody>
             </table>
-
         </div>
     </div>
 </div>
+
 <div class="container-full footer flex-center" style="position: static;">
     <span class="copyright">CopyRight 2016-2017 dhgchain.com All Rights Reserved.</span>
 </div>
@@ -164,5 +166,8 @@
 <script type="text/javascript" src="../resource/language_zh_CN.js"></script>
 <script type="text/javascript" src="../resource/login.js"></script>
 <script type="text/javascript" src="../resource/msg.js"></script>
+<script type="text/javascript" src="../resource/withdraw.js"></script>
+<script type="text/javascript" src="../resource/jquery.qrcode.min.js"></script>
+<script type="text/javascript" src="../resource/account.js"></script>
 </body>
 </html>
