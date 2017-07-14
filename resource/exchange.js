@@ -186,7 +186,6 @@ function getCoupon() {
             else {
                 util.layerAlert("", result.message, 2);
             }
-            console.log('获取优惠券:', result);
         }
-    })
+    });
 }
