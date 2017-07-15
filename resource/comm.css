@@ -86,7 +86,7 @@ body {
 .warning-icon{
     width: 0.17rem;
     height: 0.14rem;
-    background:url("../img/comm/warning-icon.png");
+    background:url("../resource/warning-icon.png");
     background-size: 100%;
     margin: 0 0.06rem;
 }

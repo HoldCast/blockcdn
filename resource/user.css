@@ -259,7 +259,7 @@
 .recharge-box .address-box .qr-dode-big-box{
     width: 2.95rem;
     height: 2.98rem;
-    background: url("../resource/qr_code_bg.png") no-repeat;
+    /*background: url("../resource/qr_code_bg.png") no-repeat;*/
     background-size: 100% 100%;
 }
 

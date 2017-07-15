@@ -13,7 +13,8 @@ var push = {
             console.log('兑换码:', result);
             if (result.status == 0) {
                 util.layerAlert("", '兑换成功', 1, function () {
-                    getCoupon();
+                    getCoupon(); //获取兑换信息
+                    getBalance();//获取资产信息
                 });
             } else {
                 util.layerAlert("", result.message, 2);

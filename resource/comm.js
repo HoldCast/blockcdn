@@ -6,6 +6,7 @@ var cPassWordUrl = "http://211.149.175.73:8089/user/changePassWord";// 修改密
 var rPassWordUrl = "http://211.149.175.73:8089/resetPassword";// 重置密码
 var exchangeUrl = "http://211.149.175.73:8089/coupon/exchange";// 前台兑换优惠券
 var queryCouponUrl = "http://211.149.175.73:8089/coupon/queryCouponByUser";// 前台个人中心查看自己的优惠券;
+var assetUrl = "http://211.149.175.73:8089/money/queryUserAsset";// 用户提现时展现用户的资产信息(注意此接口针对BTC和ETH、BCDN提现时展现);
 
 
 $(function() {
@@ -34,6 +35,9 @@ $(function() {
 	$('#uid').text(localStorage.user_name);
 	$('#createTime').text(formatDate(d));
 
+	if($('#iconNumber').length) {
+		getBalance();//获取资产信息
+	}
 
 });
 
@@ -46,4 +50,35 @@ function   formatDate(now)   {
 	var   minute=now.getMinutes();
 	var   second=now.getSeconds();
 	return   year+"-"+month+"-"+date+"   "+hour+":"+minute+":"+second;
+}
+
+//获取余额
+function getBalance() {
+	$.ajax({
+		url: assetUrl,
+		type: 'post',
+		dataType: 'json',
+		data: {
+			sessionid: localStorage.sessionid,
+			token: localStorage.token,
+			timestamp: new Date().getTime(),
+			user_name: localStorage.user_name,
+			data: JSON.stringify({user_name:localStorage.user_name})
+		},
+		success: function(json){
+			if (json.status == 0){
+				var data = json.data;
+				$('#iconNumber').text(data.bcdn);
+			}
+			else if (json.status == 431 || json.status == 402) {
+				util.layerAlert("", result.message, 2, function () {
+					location.href = 'login.html';
+				});
+			}
+			else {
+				util.layerAlert("", json.message, 2);
+			}
+			console.log('资产信息:',json);
+		}
+	});
 }
