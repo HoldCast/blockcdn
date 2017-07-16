@@ -1,3 +1,4 @@
+var widthdrawType = 1;
 var withdraw = {
     submit: function () {
         var ele = this;
@@ -5,7 +6,6 @@ var withdraw = {
         var txtText = util.trim($("#txtText").val());
         var txtAmount = util.trim($("#txtAmount").val());
         var txtCode = util.trim($("#txtCode").val());
-        var symbol = util.trim($("#symbol").val());
         if (txtText === "") {
             util.layerAlert("", util.getLan("user.tips.26"), 2);
             return;
@@ -26,21 +26,28 @@ var withdraw = {
             util.layerAlert("", util.getLan("user.tips.29"), 2);
             return;
         }
-        var url = "/withdraw/coin_manual.html";
+        //提现类型，1是btc，2是eth，3是bcdn
         var param = {
-            amount: txtAmount,
-            address: txtText,
-            code: txtCode,
-            symbol: symbol
+            sessionid: localStorage.sessionid,
+            token: localStorage.token,
+            timestamp: new Date().getTime(),
+            user_name: localStorage.user_name,
+            data: JSON.stringify({
+                "user_name": localStorage.user_name,
+                "draw_address": txtText,
+                "draw_count": txtAmount,
+                "vcode": txtCode,
+                "type": widthdrawType
+            })
         };
         var callback = function (data) {
-            if (data.code === 200) {
+            if (data.status == 0) {
                 util.layerAlert("", util.getLan("user.tips.30"), 1);
             } else {
-                util.layerAlert("", data.msg, 2);
+                util.layerAlert("", data.message, 2);
             }
         };
-        util.network({btn: ele, url: url, param: param, success: callback});
+        util.network({btn: ele, url: withdrawUrl, param: param, success: callback});
     },
     cancelCoinWithdraw: function (id) {
         util.layerConfirm(util.getLan("user.tips.31"), function () {
@@ -56,16 +63,17 @@ var withdraw = {
                 }
             };
             util.network({
-                             url: url,
-                             param: param,
-                             success: callback,
-                         });
+                url: url,
+                param: param,
+                success: callback,
+            });
         });
     }
 };
+
 $(function () {
     $("#btnSendEmailCode").on("click", function () {
-        email.sendcode($(this).data().msgtype, $(this).data().tipsid, this.id);
+        email.sendcode($(this).data().msgtype, $(this).data().tipsid, this.id, localStorage.user_name,3);
     });
     $("#btnSubmit").on("click", function () {
         withdraw.submit()
@@ -75,5 +83,24 @@ $(function () {
     });
     $(".withdraw-cancel").on("click", function (event) {
         withdraw.cancelCoinWithdraw($(this).data().fid);
+    });
+
+    //提现类型，1是btc，2是eth，3是bcdn
+    $('.withdraw-btn').off('click').on('click', function () {
+        $('.withdraw-btn').removeClass('active');
+        $(this).addClass('active');
+        var type = $(this).attr('type');
+        if (type == 'BTC') {
+            widthdrawType = 1;
+            $('#txtBalance').val(btcCount);
+        }
+        else if (type == 'ETH') {
+            widthdrawType = 2;
+            $('#txtBalance').val(ethCount);
+        }
+        else {
+            widthdrawType = 3;
+            $('#txtBalance').val(bcdnCount);
+        }
     });
 });

@@ -2,7 +2,7 @@
 <html lang="en" data-dpr="1">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>提现</title>
+    <title>充值</title>
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <link rel="icon" href="../resource/favicon.ico" type="image/x-icon"/>
@@ -106,33 +106,45 @@
 
     <div class="recharge-box">
         <div class="nav-box flex-center">
-            <a href="deposit.html?symbol=1" class="flex-center    ">
+            <a href="javascript:" type="BTC" class="flex-center active deposit-btn">
                 <img src="../resource/201706101049017_CI0f8.png"><span>BTC充值</span>
             </a>
             <!--<a href="http://dhgchain.com/deposit/coin_deposit.html?symbol=2" class="flex-center  endLine  ">
                 <img src="./deposit_files/201706101049002_dKxmV.png"><span>DHG充值</span>
             </a>-->
-            <a href="deposit.html?symbol=4" class="flex-center   active ">
+            <a href="javascript:;" type="ETH" class="flex-center deposit-btn">
                 <img src="../resource/201706101048037_uvtGO.png"><span>ETH充值</span>
             </a>
             <!--<a href="/" class="flex-center endLine">BTC充值</a>
             <a href="/" class="flex-center endLine">BTC充值</a>
             <a href="/" class="flex-center">BTC充值</a>-->
         </div>
-        <div class="address-box flex-center flex-direction">
+        <div class="address-box flex-center flex-direction" id="BTCArea">
             <div class="top-box flex-center">
                 <div class="qr-dode-big-box flex-center">
-                    <div id="qrCodeBox" class="flex-center">
+                    <div id="BTCqrCodeBox" class="flex-center"></div>
+                </div>
+            </div>
+            <p class="hint flex-center">
+                <i class="warning-icon"></i>
+                <span>这是您的专属BTC充值地址</span>
+            </p>
+            <p class="recharge-address flex-center" id="BTCStr"></p>
+        </div>
 
-                        <canvas width="150" height="150"></canvas></div>
+        <div class="address-box flex-center flex-direction" id="ETHArea" style="display: none;">
+            <div class="top-box flex-center">
+                <div class="qr-dode-big-box flex-center">
+                    <div id="ETHqrCodeBox" class="flex-center"></div>
                 </div>
             </div>
             <p class="hint flex-center">
                 <i class="warning-icon"></i>
                 <span>这是您的专属ETH充值地址</span>
             </p>
-            <p class="recharge-address flex-center">0xbfd7615772ffcf24f12982aa503a673228072ae7</p>
+            <p class="recharge-address flex-center" id="ETHStr"></p>
         </div>
+        <!--
         <div class="recharge-record">
             <table>
                 <thead>
@@ -153,6 +165,7 @@
                 </tbody>
             </table>
         </div>
+        -->
     </div>
 </div>
 
@@ -169,7 +182,6 @@
 <script type="text/javascript" src="../resource/withdraw.js"></script>
 <script type="text/javascript" src="../resource/jquery.qrcode.min.js"></script>
 <script type="text/javascript" src="../resource/account.js"></script>
-<script type="text/javascript" src="../resource/qrCode.js"></script>
 
 </body>
 </html>

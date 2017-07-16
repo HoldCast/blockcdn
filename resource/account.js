@@ -1,19 +1,15 @@
-$(function () {
-    $(".address-box").each(function () {
-        if (navigator.userAgent.indexOf("MSIE") > 0) {
-            jQuery(this).find("#qrCodeBox").qrcode({
-                text : jQuery(this).find(".recharge-address").text(),
-                width : "150",
-                height : "150",
-                render : "table"
-            });
-        } else {
-            jQuery(this).find("#qrCodeBox").qrcode({
-                text : jQuery(this).find(".recharge-address").text(),
-                width : "150",
-                height : "150"
-            });
+$(function(){
+    $('.deposit-btn').off('click').on('click',function(){
+        $('.deposit-btn').removeClass('active');
+        $(this).addClass('active');
+        var type = $(this).attr('type');
+        if (type == 'ETH'){
+            $('#ETHArea').show();
+            $('#BTCArea').hide();
+        }
+        else {
+            $('#ETHArea').hide();
+            $('#BTCArea').show();
         }
     });
-
 });

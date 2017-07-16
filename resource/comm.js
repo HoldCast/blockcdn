@@ -7,7 +7,8 @@ var rPassWordUrl = "http://211.149.175.73:8089/resetPassword";// 重置密码
 var exchangeUrl = "http://211.149.175.73:8089/coupon/exchange";// 前台兑换优惠券
 var queryCouponUrl = "http://211.149.175.73:8089/coupon/queryCouponByUser";// 前台个人中心查看自己的优惠券;
 var assetUrl = "http://211.149.175.73:8089/money/queryUserAsset";// 用户提现时展现用户的资产信息(注意此接口针对BTC和ETH、BCDN提现时展现);
-
+var withdrawUrl = "http://211.149.175.73:8089//money/draw";// 用户提现
+var btcCount = 0,ethCount = 0,bcdnCount = 0;
 
 $(function() {
 	$(".lan-tab-hover").on("click", function() {
@@ -68,10 +69,37 @@ function getBalance() {
 		success: function(json){
 			if (json.status == 0){
 				var data = json.data;
-				$('#iconNumber').text(data.bcdn);
+				btcCount = data.btc;
+				ethCount = data.eth;
+                bcdnCount = data.bcdn;
+				$('#iconNumber').text(bcdnCount);
+				if($('#BTCArea').length) {
+					var BTCStr = data.btc_address;
+					var ETHStr = data.eth_address;
+					$('#BTCStr').text(BTCStr);
+					$('#ETHStr').text(ETHStr);
+
+					//二维码
+					$("#BTCqrCodeBox").qrcode({
+						render: "table",
+						width: 200,
+						height:200,
+						text: BTCStr
+					});
+					$("#ETHqrCodeBox").qrcode({
+						render: "table",
+						width: 200,
+						height:200,
+						text: ETHStr
+					});
+				}
+                //提现余额展示
+                if ($('#txtBalance').length) {
+                    $('#txtBalance').val(btcCount);
+                }
 			}
 			else if (json.status == 431 || json.status == 402) {
-				util.layerAlert("", result.message, 2, function () {
+				util.layerAlert("", json.message, 2, function () {
 					location.href = 'login.html';
 				});
 			}

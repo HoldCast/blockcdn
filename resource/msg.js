@@ -1,7 +1,7 @@
 var email = {
     secs: 121,
     msgtype: 2,
-    sendcode: function (type, tipElement_id, button_id, address) {
+    sendcode: function (type, tipElement_id, button_id, address,type2) {
         var that = this;
         var tipElement = document.getElementById(tipElement_id);
         var button = document.getElementById(button_id);
@@ -20,7 +20,7 @@ var email = {
             //type: type,
             //msgtype: this.msgtype,
             email: address,
-            type: 2
+            type: type2 || 2
         };
 
         var callback = function (data) {
