@@ -93,14 +93,47 @@ $(function () {
         if (type == 'BTC') {
             widthdrawType = 1;
             $('#txtBalance').val(btcCount);
+            getQueryDraw(widthdrawType);
         }
         else if (type == 'ETH') {
             widthdrawType = 2;
             $('#txtBalance').val(ethCount);
+            getQueryDraw(widthdrawType);
         }
         else {
             widthdrawType = 3;
             $('#txtBalance').val(bcdnCount);
+            getQueryDraw(widthdrawType);
         }
     });
+    getQueryDraw(widthdrawType);
 });
+
+function getQueryDraw(type) {
+    $.ajax({
+        url: queryDrawUrl,
+        type: 'post',
+        dataType: 'json',
+        data: {
+            sessionid: localStorage.sessionid,
+            token: localStorage.token,
+            timestamp: new Date().getTime(),
+            user_name: localStorage.user_name,
+            data: JSON.stringify({user_name:localStorage.user_name,type:type})
+        },
+        success: function(json){
+            console.log('充值记录:',type, json);
+            if (json.status == 0){
+
+            }
+            else if (json.status == 431 || json.status == 402) {
+                util.layerAlert("", json.message, 2, function () {
+                    location.href = 'login.html';
+                });
+            }
+            else {
+                util.layerAlert("", json.message, 2);
+            }
+        }
+    });
+}
