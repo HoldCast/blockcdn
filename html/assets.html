@@ -2,7 +2,7 @@
 <html lang="en" data-dpr="1">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>BCDN</title>
+    <title>个人资产</title>
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <link rel="icon" href="../resource/favicon.ico" type="image/x-icon"/>
@@ -117,31 +117,16 @@
         <a href="modifyPassword.html">修改密码</a>
     </div>
 
-    <div class="flex-right  user-content-right flex-direction">
-        <div class="flex-direction withdraw-box flex-center">
-            <div class="ico-switch">
-                <label><input type="radio" name="ico-switch" id="bthRadio"><span>BTH</span></label>
-                <label><input type="radio" name="ico-switch" id="ethRadio"><span>ETH</span></label>
-            </div>
-            <div class="input-box flex-center">
-                <span>余额</span>
-                <input type="text" id="btcbalance" readonly="readonly" value="0.0000">
-            </div>
-            <div class="input-box flex-center">
-                <span>数量</span>
-                <input type="text" id="txtFinancesCount">
-            </div>
-
-            <input type="button" id="pushSubmit" class="flex-center" value="提交">
-        </div>
-        <div class="withdraw-record">
+    <div class="user-content-right">
+        <div>
             <table>
                 <thead>
                 <tr class="flex-center">
-                    <th width="350"><i class="ico-record-icon user-plist time"></i><span>时间</span></th>
                     <th width="150"><i class="ico-record-icon user-plist coin"></i><span>币种</span></th>
-                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>支持数量</span></th>
-                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>获得DHG</span></th>
+                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>可用资产</span></th>
+                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>冻结资产</span></th>
+                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>总量</span></th>
+                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>操作</span></th>
                     <!--<th width="100"><i class="ico-record-icon user-plist num"></i><span th:utext="#{user.ico.record.page5}">状态</span></th>-->
                 </tr>
                 </thead>
