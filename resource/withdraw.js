@@ -50,20 +50,20 @@ var withdraw = {
         util.network({btn: ele, url: withdrawUrl, param: param, success: callback});
     },
     cancelCoinWithdraw: function (id) {
+        alert(id);
         util.layerConfirm(util.getLan("user.tips.31"), function () {
-            var url = "/withdraw/coin_cancel.html";
             var param = {
                 id: id
             };
             var callback = function (data) {
-                if (data.code === 200) {
+                if (data.status == 0) {
                     window.location.reload(true);
                 } else {
                     util.layerAlert("", data.msg, 2);
                 }
             };
             util.network({
-                url: url,
+                url: cancelDrawUrl,
                 param: param,
                 success: callback,
             });
@@ -82,7 +82,7 @@ $(function () {
         return util.goIngKeypress(this, event, 4);
     });
     $(".withdraw-cancel").on("click", function (event) {
-        withdraw.cancelCoinWithdraw($(this).data().fid);
+        withdraw.cancelCoinWithdraw($(this).attr('fid'));
     });
 
     //提现类型，1是btc，2是eth，3是bcdn

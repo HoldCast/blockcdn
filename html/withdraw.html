@@ -28,6 +28,13 @@
         input, textarea, select, button, meter, progress {
             -webkit-writing-mode: horizontal-tb;
         }
+        .withdraw-cancel{
+            border: 0.01rem solid #ccc;
+            padding: 0.02rem 0.08rem;
+            border-radius: 0.03rem;
+            cursor: pointer;
+            font-weight: normal;
+        }
     </style>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
     <script type="application/javascript">
@@ -162,11 +169,13 @@
                 </thead>
                 <tbody class="flex-direction">
                 <tr>
-                    <th width="212">2017-06-16 05:49:05</th>
-                    <th width="212">42.01</th>
-                    <th width="212"><p>0xbfd7615772ffcf24f12982aa503a673228072ae7</p></th>
-                    <th width="212">提现中</th>
-                    <th width="212"><span class="withdraw-cancel">取消</span></th>
+                    <th width="200">2017-06-16 05:49:05</th>
+                    <th width="150">42.01</th>
+                    <th width="328"><p>0xbfd7615772ffcf24f12982aa503a673228072ae7</p></th>
+                    <th width="100">提现中</th>
+                    <th width="100">
+                        <span class="withdraw-cancel" fid="11119">取消</span>
+                    </th>
                 </tr>
                 </tbody>
             </table>
