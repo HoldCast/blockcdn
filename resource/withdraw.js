@@ -122,7 +122,7 @@ function getQueryDraw(type) {
             data: JSON.stringify({user_name:localStorage.user_name,type:type})
         },
         success: function(json){
-            console.log('充值记录:',type, json);
+            console.log('提现记录:',type, json);
             if (json.status == 0){
 
             }

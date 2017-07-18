@@ -10,7 +10,7 @@ var queryCouponUrl = "http://211.149.175.73:8089/coupon/queryCouponByUser";// �
 var assetUrl = "http://211.149.175.73:8089/money/queryUserAsset";// 用户提现时展现用户的资产信息(注意此接口针对BTC和ETH、BCDN提现时展现);
 var withdrawUrl = "http://211.149.175.73:8089/money/draw";// 用户提现
 var cancelDrawUrl = "http://211.149.175.73:8089/money/cancelDraw";// 用户取消提现
-var queryDrawUrl = "http://211.149.175.73:8089/money/queryDrawInfoByUser";// 前台根据用户查看体现记录
+var queryDrawUrl = "http://211.149.175.73:8089/money/queryDrawInfoByUser";// 前台根据用户查看提现记录
 var queryChargeUrl = "http://211.149.175.73:8089/money/queryRechargeInfoByUser";// 前台根据用户查看充值充值信息
 var btcCount = 0,ethCount = 0,bcdnCount = 0;
 
