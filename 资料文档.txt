@@ -10,5 +10,8 @@
 密码：cdn27232858
 
 4.ftp地址: 211.149.175.73  blockcdn blockcdn@2017 2211
+账号：blockcdn
+密码：nW13$$==
+端口：2211
 
 5.原地址:　http://dhgchain.com/
