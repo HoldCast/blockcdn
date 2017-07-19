@@ -43,6 +43,13 @@
             line-height: 1.2em !important;
         }
 
+        .td-btn{
+            border: 0.01rem solid #aaa;
+            padding: 0.02rem 0.08rem;
+            border-radius: 0.03rem;
+            cursor: pointer;
+            font-weight: normal;
+        }
 
     </style>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
@@ -126,15 +133,43 @@
                     <th width="180"><i class="ico-record-icon user-plist num"></i><span>可用资产</span></th>
                     <th width="180"><i class="ico-record-icon user-plist num"></i><span>冻结资产</span></th>
                     <th width="180"><i class="ico-record-icon user-plist num"></i><span>总量</span></th>
-                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>操作</span></th>
+                    <!--<th width="180"><i class="ico-record-icon user-plist num"></i><span>操作</span></th>-->
                     <!--<th width="100"><i class="ico-record-icon user-plist num"></i><span th:utext="#{user.ico.record.page5}">状态</span></th>-->
                 </tr>
                 </thead>
-                <tbody class="flex-direction">
-
+                <tbody class="flex-direction" id="assetsTable">
+                <tr>
+                    <th width="150">BTC</th>
+                    <th width="180" id="btcKy">100</th>
+                    <th width="180" id="btcDj">100</th>
+                    <th width="180" id="btcZl">100</th>
+                    <!--<th width="180">
+                        <span class="td-btn withdraw-btn" fid="">提现</span>
+                        <span class="td-btn deposit-btn" fid="">充值</span>
+                    </th>-->
+                </tr>
+                <tr>
+                    <th width="150">ETH</th>
+                    <th width="180" id="ethKy">100</th>
+                    <th width="180" id="ethDj">100</th>
+                    <th width="180" id="ethZl">100</th>
+                    <!--<th width="180">
+                        <span class="td-btn withdraw-btn" fid="">提现</span>
+                        <span class="td-btn deposit-btn" fid="">充值</span>
+                    </th>-->
+                </tr>
+                <tr>
+                    <th width="150">BCDN</th>
+                    <th width="180" id="bcdnKy">100</th>
+                    <th width="180" id="bcdnDj">100</th>
+                    <th width="180" id="bcdnZl">100</th>
+                    <!--<th width="180">
+                        <span class="td-btn withdraw-btn" fid="">提现</span>
+                        <span class="td-btn deposit-btn" fid="">充值</span>
+                    </th>-->
+                </tr>
                 </tbody>
             </table>
-
         </div>
     </div>
 </div>

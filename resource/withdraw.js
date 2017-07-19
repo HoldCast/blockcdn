@@ -50,16 +50,25 @@ var withdraw = {
         util.network({btn: ele, url: withdrawUrl, param: param, success: callback});
     },
     cancelCoinWithdraw: function (id) {
-        alert(id);
         util.layerConfirm(util.getLan("user.tips.31"), function () {
             var param = {
-                id: id
+                sessionid: localStorage.sessionid,
+                token: localStorage.token,
+                timestamp: new Date().getTime(),
+                user_name: localStorage.user_name,
+                data: JSON.stringify({
+                    "user_name": localStorage.user_name,
+                    id: id
+                })
             };
             var callback = function (data) {
                 if (data.status == 0) {
-                    window.location.reload(true);
-                } else {
-                    util.layerAlert("", data.msg, 2);
+                    util.layerAlert("", '取消成功', 1, function () {
+                        getQueryDraw(widthdrawType);
+                    });
+                }
+                else {
+                    util.layerAlert("", data.message, 2);
                 }
             };
             util.network({
@@ -73,15 +82,15 @@ var withdraw = {
 
 $(function () {
     $("#btnSendEmailCode").on("click", function () {
-        email.sendcode($(this).data().msgtype, $(this).data().tipsid, this.id, localStorage.user_name,3);
+        email.sendcode($(this).data().msgtype, $(this).data().tipsid, this.id, localStorage.user_name, 3);
     });
     $("#btnSubmit").on("click", function () {
         withdraw.submit()
     });
     $("#txtAmount").on("keypress", function (event) {
         return util.goIngKeypress(this, event, 4);
-    });
-    $(".withdraw-cancel").on("click", function (event) {
+    });//withdrawRecord
+    $("#withdrawRecord").off('click').on("click", '.withdraw-cancel', function (event) {
         withdraw.cancelCoinWithdraw($(this).attr('fid'));
     });
 
@@ -119,12 +128,29 @@ function getQueryDraw(type) {
             token: localStorage.token,
             timestamp: new Date().getTime(),
             user_name: localStorage.user_name,
-            data: JSON.stringify({user_name:localStorage.user_name,type:type})
+            data: JSON.stringify({user_name: localStorage.user_name, type: type})
         },
-        success: function(json){
-            console.log('提现记录:',type, json);
-            if (json.status == 0){
-
+        success: function (json) {
+            console.log('提现记录:', type, json);
+            if (json.status == 0) {
+                var data = json.data;
+                $('#withdrawRecord').empty();
+                for (var i=0;i<data.length;i++){
+                    var dataI = data[i];
+                    var draw_status = dataI.draw_status;
+                    var isNone = '';
+                    draw_status == '1' ? isNone = '' : isNone = 'none';
+                    var trHtml = '<tr>' +
+                        '<th width="200">'+formatDate(dataI.draw_time)+'</th>' +
+                        '<th width="150">'+dataI.draw_money+'</th>' +
+                        '<th width="328"><p>'+dataI.draw_address+'</p></th>' +
+                        '<th width="100">'+drawStatus(draw_status)+'</th>' +
+                        '<th width="100">' +
+                        '<span class="withdraw-cancel" style="display:'+isNone+'" fid="'+dataI.id+'">取消</span>' +
+                        '</th>' +
+                        '</tr>';
+                    $('#withdrawRecord').append(trHtml);
+                }
             }
             else if (json.status == 431 || json.status == 402) {
                 util.layerAlert("", json.message, 2, function () {
@@ -136,4 +162,14 @@ function getQueryDraw(type) {
             }
         }
     });
+}
+
+//体现状态1是审核中，2是成功，3是已取消
+function drawStatus(draw_status){
+    var obj = {
+        1 : '审核中',
+        2 : '成功',
+        3 : '已取消'
+    };
+    return obj[draw_status];
 }

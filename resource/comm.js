@@ -35,10 +35,9 @@ $(function() {
 	});
 	util.lrFixFooter($(".footer"));
 
-	var   d = new   Date(parseInt(localStorage.login_time));
 	$('#userName').text(localStorage.user_name);
 	$('#uid').text(localStorage.user_name);
-	$('#createTime').text(formatDate(d));
+	$('#createTime').text(formatDate(localStorage.login_time));
 
 	if($('#iconNumber').length) {
 		getBalance();//获取资产信息
@@ -47,7 +46,8 @@ $(function() {
 });
 
 
-function   formatDate(now)   {
+function   formatDate(str)   {
+	var now = new   Date(parseInt(str));
 	var   year=now.getFullYear();
 	var   month=now.getMonth()+1;
 	var   date=now.getDate();
@@ -101,6 +101,20 @@ function getBalance() {
                 if ($('#txtBalance').length) {
                     $('#txtBalance').val(btcCount);
                 }
+				//个人资产展示
+				if ($('#assetsTable').length) {
+					$('#btcKy').text(btcCount);
+					$('#btcDj').text(0);
+					$('#btcZl').text(btcCount);
+
+					$('#ethKy').text(ethCount);
+					$('#ethDj').text(0);
+					$('#ethZl').text(ethCount);
+
+					$('#bcdnKy').text(bcdnCount);
+					$('#bcdnDj').text(0);
+					$('#bcdnZl').text(bcdnCount);
+				}
 			}
 			else if (json.status == 431 || json.status == 402) {
 				util.layerAlert("", json.message, 2, function () {

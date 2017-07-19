@@ -102,13 +102,27 @@
     </div>
 
     <div class="flex-right  user-content-right flex-direction">
+        <div class="withdraw-nav flex-center">
+            <a  href="javascript:"  type="BTC" class="flex-center active withdraw-btn">
+                <img src="../resource/201706101049017_CI0f8.png">
+                <span>BTC</span>
+            </a>
+            <a href="javascript:" type="ETH" class="flex-center withdraw-btn">
+                <img src="../resource/201706101048037_uvtGO.png">
+                <span>ETH</span>
+            </a>
+        </div>
         <div class="flex-direction withdraw-box flex-center">
             <div class="input-box flex-center">
-                <span>余额</span>
+                <span>可用余额</span>
                 <input type="text" id="btcbalance" readonly="readonly" value="0.0000">
             </div>
             <div class="input-box flex-center">
-                <span>数量</span>
+                <p style="margin-right: 0.5rem;">当前比值：1000*108%</p>
+                <p>最大可购：9087.89</p>
+            </div>
+            <div class="input-box flex-center">
+                <span>锁定数量</span>
                 <input type="text" id="txtFinancesCount">
             </div>
 
@@ -118,10 +132,10 @@
             <table>
                 <thead>
                 <tr class="flex-center">
-                    <th width="350"><i class="ico-record-icon user-plist time"></i><span>时间</span></th>
-                    <th width="150"><i class="ico-record-icon user-plist coin"></i><span>币种</span></th>
-                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>支持数量</span></th>
-                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>获得DHG</span></th>
+                    <th width="380"><i class="ico-record-icon user-plist time"></i><span>时间</span></th>
+                    <th width="160"><i class="ico-record-icon user-plist coin"></i><span>币种</span></th>
+                    <th width="160"><i class="ico-record-icon user-plist num"></i><span>支持数量</span></th>
+                    <th width="175"><i class="ico-record-icon user-plist num"></i><span>获得DHG</span></th>
                     <!--<th width="100"><i class="ico-record-icon user-plist num"></i><span th:utext="#{user.ico.record.page5}">状态</span></th>-->
                 </tr>
                 </thead>
