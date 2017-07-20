@@ -1,3 +1,4 @@
+var pageType = getQueryString('type') || '1';
 $(function(){
     $('.deposit-btn').off('click').on('click',function(){
         $('.deposit-btn').removeClass('active');
@@ -6,15 +7,16 @@ $(function(){
         if (type == 'ETH'){
             $('#ETHArea').show();
             $('#BTCArea').hide();
-            getFinancialRecord(2);
+            getFinancialRecord('2');
         }
         else {
             $('#ETHArea').hide();
             $('#BTCArea').show();
-            getFinancialRecord(1);
+            getFinancialRecord('1');
         }
     });
-    getFinancialRecord(1);
+
+    $('#depositBtn' + pageType).click();
 });
 
 

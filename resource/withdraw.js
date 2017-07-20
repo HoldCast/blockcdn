@@ -1,4 +1,5 @@
-var widthdrawType = 1;
+var pageType = getQueryString('type');
+var widthdrawType = pageType || '1' ;
 var withdraw = {
     submit: function () {
         var ele = this;
@@ -100,22 +101,24 @@ $(function () {
         $(this).addClass('active');
         var type = $(this).attr('type');
         if (type == 'BTC') {
-            widthdrawType = 1;
+            widthdrawType = '1';
             $('#txtBalance').val(btcCount);
             getQueryDraw(widthdrawType);
         }
         else if (type == 'ETH') {
-            widthdrawType = 2;
+            widthdrawType = '2';
             $('#txtBalance').val(ethCount);
             getQueryDraw(widthdrawType);
         }
         else {
-            widthdrawType = 3;
+            widthdrawType = '3';
             $('#txtBalance').val(bcdnCount);
             getQueryDraw(widthdrawType);
         }
     });
-    getQueryDraw(widthdrawType);
+
+    $('#withdrawBtn' + widthdrawType).click();
+
 });
 
 function getQueryDraw(type) {
