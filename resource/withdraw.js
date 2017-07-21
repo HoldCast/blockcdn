@@ -146,7 +146,7 @@ function getQueryDraw(type) {
                     var trHtml = '<tr>' +
                         '<th width="200">'+formatDate(dataI.draw_time)+'</th>' +
                         '<th width="150">'+dataI.draw_money+'</th>' +
-                        '<th width="328"><p>'+dataI.draw_address+'</p></th>' +
+                        '<th width="328"><a style="color: #5454FF;text-decoration:underline;" href="http://'+ dataI.draw_address +'" target="_blank">'+dataI.draw_address+'</a></th>' +
                         '<th width="100">'+drawStatus(draw_status)+'</th>' +
                         '<th width="100">' +
                         '<span class="withdraw-cancel" style="display:'+isNone+'" fid="'+dataI.id+'">取消</span>' +
