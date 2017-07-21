@@ -43,7 +43,9 @@ var withdraw = {
         };
         var callback = function (data) {
             if (data.status == 0) {
-                util.layerAlert("", util.getLan("user.tips.30"), 1);
+                util.layerAlert("", util.getLan("user.tips.30"), 1, function(){
+                    location.href = 'withdraw.html?type=' + widthdrawType;
+                });
             } else {
                 util.layerAlert("", data.message, 2);
             }
@@ -135,6 +137,16 @@ function getQueryDraw(type) {
         },
         success: function (json) {
             console.log('提现记录:', type, json);
+            var withdrawAddress = '';
+            if (type == '1'){
+                withdrawAddress = 'https://blockchain.info/address/'
+            }
+            else if (type == '2'){
+                withdrawAddress = 'https://etherscan.io/address/'
+            }
+            else if (type == '3'){
+                withdrawAddress = 'https://etherscan.io/token/0x1e797ce986c3cff4472f7d38d5c4aba55dfefe40?a='
+            }
             if (json.status == 0) {
                 var data = json.data;
                 $('#withdrawRecord').empty();
@@ -143,10 +155,11 @@ function getQueryDraw(type) {
                     var draw_status = dataI.draw_status;
                     var isNone = '';
                     draw_status == '1' ? isNone = '' : isNone = 'none';
+                    var draw_address = withdrawAddress + dataI.draw_address;
                     var trHtml = '<tr>' +
                         '<th width="200">'+formatDate(dataI.draw_time)+'</th>' +
                         '<th width="150">'+dataI.draw_money+'</th>' +
-                        '<th width="328"><a style="color: #5454FF;text-decoration:underline;" href="http://'+ dataI.draw_address +'" target="_blank">'+dataI.draw_address+'</a></th>' +
+                        '<th width="328"><a style="color: #5454FF;text-decoration:underline;" href="'+ draw_address +'" target="_blank">'+dataI.draw_address+'</a></th>' +
                         '<th width="100">'+drawStatus(draw_status)+'</th>' +
                         '<th width="100">' +
                         '<span class="withdraw-cancel" style="display:'+isNone+'" fid="'+dataI.id+'">取消</span>' +

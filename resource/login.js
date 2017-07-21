@@ -48,7 +48,7 @@ var login = {
 					localStorage.login_time = new Date().getTime();
 					localStorage.user_name = data.data['user']['user_name'];
 					util.layerAlert("", '登陆成功!', 1, function () {
-						window.location = 'ico.html';
+						window.location = 'assets.html';
 					});
 					/*
 					if (util.trim(forwardUrl) == "") {
