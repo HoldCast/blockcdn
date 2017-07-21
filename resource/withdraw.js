@@ -119,7 +119,9 @@ $(function () {
         }
     });
 
-    $('#withdrawBtn' + widthdrawType).click();
+    setTimeout(function(){
+        $('#withdrawBtn' + widthdrawType).click();
+    },300);
 
 });
 
