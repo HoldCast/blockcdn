@@ -12,9 +12,9 @@ var withdrawUrl = "http://211.149.175.73:8089/money/draw";// 用户提现
 var cancelDrawUrl = "http://211.149.175.73:8089/money/cancelDraw";// 用户取消提现
 var queryDrawUrl = "http://211.149.175.73:8089/money/queryDrawInfoByUser";// 前台根据用户查看提现记录
 var queryChargeUrl = "http://211.149.175.73:8089/money/queryRechargeInfoByUser";// 前台根据用户查看充值充值信息
-var btcCount = 0, ethCount = 0, bcdnCount = 0;
+var btcCountYe = 0, ethCountYe = 0, bcdnCountYe = 0;
 var btcCountDj = 0, ethCountDj = 0, bcdnCountDj = 0;
-var btcCountKy = 0, ethCountKy = 0, bcdnCountKy = 0;
+var btcCountZl = 0, ethCountZl = 0, bcdnCountZl = 0;
 
 $(function () {
     $(".lan-tab-hover").on("click", function () {
@@ -82,18 +82,19 @@ function getBalance() {
         success: function (json) {
             if (json.status == 0) {
                 var data = json.data;
-                btcCount = data.btc;
-                ethCount = data.eth;
-                bcdnCount = data.bcdn;
+                //余额
+                btcCountYe = data.btc;
+                ethCountYe = data.eth;
+                bcdnCountYe = data.bcdn;
                 //冻结
                 btcCountDj = data.btc_frozen || 0;
                 ethCountDj = data.eth_frozen || 0;
                 bcdnCountDj = data.bcdn_frozen || 0;
-                //可用
-                btcCountKy = btcCount - btcCountDj;
-                ethCountKy = ethCount - ethCountDj;
-                bcdnCountKy = bcdnCount - bcdnCountDj;
-                $('#iconNumber').text(bcdnCount);
+                //总共
+                btcCountZl = btcCountYe + btcCountDj;
+                ethCountZl = ethCountYe + ethCountDj;
+                bcdnCountZl = bcdnCountYe + bcdnCountDj;
+                $('#iconNumber').text(bcdnCountZl);
                 if ($('#BTCArea').length) {
                     var BTCStr = data.btc_address;
                     var ETHStr = data.eth_address;
@@ -116,21 +117,21 @@ function getBalance() {
                 }
                 //提现余额展示
                 if ($('#txtBalance').length) {
-                    $('#txtBalance').val(btcCount);
+                    $('#txtBalance').val(btcCountYe);
                 }
                 //个人资产展示
                 if ($('#assetsTable').length) {
-                    $('#btcKy').text(btcCountKy);
+                    $('#btcKy').text(btcCountYe);
                     $('#btcDj').text(btcCountDj);
-                    $('#btcZl').text(btcCount);
+                    $('#btcZl').text(btcCountZl);
 
-                    $('#ethKy').text(ethCountKy);
+                    $('#ethKy').text(ethCountYe);
                     $('#ethDj').text(ethCountDj);
-                    $('#ethZl').text(ethCount);
+                    $('#ethZl').text(ethCountZl);
 
-                    $('#bcdnKy').text(bcdnCountKy);
+                    $('#bcdnKy').text(bcdnCountYe);
                     $('#bcdnDj').text(bcdnCountDj);
-                    $('#bcdnZl').text(bcdnCount);
+                    $('#bcdnZl').text(bcdnCountZl);
 
                     //点击提现
                     $('#assetsTable .withdraw-btn').off('click').on('click',function(){
