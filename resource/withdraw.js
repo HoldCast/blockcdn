@@ -182,12 +182,13 @@ function getQueryDraw(type) {
     });
 }
 
-//体现状态1是审核中，2是成功，3是已取消
+//提现状态1是审核中，2是成功，3是已取消,4是已驳回
 function drawStatus(draw_status){
     var obj = {
         1 : '审核中',
         2 : '成功',
-        3 : '已取消'
+        3 : '已取消',
+        4 : '已驳回'
     };
     return obj[draw_status];
 }
