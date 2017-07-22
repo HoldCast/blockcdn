@@ -60,6 +60,8 @@ function getFinancialRecord(type) {
                         var trHtml = '<tr>' +
                             '<th width="220">'+time+'</th>' +
                             '<th width="200">'+recharge_money+'</th>' +
+                            //'<th width="220"><a style="color: #5454FF;text-decoration:underline;" href="'+ recharge_out_address +'" target="_blank">'+recharge_out_address+'</a></th>' +
+
                             '<th width="220"><p>'+recharge_out_address+'</p></th>' +
                             '<th width="212">'+status+'</th>' +
                             '</tr>';
@@ -87,6 +89,6 @@ function depositeStatus(status) {
         2: '成功',
         3: '已取消',
         4: '已驳回'
-    }
+    };
     return obj[status];
 }

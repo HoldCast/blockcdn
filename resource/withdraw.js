@@ -104,17 +104,17 @@ $(function () {
         var type = $(this).attr('type');
         if (type == 'BTC') {
             widthdrawType = '1';
-            $('#txtBalance').val(btcCount);
+            $('#txtBalance').val(btcCountYe);
             getQueryDraw(widthdrawType);
         }
         else if (type == 'ETH') {
             widthdrawType = '2';
-            $('#txtBalance').val(ethCount);
+            $('#txtBalance').val(ethCountYe);
             getQueryDraw(widthdrawType);
         }
         else {
             widthdrawType = '3';
-            $('#txtBalance').val(bcdnCount);
+            $('#txtBalance').val(bcdnCountYe);
             getQueryDraw(widthdrawType);
         }
     });
