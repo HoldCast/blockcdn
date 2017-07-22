@@ -13,6 +13,8 @@ var cancelDrawUrl = "http://211.149.175.73:8089/money/cancelDraw";// 用户取�
 var queryDrawUrl = "http://211.149.175.73:8089/money/queryDrawInfoByUser";// 前台根据用户查看提现记录
 var queryChargeUrl = "http://211.149.175.73:8089/money/queryRechargeInfoByUser";// 前台根据用户查看充值充值信息
 var btcCount = 0, ethCount = 0, bcdnCount = 0;
+var btcCountDj = 0, ethCountDj = 0, bcdnCountDj = 0;
+var btcCountKy = 0, ethCountKy = 0, bcdnCountKy = 0;
 
 $(function () {
     $(".lan-tab-hover").on("click", function () {
@@ -83,6 +85,14 @@ function getBalance() {
                 btcCount = data.btc;
                 ethCount = data.eth;
                 bcdnCount = data.bcdn;
+                //冻结
+                btcCountDj = data.btc_frozen || 0;
+                ethCountDj = data.eth_frozen || 0;
+                bcdnCountDj = data.bcdn_frozen || 0;
+                //可用
+                btcCountKy = btcCount - btcCountDj;
+                ethCountKy = ethCount - ethCountDj;
+                bcdnCountKy = bcdnCount - bcdnCountDj;
                 $('#iconNumber').text(bcdnCount);
                 if ($('#BTCArea').length) {
                     var BTCStr = data.btc_address;
@@ -110,16 +120,16 @@ function getBalance() {
                 }
                 //个人资产展示
                 if ($('#assetsTable').length) {
-                    $('#btcKy').text(btcCount);
-                    $('#btcDj').text(0);
+                    $('#btcKy').text(btcCountKy);
+                    $('#btcDj').text(btcCountDj);
                     $('#btcZl').text(btcCount);
 
-                    $('#ethKy').text(ethCount);
-                    $('#ethDj').text(0);
+                    $('#ethKy').text(ethCountKy);
+                    $('#ethDj').text(ethCountDj);
                     $('#ethZl').text(ethCount);
 
-                    $('#bcdnKy').text(bcdnCount);
-                    $('#bcdnDj').text(0);
+                    $('#bcdnKy').text(bcdnCountKy);
+                    $('#bcdnDj').text(bcdnCountDj);
                     $('#bcdnZl').text(bcdnCount);
 
                     //点击提现
