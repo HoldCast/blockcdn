@@ -102,6 +102,8 @@ $(function () {
         $('.withdraw-btn').removeClass('active');
         $(this).addClass('active');
         var type = $(this).attr('type');
+        $('#txtAmount').val('');
+        $('#sjtx').text('');
         if (type == 'BTC') {
             widthdrawType = '1';
             $('#txtBalance').val(btcCountYe);
@@ -123,6 +125,8 @@ $(function () {
         $('#withdrawBtn' + widthdrawType).click();
     },300);
 
+
+
 });
 
 function getQueryDraw(type) {
@@ -140,14 +144,18 @@ function getQueryDraw(type) {
         success: function (json) {
             console.log('提现记录:', type, json);
             var withdrawAddress = '';
+            var sxf = 0;
             if (type == '1'){
-                withdrawAddress = 'https://blockchain.info/address/'
+                withdrawAddress = 'https://blockchain.info/address/';
+                sxf = 0.5;
             }
             else if (type == '2'){
-                withdrawAddress = 'https://etherscan.io/address/'
+                withdrawAddress = 'https://etherscan.io/address/';
+                sxf = 1;
             }
             else if (type == '3'){
-                withdrawAddress = 'https://etherscan.io/token/0x1e797ce986c3cff4472f7d38d5c4aba55dfefe40?a='
+                withdrawAddress = 'https://etherscan.io/token/0x1e797ce986c3cff4472f7d38d5c4aba55dfefe40?a=';
+                sxf = 5;
             }
             if (json.status == 0) {
                 var data = json.data;
@@ -169,6 +177,13 @@ function getQueryDraw(type) {
                         '</tr>';
                     $('#withdrawRecord').append(trHtml);
                 }
+
+
+                $('#sxf').text(sxf);
+                $('#txtAmount').off('change').on('change',function(){
+                    var val = $(this).val();
+                    $('#sjtx').text((val*100 - sxf*100)/100);
+                });
             }
             else if (json.status == 431 || json.status == 402) {
                 util.layerAlert("", json.message, 2, function () {

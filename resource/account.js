@@ -41,12 +41,16 @@ function getFinancialRecord(type) {
         },
         success: function (json) {
             console.log('充值记录:', type, json);
-            /* 提现状态1是审核中，2是成功，3是已取消,4是已驳回
-             "time":  "2017-09-02 12:23:23",
-             "recharge_money": 12,
-             "recharge_out_address": "asadsasdasdsaaas",
-             "status": 2
-             * */
+            var withdrawAddress = '';
+            if (type == '1'){
+                withdrawAddress = 'https://blockchain.info/address/'
+            }
+            else if (type == '2'){
+                withdrawAddress = 'https://etherscan.io/address/'
+            }
+            else if (type == '3'){
+                withdrawAddress = 'https://etherscan.io/token/0x1e797ce986c3cff4472f7d38d5c4aba55dfefe40?a='
+            }
             if (json.status == 0) {
                 var data = json.data;
                 $('#financialRecord').empty();
@@ -56,13 +60,14 @@ function getFinancialRecord(type) {
                         var time = itemData.time;
                         var recharge_money = itemData.recharge_money;
                         var recharge_out_address = itemData.recharge_out_address;
+                        var recharge_address = withdrawAddress + recharge_out_address;
                         var status = depositeStatus(itemData.status);
                         var trHtml = '<tr>' +
                             '<th width="220">'+time+'</th>' +
                             '<th width="200">'+recharge_money+'</th>' +
-                            //'<th width="220"><a style="color: #5454FF;text-decoration:underline;" href="'+ recharge_out_address +'" target="_blank">'+recharge_out_address+'</a></th>' +
+                            '<th width="220"><p><a style="color: #5454FF;text-decoration:underline;" href="'+ recharge_address +'" target="_blank">'+recharge_out_address+'</a></p></th>' +
 
-                            '<th width="220"><p>'+recharge_out_address+'</p></th>' +
+                            //'<th width="220"><p>'+recharge_out_address+'</p></th>' +
                             '<th width="212">'+status+'</th>' +
                             '</tr>';
                         $('#financialRecord').append(trHtml);
