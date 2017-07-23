@@ -91,7 +91,7 @@ $(function () {
         withdraw.submit()
     });
     $("#txtAmount").on("keypress", function (event) {
-        return util.goIngKeypress(this, event, 4);
+        //return util.goIngKeypress(this, event, 4);
     });//withdrawRecord
     $("#withdrawRecord").off('click').on("click", '.withdraw-cancel', function (event) {
         withdraw.cancelCoinWithdraw($(this).attr('fid'));
@@ -143,19 +143,25 @@ function getQueryDraw(type) {
         },
         success: function (json) {
             console.log('提现记录:', type, json);
+            //BTC 提现手续费0.0005BTC/笔，ETH提现0.005ETH/笔，BCDN提现5BCDN/笔。
             var withdrawAddress = '';
             var sxf = 0;
+            var sxfDw = '';
             if (type == '1'){
                 withdrawAddress = 'https://blockchain.info/address/';
-                sxf = 0.5;
+                sxf = 0.0005;
+                sxfDw = ' BTC/笔';
+
             }
             else if (type == '2'){
                 withdrawAddress = 'https://etherscan.io/address/';
-                sxf = 1;
+                sxf = 0.005;
+                sxfDw = ' ETH/笔';
             }
             else if (type == '3'){
                 withdrawAddress = 'https://etherscan.io/token/0x1e797ce986c3cff4472f7d38d5c4aba55dfefe40?a=';
                 sxf = 5;
+                sxfDw = ' BCDN/笔';
             }
             if (json.status == 0) {
                 var data = json.data;
@@ -179,10 +185,10 @@ function getQueryDraw(type) {
                 }
 
 
-                $('#sxf').text(sxf);
+                $('#sxf').text(sxf + sxfDw);
                 $('#txtAmount').off('change').on('change',function(){
                     var val = $(this).val();
-                    $('#sjtx').text((val*100 - sxf*100)/100);
+                    $('#sjtx').text((val*1000000 - sxf*1000000)/1000000);
                 });
             }
             else if (json.status == 431 || json.status == 402) {
