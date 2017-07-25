@@ -188,7 +188,11 @@ function getQueryDraw(type) {
                 $('#sxf').text(sxf + sxfDw);
                 $('#txtAmount').off('change').on('change',function(){
                     var val = $(this).val();
-                    $('#sjtx').text((val*1000000 - sxf*1000000)/1000000);
+                    var sjje = (val*1000000 - sxf*1000000)/1000000;
+                    if (sjje < 0) {
+                        sjje = 0;
+                    }
+                    $('#sjtx').text(sjje);
                 });
             }
             else if (json.status == 431 || json.status == 402) {
