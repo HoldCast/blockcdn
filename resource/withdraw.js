@@ -195,7 +195,7 @@ function getQueryDraw(type) {
                     $('#sjtx').text(sjje);
                 });
             }
-            else if (json.status == 431 || json.status == 402) {
+            else if (json.status == 431 || json.status == 402 || json.status == 430) {
                 util.layerAlert("", json.message, 2, function () {
                     location.href = 'login.html';
                 });

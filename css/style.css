@@ -53,7 +53,7 @@ em,i{font-style: normal;}
 .pc_header .pc_logo>img{height: 100%;width: auto;}
 .pc_header .pc_hd_menus>li{float: left;position: relative;}
 .pc_header .pc_hd_menus>li>a{line-height: 90px;text-align: center;display: block;padding: 0px 30px;color: #ffffff;font-size: 14px;}
-.pc_header .pc_hd_menus>li.active-ck>a{color: #5f92a7;background: #ffffff;}
+.pc_header .pc_hd_menus>li.active>a{color: #5f92a7;background: #ffffff;}
 .pc_header .pc_hd_menus>li:hover>a{color: #5f92a7;background: #ffffff;}
 
 .mobile_header{height:60px;background: #26a8dc;display: none;position: fixed;width: 100%;top: 0px;left: 0px;z-index: 99;}
