@@ -6,6 +6,9 @@
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <link rel="icon" href="../resource/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../css/amazeui.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="stylesheet" href="../resource/comm.css">
     <link rel="stylesheet" href="../resource/layer.css">
     <link rel="stylesheet" href="../resource/user.css">
@@ -75,61 +78,23 @@
     <link rel="stylesheet" href="../resource/layer.css" id="layuicss-skinlayercss">
 </head>
 <body>
-
-<div class="container-full header flex" id="dhgHeader">
-    <h1 class="flex-center"><a href="">
-        <img attr="DHG" class="logo" src="../resource/logo.png"></a></h1>
-    <div class="flex-grow flex-right">
-        <a class="nav-item " href="">
-            <i class="nav-split top"></i>
-            <span>首页</span>
-            <i class="nav-split bottom"></i>
-        </a>
-        <a target="_blank" class="nav-item " href="">
-            <i class="nav-split top"></i>
-            <span>白皮书</span>
-            <i class="nav-split bottom"></i>
-        </a>
-        <a class="nav-item " href="">
-            <i class="nav-split top"></i>
-            <span>新闻报道</span>
-            <i class="nav-split bottom"></i>
-        </a>
-        <a class="nav-item " href="">
-            <i class="nav-split top"></i>
-            <span>ICO</span>
-            <i class="nav-split bottom"></i>
-        </a>
-
+<div class="pc_header" id="navigation">
+    <div class="page_content nav-menu clearfix">
+        <a href="http://new.blockcdn.org/" class="pc_logo am-fl" ><img src="../images/logo.png" alt=""></a>
+        <ul class="nav pc_hd_menus am-fr clearfix">
+            <li><a href="../index.html#index" class="scroll">首页</a></li>
+            <li><a href="../index.html#feature" class="scroll">投资</a></li>
+            <li><a href="../index.html#book" class="scroll">白皮书</a></li>
+            <li><a href="../index.html#mechin" class="scroll">矿机</a></li>
+            <li><a href="../index.html#news" class="scroll">新闻报道</a></li>
+            <li class="active-ck"><a href="javascript:userInfo()" >用户中心</a></li>
+            <li id="userInfo">
+                <a href="javascript:void(0);" target="_blank"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>
+                <a href="javascript:logOut();" class="logOut">退出</a>
+            </li>
+            <li><a href="">English</a></li>
+        </ul>
     </div>
-    <div class="login-tabs">
-        <a href="login.html" class="login-tab">登录</a>
-        <a href="register.html" class="login-tab">注册</a>
-    </div>
-    <!--
-    <div class="lan-tabs">
-        <div class="lan-tab">
-            <i class="lan-tab-zh_CN"></i>
-            <i class="lan-tab-direction"></i>
-        </div>
-        <div class="lan-switch">
-            <div id="zh_CN" class="lan-tab lan-tab-hover" data-lan="zh_CN">
-                <span class="lan-des">简体中文</span>
-                <i class="lan-tab-zh_CN"></i>
-            </div>
-            <div id="zh_TW" class="lan-tab lan-tab-hover" data-lan="zh_CN">
-                <span class="lan-des">繁体中文</span>
-                <i class="lan-tab-zh_TW"></i>
-            </div>
-            <div id="en_US" class="lan-tab lan-tab-hover" data-lan="zh_CN">
-                <span class="lan-des">English</span>
-                <i class="lan-tab-en_US"></i>
-            </div>
-
-
-        </div>
-    </div>
-    -->
 </div>
 
 <div class="user-content findbackbg container-full flex-center" style="height: 461px;">
@@ -156,10 +121,7 @@
         </div>
     </div>
 </div>
-
-<div class="container-full footer flex-center" style="position: absolute; width: 100%; left: 0px; bottom: 0px;">
-    <span class="copyright">CopyRight 2016-2017 bcdn.com All Rights Reserved.</span>
-</div>
+<p class="bottom_text">Copyright ©2016 BlockCDN. All Rights Reserved. Legal</p>
 <script type="text/javascript" src="../resource/jquery.min.js"></script>
 <script type="text/javascript" src="../resource/layer.js"></script>
 <script type="text/javascript" src="../resource/util.js"></script>

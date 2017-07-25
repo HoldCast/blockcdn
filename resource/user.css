@@ -81,6 +81,7 @@
 }
 
 .user-left-menu a{
+    position: relative;
     width: 2.96rem;
     height: 0.8rem;
     float: left;
@@ -93,12 +94,20 @@
     border-left: none;
     border-right: none;
     text-decoration: none;
-    background: url("../resource/left-menu-bg.jpg") no-repeat 0 -0.85rem;
     margin: -1px 0 0 0;
+    display: block;
+    overflow: hidden;
 }
 
 .user-left-menu a:hover,.user-left-menu a.active{
-    background-position: 0 -0.03rem;
+    background: url(../resource/left-menu-bg.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.user-left-menu a>img{
+    position: absolute;
+    width: 35px;
+    display: block;;top: 22px;left: 25px;
 }
 
 .user-content-right{
@@ -115,8 +124,8 @@
 }
 
 .user-content-right table thead{
-    background-color: #a2a2b5;
-    color: #030335;
+    background-color: #a2d2ed;
+    color: #0385cd;
     height: 0.76rem;
     border: 1px solid #181846;
     display: flex;
@@ -229,7 +238,8 @@
 }
 
 .recharge-box .nav-box a.active{
-    background-color: #eaeaee !important;
+    background-color: #0084c0 !important;
+    color: #ffffff!important;
 }
 
 .recharge-box .nav-box a.endLine{
@@ -302,8 +312,8 @@
 }
 
 .recharge-box .recharge-record table thead{
-    background-color: #a2a2b5;
-    color: #030335;
+    background-color: #a2d2ed;
+    color: #0385cd;
     height: 0.76rem;
     border: 1px solid #181846;
     display: flex;
@@ -368,7 +378,7 @@
 .withdraw-nav{
     height: .55rem;
     width: 100%;
-    border: solid 1px #030335;
+    /*border: solid 1px #030335;*/
     margin-bottom: .35rem;
 }
 .withdraw-nav a{
@@ -387,13 +397,19 @@
     border-right: none;
 }
 .withdraw-nav a.active{
-    background:#eaeaee;
+    background:#0084c0;
+    color: #FFFFff;!important;
 }
 .withdraw-nav a img{
     width: .27rem;
     height: .27rem;
     margin-right: .1rem;
 }
+
+.flex-center img.white{display: none;}
+.flex-center.active img.black{display: none;}
+.flex-center.active img.white{display: inline-block;}
+
 
 .withdraw-box{
     width: 100%;

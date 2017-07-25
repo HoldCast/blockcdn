@@ -45,6 +45,8 @@ $(function () {
         getBalance();//获取资产信息
     }
 
+    getUserInfo();
+
 });
 
 function getQueryString(name) {
@@ -152,15 +154,47 @@ function getBalance() {
                     });
                 }
             }
-            else if (json.status == 431 || json.status == 402) {
+            else if (json.status == 431 || json.status == 402 || json.status == 430) {
                 util.layerAlert("", json.message, 2, function () {
+                    alert();
+                    localStorage.clear();
                     location.href = 'login.html';
                 });
             }
             else {
                 util.layerAlert("", json.message, 2);
+                localStorage.clear();
+                location.href = 'login.html';
             }
             console.log('资产信息:', json);
         }
     });
+}
+function logOut(){
+    localStorage.clear();
+    location.href = 'login.html';
+}
+
+function getUserInfo(){
+    //获取用户信息
+    var userName = localStorage.user_name;
+    if(userName){
+        $('#userInfo').show();
+        var index = userName.indexOf('@');
+        $('#userMc').text(userName.substr(0,index));
+    }
+    else {
+        $('#userInfo').hide();
+    }
+}
+
+function userInfo(){
+    //获取用户信息
+    var userName = localStorage.user_name;
+    if(userName){
+        location.href = 'assets.html';
+    }
+    else {
+        location.href = 'login.html';
+    }
 }

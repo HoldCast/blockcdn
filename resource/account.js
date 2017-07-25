@@ -76,13 +76,16 @@ function getFinancialRecord(type) {
                 }
 
             }
-            else if (json.status == 431 || json.status == 402) {
+            else if (json.status == 431 || json.status == 402 || json.status == 430) {
                 util.layerAlert("", json.message, 2, function () {
+                    localStorage.clear();
                     location.href = 'login.html';
                 });
             }
             else {
                 util.layerAlert("", json.message, 2);
+                localStorage.clear();
+                location.href = 'login.html';
             }
         }
     });
