@@ -93,9 +93,9 @@ function getBalance() {
                 ethCountDj = data.eth_frozen || 0;
                 bcdnCountDj = data.bcdn_frozen || 0;
                 //总共
-                btcCountZl = btcCountYe + btcCountDj;
-                ethCountZl = ethCountYe + ethCountDj;
-                bcdnCountZl = bcdnCountYe + bcdnCountDj;
+                btcCountZl = data.btc_total;//btcCountYe + btcCountDj;,,
+                ethCountZl = data.eth_total;//ethCountYe + ethCountDj;
+                bcdnCountZl = data.bcdn_total;//bcdnCountYe + bcdnCountDj;
                 $('#iconNumber').text(bcdnCountZl);
                 if ($('#BTCArea').length) {
                     var BTCStr = data.btc_address;
