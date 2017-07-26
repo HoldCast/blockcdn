@@ -24,7 +24,7 @@
     height: 0.6rem;
     font-size: 0.22rem;
     min-width: 5.2rem;
-    color:#5555fc;
+    color:#ffffff;
 }
 
 .user-balance-amount {
@@ -524,12 +524,12 @@
 
 .user-content .content-box{
     width: 3.6rem;
-    height: 4.4rem;
+    /*height: 4.4rem;*/
 }
 
 .user-content .content-box .logo-box{
     width: 100%;
-    height: 0.88rem;
+    height: 0.68rem;
     align-items: flex-start !important;
 }
 
@@ -542,7 +542,7 @@
 .user-content .content-box .submit-box{
     width: 100%;
     padding-top: 0.25rem;
-    border: 1px dashed #213954;
+    /*border: 1px dashed #213954;*/
     border-left: none;
     border-right: none;
 }
@@ -564,11 +564,11 @@
 .user-content .content-box .submit-box input{
     width: 100%;
     height: 0.42rem;
-    border: 1px solid #0e24c3;
+    border: none;
     outline: none;
-    background-color: #061749;
+    background-color: #ffffff;
     padding-left: 0.5rem;
-    color: #fff;
+    color: #000000;
 }
 
 .user-content .content-box .submit-box input:focus{
@@ -640,7 +640,7 @@
     width: 30%;
     margin-bottom:0;
     background: #7e83a1;
-    border: 1px solid #020229;
+    border: none;
     color:#020229;
     position: absolute;
     right: 0;
@@ -662,8 +662,8 @@
 
 
 .findbackbg .content-box .submit-box input{
-    background: #7e83a1;
-    border: 1px solid #020229;
+    background: #ffffff;
+    border: none;
     padding-left: 0.2rem;
     color:#020229;
 }

@@ -77,7 +77,7 @@
     <link rel="stylesheet" href="../resource/user.css">
     <link rel="stylesheet" href="../resource/layer.css" id="layuicss-skinlayercss">
 </head>
-<body>
+<body style="padding-top: 55px;">
 <div class="pc_header" id="navigation">
     <div class="page_content nav-menu clearfix">
         <a href="http://new.blockcdn.org/" class="pc_logo am-fl" ><img src="../images/logo.png" alt=""></a>
@@ -87,7 +87,7 @@
             <li><a href="../index.html#book" class="scroll">白皮书</a></li>
             <li><a href="../index.html#mechin" class="scroll">矿机</a></li>
             <li><a href="../index.html#news" class="scroll">新闻报道</a></li>
-            <li class="active-ck"><a href="login.html" >用户中心</a></li>
+            <li class="active"><a href="login.html" >用户中心</a></li>
             <li id="userInfo">
                 <!--<a href="javascript:void(0);" target="_blank"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>-->
                 <a href="javascript:logOut();" class="logOut">退出</a>
@@ -97,10 +97,10 @@
     </div>
 </div>
 
-<div class="user-content findbackbg container-full flex-center" style="height: 461px;">
+<div class="user-content findbackbg container-full flex-center">
     <div class="content-box">
-        <div class="logo-box flex-center findbacktitle">
-            <span class="flex-center">找回密码</span>
+        <div class="logo-box flex-center">
+            <img src="../resource/logo.png" height="31" width="90">
         </div>
         <div class="submit-box">
             <div class="div-email">
@@ -121,7 +121,7 @@
         </div>
     </div>
 </div>
-<p class="bottom_text">Copyright ©2016 BlockCDN. All Rights Reserved. Legal</p>
+<p class="bottom_text" style="position: fixed;width: 100%;left: 0px;bottom: 0px;">Copyright ©2016 BlockCDN. All Rights Reserved. Legal</p>
 <script type="text/javascript" src="../resource/jquery.min.js"></script>
 <script type="text/javascript" src="../resource/layer.js"></script>
 <script type="text/javascript" src="../resource/util.js"></script>
@@ -129,5 +129,13 @@
 <script type="text/javascript" src="../resource/language_zh_CN.js"></script>
 <script type="text/javascript" src="../resource/reset.js"></script>
 <script type="text/javascript" src="../resource/msg.js"></script>
+<script>
+
+    var win_height  = parseInt($(window).height());
+    var page_he = win_height - 160;
+    $('#userContentBox').css({
+        'height':page_he
+    });
+</script>
 </body>
 </html>
