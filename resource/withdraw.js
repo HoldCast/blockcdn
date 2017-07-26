@@ -164,17 +164,29 @@ function getQueryDraw(type) {
                 sxfDw = ' BCDN/笔';
             }
             if (json.status == 0) {
+                /*
+                * draw_actual: -4
+                 draw_address: "dsads21312wdasda123213"
+                 draw_fee: 5
+                 draw_money: 1
+                 draw_status: 2
+                 draw_time: 1500622198000
+                * */
                 var data = json.data;
                 $('#withdrawRecord').empty();
                 for (var i=0;i<data.length;i++){
                     var dataI = data[i];
                     var draw_status = dataI.draw_status;
+                    var draw_actual = dataI.draw_actual;
+                    if (draw_actual < 0) {
+                        draw_actual=0;
+                    }
                     var isNone = '';
                     draw_status == '1' ? isNone = '' : isNone = 'none';
                     var draw_address = withdrawAddress + dataI.draw_address;
                     var trHtml = '<tr>' +
                         '<th width="200">'+formatDate(dataI.draw_time)+'</th>' +
-                        '<th width="150">'+dataI.draw_money+'</th>' +
+                        '<th width="150">'+draw_actual+'</th>' +
                         '<th width="328"><a style="color: #5454FF;text-decoration:underline;" href="'+ draw_address +'" target="_blank">'+dataI.draw_address+'</a></th>' +
                         '<th width="100">'+drawStatus(draw_status)+'</th>' +
                         '<th width="100">' +
