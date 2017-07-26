@@ -66,8 +66,9 @@ var withdraw = {
             };
             var callback = function (data) {
                 if (data.status == 0) {
+                    console.log('这里语言处理');
                     util.layerAlert("", '取消成功', 1, function () {
-                        getQueryDraw(widthdrawType);
+                        location.href = 'withdraw.html?type=' + widthdrawType;
                     });
                 }
                 else {
@@ -104,6 +105,9 @@ $(function () {
         var type = $(this).attr('type');
         $('#txtAmount').val('');
         $('#sjtx').text('');
+        $('#txtText').val('');
+        $('#txtAmount').val('');
+        $('#txtCode').val('');
         if (type == 'BTC') {
             widthdrawType = '1';
             $('#txtBalance').val(btcCountYe);

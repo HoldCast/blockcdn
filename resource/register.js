@@ -117,8 +117,34 @@ var reg = {
             };
             var callback = function (data) {
                 console.log('注册:',data);
+                //注册成功
                 if (data.status === 0) {
+                //if (true) {
                     util.layerAlert("", util.getLan("user.tips.35"), 1, function () {
+                        util.network({
+                            url : logInUrl,
+                            param : {data:  JSON.stringify({
+                                user_name : regUserName,
+                                password : pwd,
+                                nonce_str : Math.random()
+                            })},
+                            success : function(data){
+                                console.log('组册后登录参数:',data);
+                                if (data.status == 0) {
+                                    localStorage.sessionid = data.data.sessionid;
+                                    localStorage.token = data.data.token;
+                                    localStorage.create_time = data.data['user']['create_time'];
+                                    localStorage.login_time = new Date().getTime();
+                                    localStorage.user_name = data.data['user']['user_name'];
+                                    //登录成功
+                                    window.location = 'assets.html';
+                                } else {
+                                    util.layerAlert("", data.message, 2);
+                                    $("#login-password").val("");
+                                }
+                            },
+                            enter : true,
+                        });
                         window.location = 'ico.html';
                     });
                 } else {

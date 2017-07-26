@@ -29,44 +29,30 @@ var login = {
 			if ($("#forwardUrl") != null) {
 				forwardUrl = $("#forwardUrl").val();
 			}
-			//data={"user_name":"2322@qq.com","password":"sdsfsfs","nonce_str":"sdfdsdfs"}
 			var param = {
 				user_name : uName,
 				password : pWord,
 				nonce_str : Math.random()
-				//loginName : uName,
-				//password : pWord,
-				//type : longLogin
-			};
-
-			var callback = function(data) {
-				console.log('登录参数:',data);
-				if (data.status == 0) {
-					localStorage.sessionid = data.data.sessionid;
-					localStorage.token = data.data.token;
-					localStorage.create_time = data.data['user']['create_time'];
-					localStorage.login_time = new Date().getTime();
-					localStorage.user_name = data.data['user']['user_name'];
-					util.layerAlert("", '登陆成功!', 1, function () {
-						window.location = 'assets.html';
-					});
-					/*
-					if (util.trim(forwardUrl) == "") {
-						window.location.href = "/ico.html";
-					} else {
-						window.location.href = forwardUrl;
-					}
-					*/
-				} else {
-                    util.layerAlert("", data.message, 2);
-					$("#login-password").val("");
-				}
 			};
 			util.network({
 				btn : $("#login-submit")[0],
 				url : logInUrl,
 				param : {data:  JSON.stringify(param)},
-				success : callback,
+				success : function(data){
+					console.log('登录参数:',data);
+					if (data.status == 0) {
+						localStorage.sessionid = data.data.sessionid;
+						localStorage.token = data.data.token;
+						localStorage.create_time = data.data['user']['create_time'];
+						localStorage.login_time = new Date().getTime();
+						localStorage.user_name = data.data['user']['user_name'];
+						//登陆成功
+						window.location = 'assets.html';
+					} else {
+						util.layerAlert("", data.message, 2);
+						$("#login-password").val("");
+					}
+				},
 				enter : true,
 			});
 		}

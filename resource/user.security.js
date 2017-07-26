@@ -20,25 +20,19 @@ var security = {
 			$("#loginpass-confirmpass").val("");
 			return;
 		}
-		var url = "/user/modify_passwd.html";
-		//data={"user_name":"sdfds@qq.com","old_password":"sdfsfdsf","new_password":"sfdssdfs","confirm_password":"sfdssfds"}
 		var param = {
 			user_name:　localStorage.user_name,
 			old_password : oldPwd,
 			new_password : newPwd,
-			confirm_password : newPwd,
-            //oldPwd : oldPwd,
-            //newPwd : newPwd,
-            //confirmPwd : newPwd,
-			//identityCode : ''
+			confirm_password : newPwd
 		};
 		var callback = function(data) {
 			console.log('修改密码参数:',data);
 			if (data.status == 0) {
-                util.layerAlert("", util.getLan("comm.tips.25"), 1);
-				/*window.setTimeout(function() {
-					window.location.href = window.location.href;
-				}, 1000);*/
+                util.layerAlert("", util.getLan("comm.tips.25"), 1, function(){
+					localStorage.clear();
+					location.href = 'login.html';
+				});
 			} else {
                 util.layerAlert("", data.message, 2);
 			}
@@ -50,10 +44,10 @@ var security = {
 				data: JSON.stringify(param),
 				sessionid:localStorage.sessionid,
 				token: localStorage.token,
-				timestamp:localStorage.timestamp,
-				user_name: localStorage.user_name,
+				timestamp: new Date().getTime(),
+				user_name: localStorage.user_name
 			},
-			success : callback,
+			success : callback
 		});
 	}
 };

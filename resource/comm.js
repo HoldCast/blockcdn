@@ -96,7 +96,7 @@ function getBalance() {
                 btcCountZl = data.btc_total;//btcCountYe + btcCountDj;,,
                 ethCountZl = data.eth_total;//ethCountYe + ethCountDj;
                 bcdnCountZl = data.bcdn_total;//bcdnCountYe + bcdnCountDj;
-                $('#iconNumber').text(bcdnCountZl);
+                $('#iconNumber').text(bcdnCountYe);
                 if ($('#BTCArea').length) {
                     var BTCStr = data.btc_address;
                     var ETHStr = data.eth_address;
@@ -156,7 +156,6 @@ function getBalance() {
             }
             else if (json.status == 431 || json.status == 402 || json.status == 430) {
                 util.layerAlert("", json.message, 2, function () {
-                    alert();
                     localStorage.clear();
                     location.href = 'login.html';
                 });
