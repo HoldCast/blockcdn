@@ -47,12 +47,14 @@ var reset = {
         var callback = function(data) {
             console.log('找回密码提交数据:', data);
             if (data.status == 0) {
-                util.layerAlert("", '修改成功', 1);
-                //window.location.href="/user/login.html"
+                console.log('语言翻译:修改成功');
+                util.layerAlert("", '修改成功', 1, function(){
+                    location.href="login.html"
+                });
             } else {
                 util.layerAlert("", data.message, 2);
             }
-        }
+        };
 		util.network({
 			btn : btnele,
 			url : rPassWordUrl,
