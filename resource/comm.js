@@ -137,6 +137,8 @@ function getBalance() {
 
                     //点击提现
                     $('#assetsTable .withdraw-btn').off('click').on('click',function(){
+                        disableHandle();
+                        return false;
                         var $this = $(this);
                         var fid = $this.attr('fid');
                         location.href = 'withdraw.html?type=' + fid;
@@ -149,6 +151,8 @@ function getBalance() {
                             location.href = 'exchange.html';
                         }
                         else {
+                            disableHandle();
+                            return false;
                             location.href = 'deposit.html?type=' + fid;
                         }
                     });
@@ -197,3 +201,9 @@ function userInfo(){
         location.href = 'login.html';
     }
 }
+
+function disableHandle(){
+    util.layerAlert("", '由于BTC近期存在分叉风险，暂停充值提现!', 2);
+    return false;
+}
+
