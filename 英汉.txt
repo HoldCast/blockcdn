@@ -1,0 +1,122 @@
+首页页面
+首页 Home 投资 Investment白皮书  White Paper矿机Miner 新闻报道 News  用户中心User Center
+基于区块链的分布式CDN平台
+ A distributed CDN platform based on blockchain technology
+ICO即将到来     ICO is coming
+早鸟early bird 锁定 lock-in
+奖励比例  proportion of award
+时间待定 time to be determined
+点击参与click to join
+早鸟阶段软顶$500000,触发软顶随时可能结束早鸟
+whenever it reaches on $500000 in the early bird stage, it will be end.
+锁定阶段软顶$1500000,触发软顶随时可能结束锁定
+whenever it reaches on $1500000 in the lock stage, it will be end.
+独有核心优势，让领先再近一步
+The particular core advantage takes the leading position.
+让闲置设备运转起来，成为CDN供应商。PC，机顶盒，手机均可成为分享者，并获得回报。
+Make the Idle equipment be the CDN distributors. PC, STB and mobile phones can be the shares to get return.
+视频、直播、网游等行业将大幅度降低CDN成本
+Video, live , online games and other industries will significantly reduce the cost of CDN.
+智能合约自动执行、区块链账本公开透明、自动撮合买卖双方、把CDN价格定价权交还给市场
+Smart contracts are automatically executed, the blockchain ledgers are open and transparent, buyers and sellers are automatically matched, and the pricing power of the CDN is given back to the market.
+超级节点完成智能调度
+Super node completes intelligent scheduling
+全球化、无限节点
+Globalization, infinite nodes
+BlockCDN
+弱网优化 optimize weak network  10倍提升 10 times improvement
+节点数量 the number of nodes
+全球无限节点 global infinite nodes
+超级节点 super node
+价格 price
+低于传统CDN90%   90% lower than traditional CDN
+公开透明 open and transparent
+交易方式 the trading ways
+基于区块链based on blockchain 智能合约smart contract 去中心decentralized 自动撮合Automatic match 透明无法作假transparent and no fake
+传统CDN    traditional CDN
+弱网优化 optimize weak network无none
+节点数量 the number of nodes
+受限于地域200-500个骨干节点 limited on territorial 200-500 backbone nodes
+价格 price价格高 high price 不透明 non-transparent
+交易方式  trading ways中心化 centralized后台有作假可能 can fake in the background 不透明 non-transparent
+阅读白皮书，开启科技之旅
+Read the White Paper to start exploring science and technology
+阅读白皮书了解BlockCDN 更多细节
+Read the White Paper to know more about BlockCDN
+订阅 subscribe
+输入你的邮箱地址 email
+白皮书下载  download white paper
+为节点分享者 all for node sharers
+BlockCDN能让网络闲置用户分享他们的闲置上网设备（如：PC、路由、电视盒、Pad、手机等等）作为CDN的数据缓存节点，
+为网站提供CDN服务。并在不额外增加投入的情况下，获得不错的收益。The network idle users can share their idle equipment (such as PC, routers, TV boxes, Pad and mobile phones) as data cache nodes to provide CDN service for website by BlockCDN,  and get benefits without extra cost.
+Windows矿机下载 download windows miner
+ Liunx 矿机下载 download Liunx miner
+安卓电视盒矿机下载download Android TV Box miner
+
+项目发展过程和未来规划
+Project development and future plan
+初始研究Initial research 实验 experiment
+获得种子轮融资，项目正式立项
+Obtain initial financing, and the project was officially set up
+客户端原型发布
+Release client prototype
+Windows节点客户端内测
+Close beta test for Windows node client
+ Unix节点客户端内测
+Close beta test for Unix node client
+ 安卓电视机顶盒端内测
+Close beta test for Android TV set-top box node client
+以太坊创始人vitalik光临指导
+Vitalik ,the founder of Ethereum,come to guide the work.
+ 重庆邮电大学洽谈合作
+Cooperate with CQUPT
+电子科技大学初步达成合作
+achieve an initial intent of cooperation with UESTC
+受邀参加上海第四届区块链国际峰会
+Invited to join in the 4th Blockchain Summit in Shanghai
+ICO开启    ICO launch
+分布式CDN功能开发完成, 测试版本上线 accomplish the function development of distributed CDN ,and put test version online
+
+Windows Linux安卓 OSX 智能路由端等挖矿终端上线
+Put Windows ,Linux, Android ,OSX,smart routing client and other mining terminals online
+BlockCDN 智能合约交易系统上线
+Put BlockCDN trading system with smart contract online
+挖矿宝发售 sell BlockCDN mining treasures
+全球超级节点计划启动 global super-node plan launch
+
+合作伙伴cooperative partners
+新闻动态 news
+团队介绍team
+联系我们contact us
+
+用户中心页面
+请输入邮箱 email address
+请输入密码 password
+忘记密码? forget password?
+注册sign up
+登录log in
+
+
+账户余额Account Balances
+个人资产personal assets
+充值 deposit
+提现 withdraw
+BCDN兑换 exchange BCDN
+兑换码redeem code
+ICO锁定 lock ICO
+修改密码  change your password
+上次登录时间 last login time
+退出登录 log out
+币种 currency name
+可用资产 available balance
+冻结资产 frozen capital
+总量 total
+操作operation
+提现 withdraw
+充值 deposit
+兑换 exchange
+
+
+
+
+

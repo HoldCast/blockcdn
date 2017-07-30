@@ -2,7 +2,7 @@
 <html lang="en" data-dpr="1">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>ICO锁定</title>
+    <title>BCDN兑换</title>
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <link rel="icon" href="../resource/favicon.ico" type="image/x-icon"/>
@@ -91,7 +91,7 @@
                 <a href="javascript:userInfo();" target="_blank"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>
                 <a href="javascript:logOut();" class="logOut">退出</a>
             </li>
-            <li><a href="javascript:lanChange('en_US')">English</a></li>
+            <li><a href="">English</a></li>
         </ul>
     </div>
 </div>
@@ -115,58 +115,40 @@
 <div class="container user-content-box">
     <div class="flex-left flex-direction user-left-menu">
         <a href="assets.html"><img src="../resource/zichan.png" alt=""> 个人资产</a>
-        <a href="deposit.html"><img src="../resource/chongzhi.png" alt=""> 充值</a>
-        <a href="withdraw.html"><img src="../resource/tixian.png" alt=""> 提现</a>
-        <a href="exchange.html"><img src="../resource/duihuan.png" alt=""> BCDN兑换</a>
-        <a href="" class="active"><img src="../resource/lock.png" alt=""> ICO锁定</a>
+        <!--<a href="deposit.html"><img src="../resource/chongzhi.png" alt=""> 充值</a>-->
+        <a href="javascript:disableHandle();"><img src="../resource/chongzhi.png" alt=""> 充值</a>
+        <!--<a href="withdraw.html"><img src="../resource/tixian.png" alt=""> 提现</a>-->
+        <a href="javascript:disableHandle();"><img src="../resource/tixian.png" alt=""> 提现</a>
+        <a href="exchange.html" class="active"><img src="../resource/duihuan.png" alt=""> BCDN兑换</a>
+        <a href=""><img src="../resource/lock.png" alt=""> ICO锁定</a>
         <a href="modifyPassword.html"><img src="../resource/mima.png" alt=""> 修改密码</a>
     </div>
 
     <div class="flex-right  user-content-right flex-direction">
-        <div class="withdraw-nav flex-center">
-            <a  href="javascript:"  type="BTC" class="flex-center active withdraw-btn">
-                <img class="black" src="../resource/201706101049017_CI0f8.png">
-                <img class="white" src="../resource/201706101049017_CI0f81.png">
-                <span>BTC</span>
-            </a>
-            <a href="javascript:" type="ETH" class="flex-center withdraw-btn">
-                <img class="black" src="../resource/201706101048037_uvtGO.png">
-                <img class="white" src="../resource/201706101048037_uvtGO1.png">
-                <span>ETH</span>
-            </a>
-        </div>
         <div class="flex-direction withdraw-box flex-center">
             <div class="input-box flex-center">
-                <span>可用余额</span>
-                <input type="text" id="btcbalance" readonly="readonly" value="0.0000">
+                <span>兑换码</span>
+                <input type="text" id="bcdnCoupon">
             </div>
-            <div class="input-box flex-center">
-                <p style="margin-right: 0.5rem;">当前比值：1000*108%</p>
-                <p>最大可购：9087.89</p>
-            </div>
-            <div class="input-box flex-center">
-                <span>锁定数量</span>
-                <input type="text" id="txtFinancesCount">
-            </div>
-
-            <input type="button" id="pushSubmit" class="flex-center" value="提交">
+            <input type="button" id="pushSubmit" class="flex-center" value="确认">
         </div>
         <div class="withdraw-record">
             <table>
                 <thead>
                 <tr class="flex-center">
-                    <th width="380"><i class="ico-record-icon user-plist time"></i><span>时间</span></th>
-                    <th width="160"><i class="ico-record-icon user-plist coin"></i><span>币种</span></th>
-                    <th width="160"><i class="ico-record-icon user-plist num"></i><span>支持数量</span></th>
-                    <th width="175"><i class="ico-record-icon user-plist num"></i><span>获得DHG</span></th>
-                    <!--<th width="100"><i class="ico-record-icon user-plist num"></i><span th:utext="#{user.ico.record.page5}">状态</span></th>-->
+                    <th width="240"><i class="ico-record-icon user-plist time"></i><span>时间</span></th>
+                    <th width="400"><i class="ico-record-icon user-plist num"></i><span>兑换码</span></th>
+                    <th width="240"><i class="ico-record-icon user-plist num"></i><span>获得BCDN</span></th>
                 </tr>
                 </thead>
-                <tbody class="flex-direction">
-
+                <tbody class="flex-direction" id="bcdnCouponList">
+                <tr>
+                    <th width="240">2017-07-12 20:00:00</th>
+                    <th width="400">1A1LJX2ktiLpZWgQKoik</th>
+                    <th width="240">99</th>
+                </tr>
                 </tbody>
             </table>
-
         </div>
     </div>
 </div>
@@ -178,5 +160,6 @@
 <script type="text/javascript" src="../resource/language_zh_CN.js"></script>
 <script type="text/javascript" src="../resource/login.js"></script>
 <script type="text/javascript" src="../resource/msg.js"></script>
+<script type="text/javascript" src="../resource/exchange.js"></script>
 </body>
 </html>

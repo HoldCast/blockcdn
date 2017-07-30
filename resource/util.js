@@ -354,6 +354,10 @@ var util = {
 	 * 多语言(key,args...)
 	 */
 	getLan : function() {
+		//language = languageEn;
+		if (getCookie('bcdnLan') == 'en_US') {
+			language = languageEn;
+		}
 		if (arguments.length === 0) {
 			throw "key is undefined";
 		}

@@ -2,7 +2,7 @@
 <html lang="en" data-dpr="1">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>ICO锁定</title>
+    <title>用户注册</title>
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <link rel="icon" href="../resource/favicon.ico" type="image/x-icon"/>
@@ -73,10 +73,11 @@
 
         /*]]>*/
     </script>
+
     <link rel="stylesheet" href="../resource/user.css">
     <link rel="stylesheet" href="../resource/layer.css" id="layuicss-skinlayercss">
 </head>
-<body>
+<body style="padding-top: 55px;">
 <div class="pc_header" id="navigation">
     <div class="page_content nav-menu clearfix">
         <a href="http://new.blockcdn.org/" class="pc_logo am-fl" ><img src="../images/logo.png" alt=""></a>
@@ -86,97 +87,64 @@
             <li><a href="../index.html#book" class="scroll">白皮书</a></li>
             <li><a href="../index.html#mechin" class="scroll">矿机</a></li>
             <li><a href="../index.html#news" class="scroll">新闻报道</a></li>
-            <!--<li class="active-ck"><a href="javascript:userInfo()" >用户中心</a></li>-->
-            <li class="active" id="userInfo">
-                <a href="javascript:userInfo();" target="_blank"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>
+            <li class="active"><a href="javascript:userInfo()" >用户中心</a></li>
+            <li id="userInfo">
+                <!--<a href="javascript:void(0);" target="_blank"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>-->
                 <a href="javascript:logOut();" class="logOut">退出</a>
             </li>
-            <li><a href="javascript:lanChange('en_US')">English</a></li>
+            <li><a href="">English</a></li>
         </ul>
     </div>
 </div>
-<div class="container-full user-banner">
-    <div class="container flex-center">
-        <div class="user-top flex-center flex-direction">
-            <i class="user-face user-plist"></i>
-            <span class="user-balance flex-center">账户余额（<span id="iconType">BCDN</span>）</span>
-            <span class="user-balance-amount flex-center" id="iconNumber">0</span>
-            <span class="user-login-name flex-center">用户名:<span id="userName"></span></span>
+
+<div class="user-content container-full flex-center">
+    <div class="content-box">
+        <div class="logo-box  flex-center">
+            <img src="../resource/logo.png" height="31" width="90">
         </div>
+        <div class="submit-box">
+            <div>
+                <img src="../resource/user-email.png">
+                <input type="text" style="font-size:10px;" id="register-email" placeholder="请输入邮箱地址">
+            </div>
+            <!--<input id="register-imgcode" class="form-control login-ipt" type="text" placeholder="请输入图片验证码" th:placeholder="#{user.page13}"/>
+            <img class="btn btn-imgcode register-imgmsg" th:src="@{/servlet/ValidateImageServlet.html}"/>-->
+            <div>
+                <input type="text" id="register-email-code" placeholder="请输入验证码">
+                <button id="btn-sendemailcode" data-msgtype="203" data-tipsid="register-email"
+                        style="text-align: center"
+                        class="btn btn-sendemailcode register-msg">获取验证码
+                </button>
+            </div>
+            <div>
+                <img src="../resource/user-password.png">
+                <input type="password" id="register-password" placeholder="请输入密码">
+            </div>
+            <div>
+                <img src="../resource/user-password.png">
+                <input type="password" id="register-confirmpassword" placeholder="请输入确认密码">
+            </div>
+            <button id="register-submit" style="text-align: center">注册</button>
+            <input id="regType" type="hidden" value="1">
+        </div>
+        <a href="login.html" class="user-login flex-right" style="color: #FFFFff;">直接登录 &gt;&gt;</a>
     </div>
 </div>
-<div class="container-full user-split flex-center">
-    <div class="user-split-content flex-center">
-        <span class="user-lastTime flex-left">上次登录时间: <span id="createTime"></span></span>
-        <span class="user-lastTime flex-center" id="uid"></span>
-        <a class="user-logout flex-right" href="javascript:logOut()">退出登录 &gt;&gt;</a>
-    </div>
-</div>
-<div class="container user-content-box">
-    <div class="flex-left flex-direction user-left-menu">
-        <a href="assets.html"><img src="../resource/zichan.png" alt=""> 个人资产</a>
-        <a href="deposit.html"><img src="../resource/chongzhi.png" alt=""> 充值</a>
-        <a href="withdraw.html"><img src="../resource/tixian.png" alt=""> 提现</a>
-        <a href="exchange.html"><img src="../resource/duihuan.png" alt=""> BCDN兑换</a>
-        <a href="" class="active"><img src="../resource/lock.png" alt=""> ICO锁定</a>
-        <a href="modifyPassword.html"><img src="../resource/mima.png" alt=""> 修改密码</a>
-    </div>
-
-    <div class="flex-right  user-content-right flex-direction">
-        <div class="withdraw-nav flex-center">
-            <a  href="javascript:"  type="BTC" class="flex-center active withdraw-btn">
-                <img class="black" src="../resource/201706101049017_CI0f8.png">
-                <img class="white" src="../resource/201706101049017_CI0f81.png">
-                <span>BTC</span>
-            </a>
-            <a href="javascript:" type="ETH" class="flex-center withdraw-btn">
-                <img class="black" src="../resource/201706101048037_uvtGO.png">
-                <img class="white" src="../resource/201706101048037_uvtGO1.png">
-                <span>ETH</span>
-            </a>
-        </div>
-        <div class="flex-direction withdraw-box flex-center">
-            <div class="input-box flex-center">
-                <span>可用余额</span>
-                <input type="text" id="btcbalance" readonly="readonly" value="0.0000">
-            </div>
-            <div class="input-box flex-center">
-                <p style="margin-right: 0.5rem;">当前比值：1000*108%</p>
-                <p>最大可购：9087.89</p>
-            </div>
-            <div class="input-box flex-center">
-                <span>锁定数量</span>
-                <input type="text" id="txtFinancesCount">
-            </div>
-
-            <input type="button" id="pushSubmit" class="flex-center" value="提交">
-        </div>
-        <div class="withdraw-record">
-            <table>
-                <thead>
-                <tr class="flex-center">
-                    <th width="380"><i class="ico-record-icon user-plist time"></i><span>时间</span></th>
-                    <th width="160"><i class="ico-record-icon user-plist coin"></i><span>币种</span></th>
-                    <th width="160"><i class="ico-record-icon user-plist num"></i><span>支持数量</span></th>
-                    <th width="175"><i class="ico-record-icon user-plist num"></i><span>获得DHG</span></th>
-                    <!--<th width="100"><i class="ico-record-icon user-plist num"></i><span th:utext="#{user.ico.record.page5}">状态</span></th>-->
-                </tr>
-                </thead>
-                <tbody class="flex-direction">
-
-                </tbody>
-            </table>
-
-        </div>
-    </div>
-</div>
-<p class="bottom_text">Copyright ©2016 BlockCDN. All Rights Reserved. Legal</p>
+<p class="bottom_text"style="position: fixed;width: 100%;left: 0px;bottom: 0px;">Copyright ©2016 BlockCDN. All Rights Reserved. Legal</p>
 <script type="text/javascript" src="../resource/jquery.min.js"></script>
 <script type="text/javascript" src="../resource/layer.js"></script>
 <script type="text/javascript" src="../resource/util.js"></script>
 <script type="text/javascript" src="../resource/comm.js"></script>
 <script type="text/javascript" src="../resource/language_zh_CN.js"></script>
-<script type="text/javascript" src="../resource/login.js"></script>
+<script type="text/javascript" src="../resource/register.js"></script>
 <script type="text/javascript" src="../resource/msg.js"></script>
+<script>
+
+    var win_height  = parseInt($(window).height());
+    var page_he = win_height - 160;
+    $('#userContentBox').css({
+        'height':page_he
+    });
+</script>
 </body>
 </html>

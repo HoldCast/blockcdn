@@ -2,7 +2,7 @@
 <html lang="en" data-dpr="1">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>用户注册</title>
+    <title>Log in</title>
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <link rel="icon" href="../resource/favicon.ico" type="image/x-icon"/>
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../resource/comm.css">
     <link rel="stylesheet" href="../resource/layer.css">
     <link rel="stylesheet" href="../resource/user.css">
+
     <style>
         input, textarea, select, button {
             text-rendering: auto;
@@ -78,65 +79,60 @@
     <link rel="stylesheet" href="../resource/layer.css" id="layuicss-skinlayercss">
 </head>
 <body style="padding-top: 55px;">
+
 <div class="pc_header" id="navigation">
     <div class="page_content nav-menu clearfix">
         <a href="http://new.blockcdn.org/" class="pc_logo am-fl" ><img src="../images/logo.png" alt=""></a>
         <ul class="nav pc_hd_menus am-fr clearfix">
-            <li><a href="../index.html#index" class="scroll">首页</a></li>
-            <li><a href="../index.html#feature" class="scroll">投资</a></li>
-            <li><a href="../index.html#book" class="scroll">白皮书</a></li>
-            <li><a href="../index.html#mechin" class="scroll">矿机</a></li>
-            <li><a href="../index.html#news" class="scroll">新闻报道</a></li>
-            <li class="active"><a href="javascript:userInfo()" >用户中心</a></li>
+            <li><a href="../index.html#index" class="scroll">Home</a></li>
+            <li><a href="../index.html#feature" class="scroll">Investment</a></li>
+            <li><a href="../index.html#book" class="scroll">White Paper</a></li>
+            <li><a href="../index.html#mechin" class="scroll">Miner</a></li>
+            <li><a href="../index.html#news" class="scroll">News</a></li>
+            <li class="active"><a href="javascript:userInfo()" >User Center</a></li>
             <li id="userInfo">
-                <!--<a href="javascript:void(0);" target="_blank"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>-->
-                <a href="javascript:logOut();" class="logOut">退出</a>
+                <!--<a href="javascript:userInfo();" target="_blank"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>-->
+                <a href="javascript:logOut();" class="logOut">Log out</a>
             </li>
-            <li><a href="javascript:lanChange('en_US')">English</a></li>
+            <li><a href="javascript:lanChange('zh_CN');">中文</a></li>
         </ul>
     </div>
 </div>
-
-<div class="user-content container-full flex-center">
+<div id="userContentBox" class="user-content container-full flex-center">
     <div class="content-box">
         <div class="logo-box  flex-center">
             <img src="../resource/logo.png" height="31" width="90">
         </div>
         <div class="submit-box">
             <div>
-                <img src="../resource/user-email.png">
-                <input type="text" style="font-size:10px;" id="register-email" placeholder="请输入邮箱地址">
+                <img src="../resource/user-account.png">
+                <input type="text" id="login-account" placeholder="email address">
             </div>
-            <!--<input id="register-imgcode" class="form-control login-ipt" type="text" placeholder="请输入图片验证码" th:placeholder="#{user.page13}"/>
+            <!--<input id="register-imgcode" class="form-control login-ipt" type="text" placeholder="请输入图片验证码"/>
             <img class="btn btn-imgcode register-imgmsg" th:src="@{/servlet/ValidateImageServlet.html}"/>-->
-            <div>
-                <input type="text" id="register-email-code" placeholder="请输入验证码">
-                <button id="btn-sendemailcode" data-msgtype="203" data-tipsid="register-email"
-                        style="text-align: center"
-                        class="btn btn-sendemailcode register-msg">获取验证码
-                </button>
-            </div>
+
+            <!--<input type="text" id="register-email-code" placeholder="请输入验证码"/>
+            <button id="btn-sendemailcode" data-msgtype="203" data-tipsid="register-email" class="btn btn-sendemailcode register-msg">获取验证码</button>-->
             <div>
                 <img src="../resource/user-password.png">
-                <input type="password" id="register-password" placeholder="请输入密码">
+                <input type="password" id="login-password" placeholder="password">
             </div>
-            <div>
-                <img src="../resource/user-password.png">
-                <input type="password" id="register-confirmpassword" placeholder="请输入确认密码">
-            </div>
-            <button id="register-submit" style="text-align: center">注册</button>
-            <input id="regType" type="hidden" value="1">
+            <button id="login-submit" style="text-align: center">Log in</button>
+            <input id="forwardUrl" type="hidden" value="">
         </div>
-        <a href="login.html" class="user-login flex-right" style="color: #FFFFff;">直接登录 &gt;&gt;</a>
+        <div class="flex">
+            <a href="findback.html" class="user-login flex-left" style="color:#ffffff!important;">forget password?</a>
+            <a href="register.html" class="user-login flex-right" style="color:#ffffff!important;">sign up &gt;&gt;</a>
+        </div>
     </div>
 </div>
-<p class="bottom_text"style="position: fixed;width: 100%;left: 0px;bottom: 0px;">Copyright ©2016 BlockCDN. All Rights Reserved. Legal</p>
+<p class="bottom_text" style="position: fixed;width: 100%;left: 0px;bottom: 0px;">Copyright ©2016 BlockCDN. All Rights Reserved. Legal</p>
 <script type="text/javascript" src="../resource/jquery.min.js"></script>
 <script type="text/javascript" src="../resource/layer.js"></script>
 <script type="text/javascript" src="../resource/util.js"></script>
 <script type="text/javascript" src="../resource/comm.js"></script>
 <script type="text/javascript" src="../resource/language_zh_CN.js"></script>
-<script type="text/javascript" src="../resource/register.js"></script>
+<script type="text/javascript" src="../resource/login.js"></script>
 <script type="text/javascript" src="../resource/msg.js"></script>
 <script>
 

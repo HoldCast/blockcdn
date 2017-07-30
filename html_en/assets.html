@@ -2,7 +2,7 @@
 <html lang="en" data-dpr="1">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>ICO锁定</title>
+    <title>Assets</title>
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <link rel="icon" href="../resource/favicon.ico" type="image/x-icon"/>
@@ -31,6 +31,30 @@
         input, textarea, select, button, meter, progress {
             -webkit-writing-mode: horizontal-tb;
         }
+        .ico-switch{
+            height: 2em;
+            line-height:2em;
+        }
+        .ico-switch input{
+            width: 1.2em !important;
+            height: 1.2em !important;
+            display: inline-block !important;
+        }
+        .ico-switch span{
+            display: inline-block !important;
+            height: 1.2em !important;
+            line-height: 1.2em !important;
+        }
+
+        .td-btn{
+            border: 0.01rem solid #aaa;
+            padding: 0.02rem 0.08rem;
+            border-radius: 0.03rem;
+            cursor: pointer;
+            font-weight: normal;
+            font-size: 0.15rem;
+        }
+
     </style>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
     <script type="application/javascript">
@@ -77,21 +101,22 @@
     <link rel="stylesheet" href="../resource/layer.css" id="layuicss-skinlayercss">
 </head>
 <body>
+<!--首页 Home 投资 Investment白皮书  White Paper矿机Miner 新闻报道 News  用户中心User Center-->
 <div class="pc_header" id="navigation">
     <div class="page_content nav-menu clearfix">
         <a href="http://new.blockcdn.org/" class="pc_logo am-fl" ><img src="../images/logo.png" alt=""></a>
         <ul class="nav pc_hd_menus am-fr clearfix">
-            <li><a href="../index.html#index" class="scroll">首页</a></li>
-            <li><a href="../index.html#feature" class="scroll">投资</a></li>
-            <li><a href="../index.html#book" class="scroll">白皮书</a></li>
-            <li><a href="../index.html#mechin" class="scroll">矿机</a></li>
-            <li><a href="../index.html#news" class="scroll">新闻报道</a></li>
-            <!--<li class="active-ck"><a href="javascript:userInfo()" >用户中心</a></li>-->
+            <li><a href="../index.html#index" class="scroll">Home</a></li>
+            <li><a href="../index.html#feature" class="scroll">Investment</a></li>
+            <li><a href="../index.html#book" class="scroll">White Paper</a></li>
+            <li><a href="../index.html#mechin" class="scroll">Miner</a></li>
+            <li><a href="../index.html#news" class="scroll">News</a></li>
+            <!--<li class="active-ck"><a href="javascript:userInfo()" >User Center</a></li>-->
             <li class="active" id="userInfo">
                 <a href="javascript:userInfo();" target="_blank"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>
-                <a href="javascript:logOut();" class="logOut">退出</a>
+                <a href="javascript:logOut();" class="logOut">Log out</a>
             </li>
-            <li><a href="javascript:lanChange('en_US')">English</a></li>
+            <li><a href="javascript:lanChange('zh_CN');">中文</a></li>
         </ul>
     </div>
 </div>
@@ -99,74 +124,77 @@
     <div class="container flex-center">
         <div class="user-top flex-center flex-direction">
             <i class="user-face user-plist"></i>
-            <span class="user-balance flex-center">账户余额（<span id="iconType">BCDN</span>）</span>
+            <span class="user-balance flex-center">Account Balances（<span id="iconType">BCDN</span>）</span>
             <span class="user-balance-amount flex-center" id="iconNumber">0</span>
-            <span class="user-login-name flex-center">用户名:<span id="userName"></span></span>
+            <span class="user-login-name flex-center">User Name:<span id="userName"></span></span>
         </div>
     </div>
 </div>
 <div class="container-full user-split flex-center">
     <div class="user-split-content flex-center">
-        <span class="user-lastTime flex-left">上次登录时间: <span id="createTime"></span></span>
+        <span class="user-lastTime flex-left">last login time: <span id="createTime"></span></span>
         <span class="user-lastTime flex-center" id="uid"></span>
-        <a class="user-logout flex-right" href="javascript:logOut()">退出登录 &gt;&gt;</a>
+        <a class="user-logout flex-right" href="javascript:logOut()">log out &gt;&gt;</a>
     </div>
 </div>
 <div class="container user-content-box">
     <div class="flex-left flex-direction user-left-menu">
-        <a href="assets.html"><img src="../resource/zichan.png" alt=""> 个人资产</a>
-        <a href="deposit.html"><img src="../resource/chongzhi.png" alt=""> 充值</a>
-        <a href="withdraw.html"><img src="../resource/tixian.png" alt=""> 提现</a>
-        <a href="exchange.html"><img src="../resource/duihuan.png" alt=""> BCDN兑换</a>
-        <a href="" class="active"><img src="../resource/lock.png" alt=""> ICO锁定</a>
-        <a href="modifyPassword.html"><img src="../resource/mima.png" alt=""> 修改密码</a>
+        <a href="assets.html" class="active"><img src="../resource/zichan.png" alt=""> personal assets</a>
+        <!--<a href="deposit.html"><img src="../resource/chongzhi.png" alt=""> deposit</a>-->
+        <a href="javascript:disableHandle();"><img src="../resource/chongzhi.png" alt=""> deposit</a>
+        <!--<a href="withdraw.html"><img src="../resource/tixian.png" alt=""> withdraw</a>-->
+        <a href="javascript:disableHandle();"><img src="../resource/tixian.png" alt=""> withdraw</a>
+        <a href="exchange.html"><img src="../resource/duihuan.png" alt=""> exchange BCDN</a>
+        <a href=""><img src="../resource/lock.png" alt=""> lock ICO</a>
+        <a href="modifyPassword.html"><img src="../resource/mima.png" alt=""> change your password</a>
     </div>
 
-    <div class="flex-right  user-content-right flex-direction">
-        <div class="withdraw-nav flex-center">
-            <a  href="javascript:"  type="BTC" class="flex-center active withdraw-btn">
-                <img class="black" src="../resource/201706101049017_CI0f8.png">
-                <img class="white" src="../resource/201706101049017_CI0f81.png">
-                <span>BTC</span>
-            </a>
-            <a href="javascript:" type="ETH" class="flex-center withdraw-btn">
-                <img class="black" src="../resource/201706101048037_uvtGO.png">
-                <img class="white" src="../resource/201706101048037_uvtGO1.png">
-                <span>ETH</span>
-            </a>
-        </div>
-        <div class="flex-direction withdraw-box flex-center">
-            <div class="input-box flex-center">
-                <span>可用余额</span>
-                <input type="text" id="btcbalance" readonly="readonly" value="0.0000">
-            </div>
-            <div class="input-box flex-center">
-                <p style="margin-right: 0.5rem;">当前比值：1000*108%</p>
-                <p>最大可购：9087.89</p>
-            </div>
-            <div class="input-box flex-center">
-                <span>锁定数量</span>
-                <input type="text" id="txtFinancesCount">
-            </div>
-
-            <input type="button" id="pushSubmit" class="flex-center" value="提交">
-        </div>
-        <div class="withdraw-record">
+    <div class="user-content-right">
+        <div>
             <table>
                 <thead>
                 <tr class="flex-center">
-                    <th width="380"><i class="ico-record-icon user-plist time"></i><span>时间</span></th>
-                    <th width="160"><i class="ico-record-icon user-plist coin"></i><span>币种</span></th>
-                    <th width="160"><i class="ico-record-icon user-plist num"></i><span>支持数量</span></th>
-                    <th width="175"><i class="ico-record-icon user-plist num"></i><span>获得DHG</span></th>
+                    <th width="150"><i class="ico-record-icon user-plist coin"></i><span>currency name</span></th>
+                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>available balance</span></th>
+                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>frozen capital</span></th>
+                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>total</span></th>
+                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>operation</span></th>
                     <!--<th width="100"><i class="ico-record-icon user-plist num"></i><span th:utext="#{user.ico.record.page5}">状态</span></th>-->
                 </tr>
                 </thead>
-                <tbody class="flex-direction">
-
+                <tbody class="flex-direction" id="assetsTable">
+                <tr>
+                    <th width="150">BTC</th>
+                    <th width="180" id="btcKy">0</th>
+                    <th width="180" id="btcDj">0</th>
+                    <th width="180" id="btcZl">0</th>
+                    <th width="180">
+                        <span class="td-btn withdraw-btn" fid="1">withdraw</span>
+                        <span class="td-btn deposit-btn" fid="1">deposit</span>
+                    </th>
+                </tr>
+                <tr>
+                    <th width="150">ETH</th>
+                    <th width="180" id="ethKy">0</th>
+                    <th width="180" id="ethDj">0</th>
+                    <th width="180" id="ethZl">0</th>
+                    <th width="180">
+                        <span class="td-btn withdraw-btn" fid="2">withdraw</span>
+                        <span class="td-btn deposit-btn" fid="2">deposit</span>
+                    </th>
+                </tr>
+                <tr>
+                    <th width="150">BCDN</th>
+                    <th width="180" id="bcdnKy">0</th>
+                    <th width="180" id="bcdnDj">0</th>
+                    <th width="180" id="bcdnZl">0</th>
+                    <th width="180">
+                        <span class="td-btn withdraw-btn" fid="3">withdraw</span>
+                        <span class="td-btn deposit-btn" fid="3">exchange</span>
+                    </th>
+                </tr>
                 </tbody>
             </table>
-
         </div>
     </div>
 </div>
