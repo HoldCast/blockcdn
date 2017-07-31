@@ -148,24 +148,28 @@ function getQueryDraw(type) {
         success: function (json) {
             console.log('提现记录:', type, json);
             //BTC 提现手续费0.0005BTC/笔，ETH提现0.005ETH/笔，BCDN提现5BCDN/笔。
+            var dw = '笔';
+            if (getCookie('bcdnLan') == 'en_US') {
+                dw = 'sum';
+            }
             var withdrawAddress = '';
             var sxf = 0;
             var sxfDw = '';
             if (type == '1'){
                 withdrawAddress = 'https://blockchain.info/address/';
                 sxf = 0.0005;
-                sxfDw = ' BTC/笔';
+                sxfDw = ' BTC/' + dw;
 
             }
             else if (type == '2'){
                 withdrawAddress = 'https://etherscan.io/address/';
                 sxf = 0.005;
-                sxfDw = ' ETH/笔';
+                sxfDw = ' ETH' + dw;
             }
             else if (type == '3'){
                 withdrawAddress = 'https://etherscan.io/token/0x1e797ce986c3cff4472f7d38d5c4aba55dfefe40?a=';
                 sxf = 5;
-                sxfDw = ' BCDN/笔';
+                sxfDw = ' BCDN' + dw;
             }
             if (json.status == 0) {
                 /*

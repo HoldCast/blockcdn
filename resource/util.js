@@ -355,6 +355,7 @@ var util = {
 	 */
 	getLan : function() {
 		//language = languageEn;
+		console.log(getCookie('bcdnLan'));
 		if (getCookie('bcdnLan') == 'en_US') {
 			language = languageEn;
 		}

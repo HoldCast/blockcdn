@@ -1,13 +1,6 @@
-$(function(){
-    /*var bcdnLan =  getCookie('bcdnLan');
-    var lanStatus =  getCookie('lanStatus');
-    if (bcdnLan == 'en_US'){
-        location.href = 'index_en.html';
-        setCookie('lanStatus', 'en_US', 300);
-    }*/
-});
-
-
+if(!window.localStorage){
+    alert("浏览器版本过低!");
+}
 //获取cookie值
 function getCookie(name){
     try{
@@ -25,11 +18,11 @@ function getCookie(name){
 function setCookie(c_name,value,expiredays){
     var exdate=new Date();
     exdate.setDate(exdate.getDate()+expiredays);
-    document.cookie=c_name+ "=" +escape(value)+	((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+    document.cookie=c_name+ "=" +encodeURIComponent(value)+	((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
 }
 
 function lanChange(type){
-    var homeUrl = 'index.html';
+    var homeUrl = '';
     if(type == 'zh_CN'){
         homeUrl = 'index.html';
     }
@@ -37,6 +30,4 @@ function lanChange(type){
         homeUrl = 'index_en.html';
     }
     location.href = homeUrl;
-    setCookie('bcdnLan', type, 300)
-
 }

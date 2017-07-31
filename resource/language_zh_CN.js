@@ -1,4 +1,7 @@
 var language = {
+    "add1": "请输入兑换码",
+    "add2": "兑换成功",
+    "add3": "由于BTC近期存在分叉风险，暂停充值提现!",
     "comm.tips.11" : "请输入密码！",
     "comm.tips.12" : "密码长度不能小于6！",
     "comm.tips.13" : "密码格式错误，密码必须大于等于6位且包含字母和数字！",
@@ -55,6 +58,9 @@ var language = {
     "ico.page.state3":"众筹结束"
 }
 var languageEn = {
+    "add1": "Please enter the exchange code",
+    "add2": "success",
+    "add3": "As the bifurcation BTC recently, suspend top-up withdrawal",
     "comm.tips.11" : "Please enter the password!",
     "comm.tips.12" : "The password can’t be less than 6 characters!",
     "comm.tips.13" : "Incorrect password format，the password should be more than 6 characters and include letters and numbers!",

@@ -2,7 +2,7 @@
 <html lang="en" data-dpr="1">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>找回密码</title>
+    <title>Find back</title>
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <link rel="icon" href="../resource/favicon.ico" type="image/x-icon"/>
@@ -82,17 +82,17 @@
     <div class="page_content nav-menu clearfix">
         <a href="http://new.blockcdn.org/" class="pc_logo am-fl" ><img src="../images/logo.png" alt=""></a>
         <ul class="nav pc_hd_menus am-fr clearfix">
-            <li><a href="../index.html#index" class="scroll">首页</a></li>
-            <li><a href="../index.html#feature" class="scroll">投资</a></li>
-            <li><a href="../index.html#book" class="scroll">白皮书</a></li>
-            <li><a href="../index.html#mechin" class="scroll">矿机</a></li>
-            <li><a href="../index.html#news" class="scroll">新闻报道</a></li>
-            <li class="active"><a href="login.html" >用户中心</a></li>
-            <li id="userInfo">
-                <!--<a href="javascript:void(0);" target="_blank"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>-->
-                <a href="javascript:logOut();" class="logOut">退出</a>
+            <li><a href="../index_en.html#index" class="scroll">Home</a></li>
+            <li><a href="../index_en.html#feature" class="scroll">Investment</a></li>
+            <li><a href="../index_en.html#book" class="scroll">White Paper</a></li>
+            <li><a href="../index_en.html#mechin" class="scroll">Miner</a></li>
+            <li><a href="../index_en.html#news" class="scroll">News</a></li>
+            <!--<li class="active-ck"><a href="javascript:userInfo()" >User Center</a></li>-->
+            <li class="active" id="userInfo">
+                <a href="javascript:userInfo();" target="_blank"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>
+                <a href="javascript:logOut();" class="logOut">Log out</a>
             </li>
-            <li><a href="">English</a></li>
+            <li><a href="javascript:lanChange('zh_CN');">中文</a></li>
         </ul>
     </div>
 </div>
@@ -104,19 +104,19 @@
         </div>
         <div class="submit-box">
             <div class="div-email">
-                <input type="text" class="input-email" id="email" placeholder="请输入邮箱地址">
-                <button id="btn-sendemailcode" data-msgtype="202" data-tipsid="email" class="btn btn-sendemailcode sendemailcode">获取验证码</button>
+                <input type="text" class="input-email" id="email" placeholder="email">
+                <button id="btn-sendemailcode" data-msgtype="202" data-tipsid="email" class="btn btn-sendemailcode sendemailcode">get Vcode</button>
             </div>
             <div>
-                <input type="text" id="emailCode" placeholder="请邮箱验证码">
+                <input type="text" id="emailCode" placeholder="vcode">
             </div>
             <div>
-                <input type="password" id="password" placeholder="请输入密码">
+                <input type="password" id="password" placeholder="password">
             </div>
             <div>
-                <input type="password" id="confirmpassword" placeholder="请输入确认密码">
+                <input type="password" id="confirmpassword" placeholder="password confirm">
             </div>
-            <button id="btnRestPassword">确认修改</button>
+            <button id="btnRestPassword">confirm</button>
             <input id="regType" type="hidden" value="1">
         </div>
     </div>

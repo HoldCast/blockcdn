@@ -203,7 +203,8 @@ function userInfo(){
 }
 
 function disableHandle(){
-    util.layerAlert("", '由于BTC近期存在分叉风险，暂停充值提现!', 2);
+    //util.layerAlert("", '由于BTC近期存在分叉风险，暂停充值提现!', 2);
+    util.layerAlert("", util.getLan("add3"), 2);
     return false;
 }
 
@@ -228,7 +229,7 @@ function setCookie(c_name,value,expiredays){
 }
 
 function lanChange(type){
-    var homeUrl = '../index.html';
+    var homeUrl = '';
     if(type == 'zh_CN'){
         homeUrl = '../index.html';
     }
@@ -236,6 +237,4 @@ function lanChange(type){
         homeUrl = '../index_en.html';
     }
     location.href = homeUrl;
-    setCookie('bcdnLan', type, 300)
-
 }

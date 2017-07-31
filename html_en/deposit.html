@@ -2,7 +2,7 @@
 <html lang="en" data-dpr="1">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>充值</title>
+    <title>Deposit</title>
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <link rel="icon" href="../resource/favicon.ico" type="image/x-icon"/>
@@ -82,17 +82,17 @@
     <div class="page_content nav-menu clearfix">
         <a href="http://new.blockcdn.org/" class="pc_logo am-fl" ><img src="../images/logo.png" alt=""></a>
         <ul class="nav pc_hd_menus am-fr clearfix">
-            <li><a href="../index.html#index" class="scroll">首页</a></li>
-            <li><a href="../index.html#feature" class="scroll">投资</a></li>
-            <li><a href="../index.html#book" class="scroll">白皮书</a></li>
-            <li><a href="../index.html#mechin" class="scroll">矿机</a></li>
-            <li><a href="../index.html#news" class="scroll">新闻报道</a></li>
-            <!--<li class="active-ck"><a href="javascript:userInfo()" >用户中心</a></li>-->
+            <li><a href="../index_en.html#index" class="scroll">Home</a></li>
+            <li><a href="../index_en.html#feature" class="scroll">Investment</a></li>
+            <li><a href="../index_en.html#book" class="scroll">White Paper</a></li>
+            <li><a href="../index_en.html#mechin" class="scroll">Miner</a></li>
+            <li><a href="../index_en.html#news" class="scroll">News</a></li>
+            <!--<li class="active-ck"><a href="javascript:userInfo()" >User Center</a></li>-->
             <li class="active" id="userInfo">
                 <a href="javascript:userInfo();" target="_blank"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>
-                <a href="javascript:logOut();" class="logOut">退出</a>
+                <a href="javascript:logOut();" class="logOut">Log out</a>
             </li>
-            <li><a href="">English</a></li>
+            <li><a href="javascript:lanChange('zh_CN');">中文</a></li>
         </ul>
     </div>
 </div>
@@ -100,30 +100,30 @@
     <div class="container flex-center">
         <div class="user-top flex-center flex-direction">
             <i class="user-face user-plist"></i>
-            <span class="user-balance flex-center">账户余额（<span id="iconType">BCDN</span>）</span>
+            <span class="user-balance flex-center">Account Balances（<span id="iconType">BCDN</span>）</span>
             <span class="user-balance-amount flex-center" id="iconNumber">0</span>
-            <span class="user-login-name flex-center">用户名:<span id="userName"></span></span>
+            <span class="user-login-name flex-center">User Name:<span id="userName"></span></span>
         </div>
     </div>
 </div>
 <div class="container-full user-split flex-center">
     <div class="user-split-content flex-center">
-        <span class="user-lastTime flex-left">上次登录时间: <span id="createTime"></span></span>
+        <span class="user-lastTime flex-left">last login time: <span id="createTime"></span></span>
         <span class="user-lastTime flex-center" id="uid"></span>
-        <a class="user-logout flex-right" href="javascript:logOut()">退出登录 &gt;&gt;</a>
+        <a class="user-logout flex-right" href="javascript:logOut()">log out &gt;&gt;</a>
     </div>
 </div>
 <div class="container user-content-box">
 
     <div class="flex-left flex-direction user-left-menu">
-        <a href="assets.html"><img src="../resource/zichan.png" alt=""> 个人资产</a>
-        <!--<a href="deposit.html"  class="active"><img src="../resource/chongzhi.png" alt=""> 充值</a>-->
-        <a href="javascript:disableHandle();"><img src="../resource/chongzhi.png" alt=""> 充值</a>
-        <!--<a href="withdraw.html"><img src="../resource/tixian.png" alt=""> 提现</a>-->
-        <a href="javascript:disableHandle();"><img src="../resource/tixian.png" alt=""> 提现</a>
-        <a href="exchange.html"><img src="../resource/duihuan.png" alt=""> BCDN兑换</a>
-        <a href=""><img src="../resource/lock.png" alt=""> ICO锁定</a>
-        <a href="modifyPassword.html"><img src="../resource/mima.png" alt=""> 修改密码</a>
+        <a href="assets.html"><img src="../resource/zichan.png" alt=""> personal assets</a>
+        <!--<a href="deposit.html"><img src="../resource/chongzhi.png" alt=""> deposit</a>-->
+        <a href="javascript:disableHandle();" class="active"><img src="../resource/chongzhi.png" alt=""> deposit</a>
+        <!--<a href="withdraw.html"><img src="../resource/tixian.png" alt=""> withdraw</a>-->
+        <a href="javascript:disableHandle();"><img src="../resource/tixian.png" alt=""> withdraw</a>
+        <a href="exchange.html"><img src="../resource/duihuan.png" alt=""> exchange BCDN</a>
+        <a href=""><img src="../resource/lock.png" alt=""> lock ICO</a>
+        <a href="modifyPassword.html"><img src="../resource/mima.png" alt=""> change your password</a>
     </div>
 
     <div class="recharge-box">
@@ -131,14 +131,14 @@
             <a href="javascript:" type="BTC" id="depositBtn1" class="flex-center active deposit-btn">
                 <img class="black" src="../resource/201706101049017_CI0f8.png">
                 <img class="white" src="../resource/201706101049017_CI0f81.png">
-                <span>BTC充值</span>
+                <span>exchange BTC</span>
             </a>
             <!--<a href="http://dhgchain.com/deposit/coin_deposit.html?symbol=2" class="flex-center  endLine  ">
                 <img src="./deposit_files/201706101049002_dKxmV.png"><span>DHG充值</span>
             </a>-->
             <a href="javascript:;" type="ETH" id="depositBtn2" class="flex-center deposit-btn">
                 <img class="black" src="../resource/201706101048037_uvtGO.png">
-                <img class="white" src="../resource/201706101048037_uvtGO1.png"><span>ETH充值</span>
+                <img class="white" src="../resource/201706101048037_uvtGO1.png"><span>exchange ETH</span>
             </a>
             <!--<a href="/" class="flex-center endLine">BTC充值</a>
             <a href="/" class="flex-center endLine">BTC充值</a>
@@ -152,7 +152,7 @@
             </div>
             <p class="hint flex-center">
                 <i class="warning-icon"></i>
-                <span>这是您的专属BTC充值地址</span>
+                <span>BTC address</span>
             </p>
             <p class="recharge-address flex-center" id="BTCStr"></p>
         </div>
@@ -165,7 +165,7 @@
             </div>
             <p class="hint flex-center">
                 <i class="warning-icon"></i>
-                <span>这是您的专属ETH充值地址</span>
+                <span>ETH address</span>
             </p>
             <p class="recharge-address flex-center" id="ETHStr"></p>
         </div>
@@ -173,19 +173,13 @@
             <table>
                 <thead>
                 <tr class="flex-center">
-                    <th width="220"><i class="financial-record user-plist time"></i><span>时间</span></th>
-                    <th width="200"><i class="financial-record user-plist num"></i><span>充值数量</span></th>
-                    <th width="220"><i class="financial-record user-plist num"></i><span>地址</span></th>
-                    <th width="212"><i class="financial-record user-plist num"></i><span>状态</span></th>
+                    <th width="220"><i class="financial-record user-plist time"></i><span>time</span></th>
+                    <th width="200"><i class="financial-record user-plist num"></i><span>count</span></th>
+                    <th width="220"><i class="financial-record user-plist num"></i><span>address</span></th>
+                    <th width="212"><i class="financial-record user-plist num"></i><span>status</span></th>
                 </tr>
                 </thead>
                 <tbody class="flex-direction" id="financialRecord">
-                <!--<tr>
-                    <th width="220">2017-07-16 15:49:05</th>
-                    <th width="200">15</th>
-                    <th width="220"><p>0xbfd7615772ffcf24f12982aa503a673228072ae7</p></th>
-                    <th width="212">充值成功</th>
-                </tr>-->
                 </tbody>
             </table>
         </div>

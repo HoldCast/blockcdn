@@ -2,7 +2,7 @@ var push = {
     submit: function (ele) {
         var bcdnCoupon = $("#bcdnCoupon").val();
         if (bcdnCoupon == "") {
-            util.layerAlert("", "请输入兑换码", 2);
+            util.layerAlert("", util.getLan("add1"), 2);
             return;
         }
         var param = {
@@ -12,7 +12,7 @@ var push = {
         var callback = function (result) {
             console.log('兑换码:', result);
             if (result.status == 0) {
-                util.layerAlert("", '兑换成功', 1, function () {
+                util.layerAlert("", util.getLan("add2"), 1, function () {
                     getCoupon(); //获取兑换信息
                     getBalance();//获取资产信息
                 });
