@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" data-dpr="1">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Find back</title>
-    <meta name="Keywords" content="">
-    <meta name="Description" content="">
+
     <link rel="icon" href="../resource/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="../css/amazeui.min.css" type="text/css">
     <link rel="stylesheet" href="../css/animate.min.css" type="text/css">
@@ -32,7 +30,7 @@
             -webkit-writing-mode: horizontal-tb;
         }
     </style>
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <!--<meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">-->
     <script type="application/javascript">
         /*<![CDATA[*/
         var remPercent = 0;
@@ -50,8 +48,8 @@
             }
             var metaEl = doc.createElement('meta');
             metaEl.name = 'viewport';
-            metaEl.content = 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale;
-            docEl.firstElementChild.appendChild(metaEl);
+//            metaEl.content = 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale;
+//            docEl.firstElementChild.appendChild(metaEl);
 
             var recalc = function () {
                 var width = docEl.clientWidth;
@@ -97,6 +95,40 @@
     </div>
 </div>
 
+
+<div class="mobile_header">
+    <div class="page_content clearfix">
+        <a href="http://new.blockcdn.org/" class="pc_logo am-fl"><img src="../images/logo.png" alt=""></a>
+        <a class="header-back" id="off-canvas"><i><img src="../images/menu.png" alt=""></i></a>
+    </div>
+</div>
+<div id="offcanvas" class="am-offcanvas_box">
+    <div class="canvas_bg"></div>
+    <div class="am-offcanvas-bar_box">
+        <div class="am-offcanvas-content">
+            <i class="canvas-close"><img src="../images/close.png" alt=""></i>
+            <ul class="canvas-menu">
+                <li><a href="http://new.blockcdn.org/" data-id="home"><span>Home</span><i class="next"><img
+                        src="../images/next-btns.png" alt=""></i></a></li>
+                <li><a href="../index.html#feature" data-id="service"><span>Investment</span><i class="next"><img src="../images/next-btns.png"
+                                                                                                                  alt=""></i></a></li>
+                <li><a href="../index.html#book" data-id="anli"><span>White Paper</span><i class="next"><img src="../images/next-btns.png"
+                                                                                                             alt=""></i></a></li>
+                <li><a href="../index.html#mechin" data-id="clients"><span>Miner</span><i class="next"><img src="../images/next-btns.png"
+                                                                                                            alt=""></i></a></li>
+                <li><a href="../index.html#news" data-id="clients"><span>News</span><i class="next"><img src="../images/next-btns.png"
+                                                                                                         alt=""></i></a></li>
+                <li><a href="http://member.blockcdn.org/user/html/login.html" data-id="clients" target="_blank"><span>User Center</span><i
+                        class="next"><img src="../images/next-btns.png" alt=""></i></a></li>
+                <li><a href="" data-id="clients"><span>中文</span><i class="next"><img src="../images/next-btns.png"
+                                                                                     alt=""></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="user-content findbackbg container-full flex-center">
     <div class="content-box">
         <div class="logo-box flex-center">
@@ -135,6 +167,17 @@
     var page_he = win_height - 160;
     $('#userContentBox').css({
         'height':page_he
+    });
+
+    //    <!--手机侧边栏-->
+    $('#off-canvas').click(function () {
+        $('#offcanvas').toggleClass('show');
+    });
+    $('.canvas-close').click(function () {
+        $('#offcanvas').toggleClass('show');
+    });
+    $('.canvas_bg').click(function () {
+        $('#offcanvas').toggleClass('show');
     });
 </script>
 </body>
