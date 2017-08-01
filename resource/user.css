@@ -709,9 +709,9 @@
     .user-login-name{height: auto;margin: 3px 0px;font-size: 14px;}
     .user-split{height: auto;width: 100%;}
     .user-split-content{height: auto;width: 100%;}
-    .user-lastTime{height: auto;width: 100%;display: block;text-align: left;padding: 10px 20px;}
+    .user-lastTime{height: auto;width: 100%;display: block;text-align: left;padding: 10px 20px;font-size: 12px;}
     .user-lastTime.flex-center{display: none}
-    .user-logout{height: auto;width: 100%;display: block;text-align: right;padding: 10px 20px;}
+    .user-logout{height: auto;width: 100%;display: block;text-align: right;padding: 10px 20px;font-size: 12px;}
     .user-content-box{width: 100%!important;height: auto;display: block;}
     .user-left-menu{width: 100%!important;height: 80px;display: block;}
     .user-content-right{width: 100%!important;height: auto;display: block;}
@@ -731,11 +731,14 @@
     .td-btn{font-size: 12px;}
     .user-content-right table tbody{width: 100%;display: table-footer-group}
 
-    .modify-password-box input{width: 80%;height: 30px;line-height: 30px;margin: 10px 0px;}
+    .modify-password-box input{width: 80%;height: 30px;line-height: 30px;margin: 10px 0px;font-size: 14px!important;}
+    .modify-password-box input[type="button"]{font-size: 14px;display: block;margin: 15px auto;text-align: center;}
+    .user-content .content-box .user-login{font-size: 14px!important;}
 
     .withdraw-box .input-box{width: 80%;height: 30px;}
-    .withdraw-box .input-box span{line-height: 30px;top: 0px;}
-    .withdraw-box input{width: 200px;height: 30px;line-height: 30px;}
+    .withdraw-box .input-box span{line-height: 30px;top: 0px;font-size: 14px;}
+    .withdraw-box input{width: 200px;height: 30px;line-height: 30px;font-size: 14px;}
+    .withdraw-box input[type="button"]{font-size: 14px;display: block;margin: 15px auto;text-align: center;}
 
     .withdraw-record table thead{height: 30px!important;display: table-header-group}
     .withdraw-record table tbody{height: 30px!important;display: table-footer-group}
@@ -750,9 +753,12 @@
 
     .withdraw-nav{height: 40px;}
     .withdraw-nav a img{width: 20px;height: auto;margin-right: 3px;}
-    .withdraw-box input[type="text"]{margin-left: 70px;width: 100%;}
+    .withdraw-box input[type="text"]{margin-left: 70px;width: 90%!important;font-size: 14px!important;}
+    input[type="text"]{width: 100%;font-size: 14px!important;}
     #btnSendEmailCode{width: auto;height: 30px;line-height: 30px;border: 1px solid #46466b;padding: 0px 5px;right: 0px;}
-    .mobile_only{width: 80%;justify-content: left;}
+    .mobile_only{width: 80%;justify-content: left;margin: 15px 0px;display: block}
+    .mobile_only em{font-size: 14px!important;}
+    .mobile_only span{font-size: 14px!important;}
     .withdraw-box .input-box{margin-bottom: 15px;}
     .ico-record-icon.user-plist.time{display: none;}
 

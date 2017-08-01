@@ -333,7 +333,7 @@ em,i{font-style: normal;}
     .contact_list>li{margin-bottom: 0px;width: 25%;margin-right: 0px;padding: 2px;}
     .bottom_text{font-size: 12px;}
     .bottom_logo{padding: 60px 0px;}
-    .contact_list{margin-top: 20px;}
+    .contact_list{margin-top: 20px;width: 100%;}
     .contact_box{padding: 60px 0px;}
     .team_box{padding: 60px 0px;}
     .load_more{margin: 10px auto;}
@@ -382,12 +382,12 @@ em,i{font-style: normal;}
     .inner_page{padding-top: 60px;}
     .inner_page .touzi-btn{width: 100%;}
     .investment_table>.table_box{margin-bottom: 0px;}
-    .email_contact{padding: 80px 0px;}
-    .feature_come{padding-top: 80px;}
+    .email_contact{padding: 40px 0px;}
+    .feature_come{padding-top: 50px;}
     .inner_page .touzi_type>img{margin-left: 110px;}
     .inner_page>img{margin-bottom: 0px;}
     html,body{width: 100%;overflow-x: hidden}
-    iframe{width: 100%!important;height: auto!important;;}
+    iframe{width: 100%!important;height: 250px!important;;}
 }
 
 @media screen and (min-width:900px){
