@@ -732,11 +732,15 @@
                 window.onmousewheel = document.onmousewheel = scrollFunc;//IE/Opera/Chrome
 
 
+
 //    <!--手机侧边栏-->
                 $('#off-canvas').click(function () {
                     $('#offcanvas').toggleClass('show');
                 });
                 $('.canvas-close').click(function () {
+                    $('#offcanvas').toggleClass('show');
+                });
+                $('.canvas_bg').click(function () {
                     $('#offcanvas').toggleClass('show');
                 });
 
