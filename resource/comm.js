@@ -12,6 +12,11 @@ var withdrawUrl = "http://211.149.175.73:8089/money/draw";// 用户提现
 var cancelDrawUrl = "http://211.149.175.73:8089/money/cancelDraw";// 用户取消提现
 var queryDrawUrl = "http://211.149.175.73:8089/money/queryDrawInfoByUser";// 前台根据用户查看提现记录
 var queryChargeUrl = "http://211.149.175.73:8089/money/queryRechargeInfoByUser";// 前台根据用户查看充值充值信息
+
+//购币, ico锁定
+var moneyRateUrl = "http://211.149.175.73:8089/moneyRate/getNowMoneyRate";// 前台根据货币类型查看当前汇率信息
+var moneyBuyUrl = "http://211.149.175.73:8089/moneyRate/buy";// 前台根据货币类型查看当前汇率信息
+var queryAllBuyUrl = "http://211.149.175.73:8089/moneyRate/queryAllUserBuyHistory";// 后台查看用户兑换信息
 var btcCountYe = 0, ethCountYe = 0, bcdnCountYe = 0;
 var btcCountDj = 0, ethCountDj = 0, bcdnCountDj = 0;
 var btcCountZl = 0, ethCountZl = 0, bcdnCountZl = 0;
@@ -159,7 +164,8 @@ function getBalance() {
                 }
             }
             else if (json.status == 431 || json.status == 402 || json.status == 430) {
-                util.layerAlert("", json.message, 2, function () {
+                console.log('message:', json.message);
+                util.layerAlert("", util.getLan("add4"), 2, function () {
                     localStorage.clear();
                     location.href = 'login.html';
                 });

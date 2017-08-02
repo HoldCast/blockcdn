@@ -165,18 +165,18 @@
         <a href="deposit.html"><img src="../resource/chongzhi.png" alt=""> 充值</a>
         <a href="withdraw.html"><img src="../resource/tixian.png" alt=""> 提现</a>
         <a href="exchange.html"><img src="../resource/duihuan.png" alt=""> BCDN兑换</a>
-        <a href="" class="active"><img src="../resource/lock.png" alt=""> ICO锁定</a>
+        <a href="ico.html" class="active"><img src="../resource/lock.png" alt=""> ICO锁定</a>
         <a href="modifyPassword.html"><img src="../resource/mima.png" alt=""> 修改密码</a>
     </div>
 
     <div class="flex-right  user-content-right flex-direction">
         <div class="withdraw-nav flex-center">
-            <a  href="javascript:"  type="BTC" class="flex-center active withdraw-btn">
+            <a  href="javascript:" id="icoBtn1"  type="BTC" class="flex-center active withdraw-btn">
                 <img class="black" src="../resource/201706101049017_CI0f8.png">
                 <img class="white" src="../resource/201706101049017_CI0f81.png">
                 <span>BTC</span>
             </a>
-            <a href="javascript:" type="ETH" class="flex-center withdraw-btn">
+            <a href="javascript:" id="icoBtn2" type="ETH" class="flex-center withdraw-btn">
                 <img class="black" src="../resource/201706101048037_uvtGO.png">
                 <img class="white" src="../resource/201706101048037_uvtGO1.png">
                 <span>ETH</span>
@@ -185,18 +185,18 @@
         <div class="flex-direction withdraw-box flex-center">
             <div class="input-box flex-center">
                 <span>可用余额</span>
-                <input type="text" id="btcbalance" readonly="readonly" value="0.0000">
+                <input type="text" id="btcbalance" readonly="readonly" value="0">
             </div>
             <div class="input-box flex-center mobile_only">
-                <p style="margin-right: 0.5rem;">当前比值：1000*108%</p>
-                <p>最大可购：9087.89</p>
+                <p style="margin-right: 0.5rem;">当前比值：<i id="rateValue"></i></p>
+                <p>最大可购：<i id="icoCount"></i></p>
             </div>
             <div class="input-box flex-center">
                 <span>锁定数量</span>
                 <input type="text" id="txtFinancesCount">
             </div>
 
-            <input type="button" id="pushSubmit" class="flex-center" value="提交">
+            <input type="button" id="icoSubmit" class="flex-center" value="提交">
         </div>
         <div class="withdraw-record">
             <table>
@@ -225,6 +225,7 @@
 <script type="text/javascript" src="../resource/language_zh_CN.js"></script>
 <script type="text/javascript" src="../resource/login.js"></script>
 <script type="text/javascript" src="../resource/msg.js"></script>
+<script type="text/javascript" src="../resource/ico.js"></script>
 <script>
 
     //    <!--手机侧边栏-->

@@ -216,7 +216,8 @@ function getQueryDraw(type) {
                 });
             }
             else if (json.status == 431 || json.status == 402 || json.status == 430) {
-                util.layerAlert("", json.message, 2, function () {
+                console.log('message:', json.message);
+                util.layerAlert("", util.getLan("add4"), 2, function () {
                     location.href = 'login.html';
                 });
             }

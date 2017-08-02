@@ -160,14 +160,13 @@ function getCoupon() {
             sessionid: localStorage.sessionid,
             token: localStorage.token,
             timestamp: new Date().getTime(),
-            user_name: localStorage.user_name,
-
+            user_name: localStorage.user_name
         },
-        success: function (result) {
-            console.log('获取兑换券:', result);
-            if (result.status == 0) {
+        success: function (json) {
+            console.log('获取兑换券:', json);
+            if (json.status == 0) {
                 $('#bcdnCouponList').empty();
-                var users = result.data.users;
+                var users = json.data.users;
                 for (var i=0;i<users.length;i++) {
                     var user = users[i];
                     var trHtml = '<tr>' +
@@ -178,14 +177,15 @@ function getCoupon() {
                     $('#bcdnCouponList').append(trHtml);
                 }
             }
-            else if (result.status == 431 || result.status == 402) {
-                util.layerAlert("", result.message, 2, function () {
+            else if (json.status == 431 || json.status == 402 || json.status == 430) {
+                console.log('message:', json.message);
+                util.layerAlert("", util.getLan("add4"), 2, function () {
                     location.href = 'login.html';
                 });
             }
 
             else {
-                util.layerAlert("", result.message, 2);
+                util.layerAlert("", json.message, 2);
             }
         }
     });
