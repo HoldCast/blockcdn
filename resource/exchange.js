@@ -65,11 +65,11 @@ var push = {
             + '</div>'
             + '<div class="content">'
             + '<div class="grid-item"><span>' + util.getLan("finance.tips.43")
-            + '</span><span>DHG</span></div>'
+            + '</span><span>BCDN</span></div>'
             + '<div class="grid-item"><span>' + util.getLan("finance.tips.44")
             + '</span><span>' + price + coins + '</span></div>'
             + '<div class="grid-item"><span>' + util.getLan("finance.tips.45")
-            + '</span><span>' + count + 'DHG</span></div>'
+            + '</span><span>' + count + 'BCDN</span></div>'
             + '<div class="grid-item"><span>' + util.getLan("finance.tips.46")
             + '</span><span class="blod">' + amount + coins + '</span></div>'
             + '</div>'
