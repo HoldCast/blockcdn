@@ -16,15 +16,60 @@ $(function(){
     });
 
     $('#icoSubmit').off('click').on('click',function(){
-        var txtFinancesCount = parseInt($('#txtFinancesCount').val());
+        var txtFinancesCount = $('#txtFinancesCount').val();
         rateData.txtFinancesCount = txtFinancesCount;
         moneyBuy(rateData);
     });
+
+    buyRecord()
 });
 
 //购买记录
 function buyRecord(){
-    //url: queryAllBuyUrl
+    $.ajax({
+        url: queryAllBuyUrl,
+        type: 'post',
+        dataType: 'json',
+        data: {
+            data : JSON.stringify({
+                user_name:localStorage.user_name
+            }),
+            sessionid: localStorage.sessionid,
+            token: localStorage.token,
+            timestamp: new Date().getTime(),
+            user_name: localStorage.user_name
+        },
+        success: function(json){
+            console.log('购买记录:', json);
+            /*
+            * "user_name":"12121@qq.com",
+             "buy_time":1212121112,
+             "buy_money_type":1,
+             "buy_money":1.24,
+             "bcdn":1233
+            * */
+            if(json.status == 0){
+                var data = json.data;
+                var buy_time = data.buy_time;
+                var buy_money_type = data.buy_time;
+                var buy_money = data.buy_time;
+                var bcdn = data.buy_time;
+
+            }
+            else if (json.status == 420) {
+                util.layerAlert("", util.getLan("add5"), 2);
+            }
+            /*else if (json.status == 431 || json.status == 402 || json.status == 430) {
+             console.log('message:', json.message);
+             util.layerAlert("", util.getLan("add4"), 2, function () {
+             location.href = 'login.html';
+             });
+             }*/
+            else{
+                util.layerAlert("", json.message, 2);
+            }
+        }
+    });
 }
 
 //锁定
@@ -97,7 +142,7 @@ function getRate(type) {
                 rateData.rate = parseInt(data.rate);
                 var rate = data.number + '*' + data.rate;
                 $('#rateValue').text(rate);
-                $('#btcbalance').text(data.money);
+                $('#btcbalance').val(data.money);
                 $('#icoCount').text(data.max_buy);
             }
             else if (json.status == 420) {
