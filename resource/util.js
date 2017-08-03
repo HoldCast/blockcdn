@@ -354,20 +354,22 @@ var util = {
 	 * 多语言(key,args...)
 	 */
 	getLan : function() {
-		//language = languageEn;
+		var lan = language;
 		console.log(getCookie('bcdnLan'));
 		if (getCookie('bcdnLan') == 'en_US') {
-			language = languageEn;
+			lan = languageEn;
+		}else{
+			lan = language
 		}
 		if (arguments.length === 0) {
 			throw "key is undefined";
 		}
 		var key = arguments[0];
 		var result = "";
-		if ("undefined" === typeof (language[key])) {
+		if ("undefined" === typeof (lan[key])) {
 			result = key;
 		} else {
-			result = language[key];
+			result = lan[key];
 		}
 		if (arguments.length === 1) {
 			return result;
