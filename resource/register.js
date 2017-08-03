@@ -145,7 +145,6 @@ var reg = {
                             },
                             enter : true,
                         });
-                        window.location = 'ico.html';
                     });
                 } else {
                     // 注册失败
