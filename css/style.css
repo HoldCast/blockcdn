@@ -229,10 +229,10 @@ em,i{font-style: normal;}
 .team_list{margin: 80px -20px;}
 .team_list>li{width: 33.333%;float: left;position: relative;padding: 20px;}
 .team_name{position: absolute;width: 100%;left: 0px;bottom: 0px;padding: 10px;text-align: center;background: #0084c0;z-index: 5}
-.list_team_item{position: relative;overflow: hidden;}
+.list_team_item{position: relative;overflow: hidden;cursor: pointer}
 .team_name h1{color: #ffffff;font-size: 24px;font-weight: normal;}
 .team_name p{color: #ffffff;font-size: 14px;font-weight: normal;}
-.team_text{position: absolute;width: 100%;left: 0px;bottom: -100%;padding: 20px;background: #ffffff;text-align: left;font-sizet: 14px;color: #000000;z-index: 4;}
+.team_text{position: absolute;width: 100%;left: 0px;bottom: -100%;padding: 20px;background: #ffffff;text-align: left;font-sizet: 14px;color: #000000;z-index: 4;max-height: 380px;overflow-y: scroll;}
 .team_list>li:hover .team_text{bottom:80px;}
 
 
@@ -302,6 +302,7 @@ em,i{font-style: normal;}
 .center_text p{text-align: center;font-size: 37px;color: #ffffff;}
 .logOut{position: absolute;top: -60px;left: 0px;text-align: center;color: #000000!important;display: block;line-height: 60px!important;background: #26a8dc;width: 100%;font-size: 14px;opacity: 0;text-decoration: underline;height: 60px!important;}
 .pc_hd_menus>li:hover .logOut{top: 90px;opacity: 1;}
+#youkuplayer{float: left;}
 @media screen and (max-width:900px){
     .mobile_header{display: block;}
     .pc_header{display: none;}
@@ -387,7 +388,9 @@ em,i{font-style: normal;}
     .inner_page .touzi_type>img{margin-left: 110px;}
     .inner_page>img{margin-bottom: 0px;}
     html,body{width: 100%;overflow-x: hidden}
+    #youkuplayer{width: 100%!important;height: 250px!important;;}
     iframe{width: 100%!important;height: 250px!important;;}
+    .center_text p{font-size: 16px;width: 80%;margin: 0 auto;}
 }
 
 @media screen and (min-width:900px){
