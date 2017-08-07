@@ -16,7 +16,7 @@ var queryChargeUrl = "http://211.149.175.73:8089/money/queryRechargeInfoByUser";
 //购币, ico锁定
 var moneyRateUrl = "http://211.149.175.73:8089/moneyRate/getNowMoneyRate";// 前台根据货币类型查看当前汇率信息
 var moneyBuyUrl = "http://211.149.175.73:8089/moneyRate/buy";// 前台根据货币类型查看当前汇率信息
-var queryAllBuyUrl = "http://211.149.175.73:8089/moneyRate/queryAllUserBuyHistory";// 后台查看用户兑换信息
+var queryAllBuyUrl = "http://211.149.175.73:8089/moneyRate/getBuyHistoryByUser";// 后台查看用户兑换信息
 var btcCountYe = 0, ethCountYe = 0, bcdnCountYe = 0;
 var btcCountDj = 0, ethCountDj = 0, bcdnCountDj = 0;
 var btcCountZl = 0, ethCountZl = 0, bcdnCountZl = 0;

@@ -55,6 +55,7 @@ function buyRecord(){
                 var buy_money = data.buy_time;
                 var bcdn = data.buy_time;
 
+
             }
             else if (json.status == 420) {
                 util.layerAlert("", util.getLan("add5"), 2);
@@ -74,9 +75,8 @@ function buyRecord(){
 
 //锁定
 function moneyBuy(rateData){
-    console.log(rateData)
+    console.log(rateData);
     var ioc = rateData.txtFinancesCount;
-    var number = (rateData.number * ioc * rateData.rate)/100;
     $.ajax({
         url: moneyBuyUrl,
         type: 'post',
@@ -86,8 +86,7 @@ function moneyBuy(rateData){
                 type: rateData.type,
                 user_name:localStorage.user_name,
                 step: rateData.step,
-                ioc: ioc,
-                number: number
+                ioc: ioc
             }),
             sessionid: localStorage.sessionid,
             token: localStorage.token,
