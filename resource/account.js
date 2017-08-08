@@ -94,10 +94,10 @@ function getFinancialRecord(type) {
 
 function depositeStatus(status) {
     var obj = {
-        1: '审核中',
-        2: '成功',
-        3: '已取消',
-        4: '已驳回'
+        1 : util.getLan("add9"),
+        2 : util.getLan("add10"),
+        3 : util.getLan("add11"),
+        4 : util.getLan("add12")
     };
     return obj[status];
 }

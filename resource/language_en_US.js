@@ -1,10 +1,31 @@
 var language = {
+    "add1": "Please enter the exchange code",
+    "add2": "success",
+    "add3": "As the risk of BTC split, it is suspending deposit and withdraw.",
+    "add4": "Please login again.",
+    "add5": "Not available for purchase",
+    "add6": "success",
+    "add7": "cancel success",
+    "add8": "sum",
+    "add9": "under review",
+    "add10": "succeed",
+    "add11": "canceled",
+    "add12": "rejected",
+    "add13": "cancel",
+
+
+
+
+
+
+
+
     "comm.tips.11" : "Please enter the password!",
     "comm.tips.12" : "The password can’t be less than 6 characters!",
     "comm.tips.13" : "Incorrect password format，the password should be more than 6 characters and include letters and numbers!",
     "comm.tips.14" : "The password should be less than 16 characters!",
     "comm.tips.17" : "The two passwords don't match",
-    "comm.tips.18" : "Remainder",
+    "comm.tips.18" : "Reminder",
     "comm.tips.19" : "OK",
     "comm.tips.25" : "Success",
     "msg.tips.3" : "send verification code",

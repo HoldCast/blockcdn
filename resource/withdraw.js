@@ -66,8 +66,7 @@ var withdraw = {
             };
             var callback = function (data) {
                 if (data.status == 0) {
-                    console.log('这里语言处理');
-                    util.layerAlert("", '取消成功', 1, function () {
+                    util.layerAlert("", util.getLan("add7"), 1, function () {
                         location.href = 'withdraw.html?type=' + widthdrawType;
                     });
                 }
@@ -148,10 +147,7 @@ function getQueryDraw(type) {
         success: function (json) {
             console.log('提现记录:', type, json);
             //BTC 提现手续费0.0005BTC/笔，ETH提现0.005ETH/笔，BCDN提现5BCDN/笔。
-            var dw = '笔';
-            if (getCookie('bcdnLan') == 'en_US') {
-                dw = 'sum';
-            }
+            var dw = util.getLan("add8");
             var withdrawAddress = '';
             var sxf = 0;
             var sxfDw = '';
@@ -169,17 +165,9 @@ function getQueryDraw(type) {
             else if (type == '3'){
                 withdrawAddress = 'https://etherscan.io/token/0x1e797ce986c3cff4472f7d38d5c4aba55dfefe40?a=';
                 sxf = 5;
-                sxfDw = ' BCDN' + dw;
+                sxfDw = ' BCDN/' + dw;
             }
             if (json.status == 0) {
-                /*
-                * draw_actual: -4
-                 draw_address: "dsads21312wdasda123213"
-                 draw_fee: 5
-                 draw_money: 1
-                 draw_status: 2
-                 draw_time: 1500622198000
-                * */
                 var data = json.data;
                 $('#withdrawRecord').empty();
                 for (var i=0;i<data.length;i++){
@@ -195,10 +183,10 @@ function getQueryDraw(type) {
                     var trHtml = '<tr>' +
                         '<th width="200">'+formatDate(dataI.draw_time)+'</th>' +
                         '<th width="150">'+draw_actual+'</th>' +
-                        '<th width="328"><a style="color: #5454FF;text-decoration:underline;" href="'+ draw_address +'" target="_blank">'+dataI.draw_address+'</a></th>' +
-                        '<th width="100">'+drawStatus(draw_status)+'</th>' +
+                        '<th width="300"><a style="color: #5454FF;text-decoration:underline;" href="'+ draw_address +'" target="_blank">'+dataI.draw_address+'</a></th>' +
+                        '<th width="128">'+drawStatus(draw_status)+'</th>' +
                         '<th width="100">' +
-                        '<span class="withdraw-cancel" style="display:'+isNone+'" fid="'+dataI.id+'">取消</span>' +
+                        '<span class="withdraw-cancel" style="display:'+isNone+'" fid="'+dataI.id+'">'+util.getLan("add13")+'</span>' +
                         '</th>' +
                         '</tr>';
                     $('#withdrawRecord').append(trHtml);
@@ -231,10 +219,10 @@ function getQueryDraw(type) {
 //提现状态1是审核中，2是成功，3是已取消,4是已驳回
 function drawStatus(draw_status){
     var obj = {
-        1 : '审核中',
-        2 : '成功',
-        3 : '已取消',
-        4 : '已驳回'
+        1 : util.getLan("add9"),
+        2 : util.getLan("add10"),
+        3 : util.getLan("add11"),
+        4 : util.getLan("add12")
     };
     return obj[draw_status];
 }

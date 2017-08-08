@@ -355,12 +355,6 @@ var util = {
 	 */
 	getLan : function() {
 		var lan = language;
-		console.log(getCookie('bcdnLan'));
-		if (getCookie('bcdnLan') == 'en_US') {
-			lan = languageEn;
-		}else{
-			lan = language
-		}
 		if (arguments.length === 0) {
 			throw "key is undefined";
 		}

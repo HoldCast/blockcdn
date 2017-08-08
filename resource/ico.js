@@ -1,5 +1,5 @@
 var rateData = {};
-
+var pageType = getQueryString('type') || '1';
 $(function () {
     getRate(1);
 
@@ -7,12 +7,14 @@ $(function () {
         $('.withdraw-btn').removeClass('active');
         $(this).addClass('active');
         getRate(1);
+        pageType = 1
     });
 
     $('#icoBtn2').off('click').on('click', function () {
         $('.withdraw-btn').removeClass('active');
         $(this).addClass('active');
         getRate(2);
+        pageType = 2
     });
 
     $('#icoSubmit').off('click').on('click', function () {
@@ -20,6 +22,8 @@ $(function () {
         rateData.txtFinancesCount = txtFinancesCount;
         moneyBuy(rateData);
     });
+
+    $('#icoBtn' + pageType).click();
 
     buyRecord()
 });
@@ -108,7 +112,7 @@ function moneyBuy(rateData) {
             console.log('购买:', json);
             if (json.status == 0) {
                 util.layerAlert("", util.getLan("add6"), 1, function(){
-                    location.reload();
+                    location.href = 'ico.html?type=' + pageType;
                 });
             }
             else if (json.status == 420) {
