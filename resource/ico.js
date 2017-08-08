@@ -1,21 +1,21 @@
 var rateData = {};
 
-$(function(){
+$(function () {
     getRate(1);
 
-    $('#icoBtn1').off('click').on('click',function(){
+    $('#icoBtn1').off('click').on('click', function () {
         $('.withdraw-btn').removeClass('active');
         $(this).addClass('active');
         getRate(1);
     });
 
-    $('#icoBtn2').off('click').on('click',function(){
+    $('#icoBtn2').off('click').on('click', function () {
         $('.withdraw-btn').removeClass('active');
         $(this).addClass('active');
         getRate(2);
     });
 
-    $('#icoSubmit').off('click').on('click',function(){
+    $('#icoSubmit').off('click').on('click', function () {
         var txtFinancesCount = $('#txtFinancesCount').val();
         rateData.txtFinancesCount = txtFinancesCount;
         moneyBuy(rateData);
@@ -25,56 +25,67 @@ $(function(){
 });
 
 //购买记录
-function buyRecord(){
+function buyRecord() {
     $.ajax({
         url: queryAllBuyUrl,
         type: 'post',
         dataType: 'json',
         data: {
-            data : JSON.stringify({
-                user_name:localStorage.user_name
+            data: JSON.stringify({
+                user_name: localStorage.user_name
             }),
             sessionid: localStorage.sessionid,
             token: localStorage.token,
             timestamp: new Date().getTime(),
             user_name: localStorage.user_name
         },
-        success: function(json){
+        success: function (json) {
             console.log('购买记录:', json);
-            /*
-            * "user_name":"12121@qq.com",
-             "buy_time":1212121112,
-             "buy_money_type":1,
-             "buy_money":1.24,
-             "bcdn":1233
-            * */
-            if(json.status == 0){
+            if (json.status == 0) {
                 var data = json.data;
-                var buy_time = data.buy_time;
-                var buy_money_type = data.buy_time;
-                var buy_money = data.buy_time;
-                var bcdn = data.buy_time;
-
+                $('#withdrawRecord').empty();
+                for(var i=0;i<data.length;i++){
+                    var buy_time = data[i].buy_time;
+                    var buy_money_type = data[i].buy_money_type;
+                    var buy_money = data[i].buy_money;
+                    var bcdn = data[i].bcdn;
+                    var trHtml = '<tr>' +
+                        '<th width="240">' + formatDate(buy_time) + '</th>' +
+                        '<th width="200">' + moneyType(buy_money_type) + '</th>' +
+                        '<th width="200">' + buy_money + '</th>' +
+                        '<th width="238">' + bcdn + '</th>' +
+                        '</tr>';
+                    $('#withdrawRecord').append(trHtml);
+                }
 
             }
             else if (json.status == 420) {
                 util.layerAlert("", util.getLan("add5"), 2);
             }
-            /*else if (json.status == 431 || json.status == 402 || json.status == 430) {
-             console.log('message:', json.message);
-             util.layerAlert("", util.getLan("add4"), 2, function () {
-             location.href = 'login.html';
-             });
-             }*/
-            else{
+            else if (json.status == 431 || json.status == 402 || json.status == 430) {
+                console.log('message:', json.message);
+                util.layerAlert("", util.getLan("add4"), 2, function () {
+                    location.href = 'login.html';
+                });
+            }
+            else {
                 util.layerAlert("", json.message, 2);
             }
         }
     });
 }
 
-//锁定
-function moneyBuy(rateData){
+function moneyType(type){
+    //1是BTC,2是ETH
+    var obj = {
+        1: 'BTC',
+        2: 'ETH'
+    };
+    return obj[type];
+}
+
+//锁定(购币)
+function moneyBuy(rateData) {
     console.log(rateData);
     var ioc = rateData.txtFinancesCount;
     $.ajax({
@@ -82,9 +93,9 @@ function moneyBuy(rateData){
         type: 'post',
         dataType: 'json',
         data: {
-            data : JSON.stringify({
+            data: JSON.stringify({
                 type: rateData.type,
-                user_name:localStorage.user_name,
+                user_name: localStorage.user_name,
                 step: rateData.step,
                 ioc: ioc
             }),
@@ -93,21 +104,17 @@ function moneyBuy(rateData){
             timestamp: new Date().getTime(),
             user_name: localStorage.user_name
         },
-        success: function(json){
+        success: function (json) {
             console.log('购买:', json);
-            if(json.status == 0){
-
+            if (json.status == 0) {
+                util.layerAlert("", util.getLan("add6"), 1, function(){
+                    location.reload();
+                });
             }
             else if (json.status == 420) {
                 util.layerAlert("", util.getLan("add5"), 2);
             }
-            /*else if (json.status == 431 || json.status == 402 || json.status == 430) {
-                console.log('message:', json.message);
-                util.layerAlert("", util.getLan("add4"), 2, function () {
-                    location.href = 'login.html';
-                });
-            }*/
-            else{
+            else {
                 util.layerAlert("", json.message, 2);
             }
         }
@@ -122,7 +129,7 @@ function getRate(type) {
         type: 'post',
         dataType: 'json',
         data: {
-            data : JSON.stringify({
+            data: JSON.stringify({
                 type: type,
                 user_name: localStorage.user_name
             }),
@@ -131,9 +138,9 @@ function getRate(type) {
             timestamp: new Date().getTime(),
             user_name: localStorage.user_name
         },
-        success: function(json){
-            console.log('汇率信息:'+type, json);
-            if(json.status == 0){
+        success: function (json) {
+            console.log('汇率信息:' + type, json);
+            if (json.status == 0) {
                 var data = json.data;
                 rateData.type = data.type;
                 rateData.step = data.step;
@@ -153,7 +160,7 @@ function getRate(type) {
                     location.href = 'login.html';
                 });
             }
-            else{
+            else {
                 util.layerAlert("", json.message, 2);
             }
         }

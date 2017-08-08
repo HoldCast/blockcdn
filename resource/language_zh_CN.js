@@ -4,6 +4,7 @@ var language = {
     "add3": "由于BTC近期存在分叉风险，暂停充值提现!",
     "add4": "登录信息过期,重新登录!",
     "add5": "暂未开放购买BCDN!",
+    "add6": "执行成功!",
     "comm.tips.11" : "请输入密码！",
     "comm.tips.12" : "密码长度不能小于6！",
     "comm.tips.13" : "密码格式错误，密码必须大于等于6位且包含字母和数字！",
@@ -58,13 +59,14 @@ var language = {
     "ico.page.state1":"锁定中",
     "ico.page.state2":"众筹中",
     "ico.page.state3":"众筹结束"
-}
+};
 var languageEn = {
     "add1": "Please enter the exchange code",
     "add2": "success",
     "add3": "As the risk of BTC split, it is suspending deposit and withdraw.",
     "add4": "Please login again.",
     "add5": "Not available for purchase",
+    "add6": "success",
     "comm.tips.11" : "Please enter the password!",
     "comm.tips.12" : "The password can’t be less than 6 characters!",
     "comm.tips.13" : "Incorrect password format，the password should be more than 6 characters and include letters and numbers!",

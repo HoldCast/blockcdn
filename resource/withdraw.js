@@ -164,7 +164,7 @@ function getQueryDraw(type) {
             else if (type == '2'){
                 withdrawAddress = 'https://etherscan.io/address/';
                 sxf = 0.005;
-                sxfDw = ' ETH' + dw;
+                sxfDw = ' ETH/' + dw;
             }
             else if (type == '3'){
                 withdrawAddress = 'https://etherscan.io/token/0x1e797ce986c3cff4472f7d38d5c4aba55dfefe40?a=';
