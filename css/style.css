@@ -112,8 +112,8 @@ em,i{font-style: normal;}
 .investments_list>li{float: left;width: 25%;display: block;}
 .investments_list>li>h2{font-size: 24px;color: #737373;font-weight: normal;}
 .investments_list>li>p{font-size: 16px;color: #929292;}
-.investments_list>li>span{font-size: 18px;color: #818a8c;}
-.investments_list>li.set_pad{padding-left: 50px;}
+.investments_list>li>span{font-size: 14px;color: #818a8c;}
+.investments_list>li.set_pad{padding-left: 30px;}
 .join_btn{font-size: 18px;color: #ffffff!important;width: 125px;line-height: 40px;display: block;text-align: center;background-color: #26a8dc;border-radius: 4px;margin-top: 50px;float: right;}
 .jindutiao{width: 100%;position: relative;background: #3f3f3f;height: 40px;border-radius: 40px;margin: 100px 0px 10px;}
 .steps{position: absolute;top: 0px;left: 0px;height: 100%;border-radius: 40px;}
