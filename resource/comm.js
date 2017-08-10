@@ -12,10 +12,9 @@ var withdrawUrl = "http://211.149.175.73:8089/money/draw";// 用户提现
 var cancelDrawUrl = "http://211.149.175.73:8089/money/cancelDraw";// 用户取消提现
 var queryDrawUrl = "http://211.149.175.73:8089/money/queryDrawInfoByUser";// 前台根据用户查看提现记录
 var queryChargeUrl = "http://211.149.175.73:8089/money/queryRechargeInfoByUser";// 前台根据用户查看充值充值信息
-
 //购币, ico锁定
 var moneyRateUrl = "http://211.149.175.73:8089/moneyRate/getNowMoneyRate";// 前台根据货币类型查看当前汇率信息
-var moneyBuyUrl = "http://211.149.175.73:8089/moneyRate/buy";// 前台根据货币类型查看当前汇率信息
+var moneyBuyUrl = "http://211.149.175.73:8089/moneyRate/buy";//
 var queryAllBuyUrl = "http://211.149.175.73:8089/moneyRate/getBuyHistoryByUser";// 后台查看用户兑换信息
 var btcCountYe = 0, ethCountYe = 0, bcdnCountYe = 0;
 var btcCountDj = 0, ethCountDj = 0, bcdnCountDj = 0;

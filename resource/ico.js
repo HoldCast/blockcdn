@@ -1,22 +1,23 @@
 var rateData = {};
 var pageType = getQueryString('type') || '1';
 $(function () {
-    getRate(1);
-
     $('#icoBtn1').off('click').on('click', function () {
         $('.withdraw-btn').removeClass('active');
         $(this).addClass('active');
-        getRate(1);
-        pageType = 1
+        pageType = 1;
+        buyRecord(pageType);//获取记录
+        getRate(pageType);
     });
 
     $('#icoBtn2').off('click').on('click', function () {
         $('.withdraw-btn').removeClass('active');
         $(this).addClass('active');
-        getRate(2);
-        pageType = 2
+        pageType = 2;
+        getRate(pageType);
+        buyRecord(pageType);
     });
 
+    //点击锁定
     $('#icoSubmit').off('click').on('click', function () {
         var txtFinancesCount = $('#txtFinancesCount').val();
         rateData.txtFinancesCount = txtFinancesCount;
@@ -25,18 +26,19 @@ $(function () {
 
     $('#icoBtn' + pageType).click();
 
-    buyRecord()
+
 });
 
 //购买记录
-function buyRecord() {
+function buyRecord(type) {
     $.ajax({
         url: queryAllBuyUrl,
         type: 'post',
         dataType: 'json',
         data: {
             data: JSON.stringify({
-                user_name: localStorage.user_name
+                user_name: localStorage.user_name,
+                type: type
             }),
             sessionid: localStorage.sessionid,
             token: localStorage.token,
@@ -45,6 +47,12 @@ function buyRecord() {
         },
         success: function (json) {
             console.log('购买记录:', json);
+            //json.status = 420
+            var lastTime = '2017-08-11 19:00:00';
+            var nowTimeNumber = Date.parse(new Date());
+            var lastTimeNumber = Date.parse(new Date(lastTime));
+            console.log(nowTimeNumber,lastTimeNumber);
+            //var
             if (json.status == 0) {
                 var data = json.data;
                 $('#withdrawRecord').empty();
@@ -63,8 +71,18 @@ function buyRecord() {
                 }
 
             }
+            //未开放购买的时间
             else if (json.status == 420) {
-                util.layerAlert("", util.getLan("add5"), 2);
+                var tips = util.getLan("add14");
+                if(nowTimeNumber > lastTimeNumber){
+                    tips = util.getLan("add15");
+                }
+                util.layerAlert("", tips, 1,function(){
+                    $('#icoSubmit').css({
+                        background:'#ccc',
+                        borderColor: '#ccc'
+                    }).off('click');
+                });
             }
             else if (json.status == 431 || json.status == 402 || json.status == 430) {
                 console.log('message:', json.message);

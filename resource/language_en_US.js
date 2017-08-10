@@ -12,7 +12,8 @@ var language = {
     "add11": "canceled",
     "add12": "rejected",
     "add13": "cancel",
-
+    "add14": "It’s not the time to purchase . Please do the locking in the following time. <br>Early bird :2017.8.15  08:00－2017.8.17  08：00 <br>Lock-in:2017.8.23  08:00－2017.8.25  08：00 <br>ICO:2017.8.30  08:00－2017.9.30  08：00",
+    "add15": "ICO has finished. Thanks for your participation!",
 
 
 
