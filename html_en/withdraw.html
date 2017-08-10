@@ -173,9 +173,9 @@
         <a href="javascript:disableHandle();"><img src="../resource/chongzhi.png" alt=""> deposit</a>
         <!--<a href="withdraw.html" class="active"><img src="../resource/tixian.png" alt=""> withdraw</a>-->
         <a href="javascript:disableHandle();" class="active"><img src="../resource/tixian.png" alt=""> withdraw</a>
-        <a href="exchange.html" ><img src="../resource/duihuan.png" alt=""> exchange BCDN</a>
+        <a href="exchange.html" ><img src="../resource/duihuan.png" alt=""> exchange</a>
         <a href=""><img src="../resource/lock.png" alt=""> lock ICO</a>
-        <a href="modifyPassword.html"><img src="../resource/mima.png" alt=""> change your password</a>
+        <a href="modifyPassword.html"><img src="../resource/mima.png" alt=""> password</a>
     </div>
 
     <div class="flex-right  user-content-right flex-direction">
@@ -202,10 +202,14 @@
                 <span>account balances</span>
                 <input type="text" id="txtBalance" readonly="readonly" value="">
             </div>
-            <div class="input-box flex-center">
+            <div class="input-box flex-center" style="margin-bottom:0.08rem;">
                 <span>withdraw add</span>
                 <input type="text" id="txtText">
             </div>
+            <!--<p class="recharge-address flex-center" id="BTCStr" style="margin-bottom:0.08rem;"></p>-->
+            <p style="color:#ff1f1c;margin-bottom:0.21rem;visibility: hidden" id="etcTips">
+                Please fill in the correct ETH address.
+            </p>
             <div class="input-box flex-center" style="margin-bottom: 0rem;">
                 <span>withdraw count</span>
                 <input type="text" id="txtAmount">
@@ -221,12 +225,13 @@
                 <button style="text-align: center" id="btnSendEmailCode" data-msgtype="203" data-tipsid="register-email">get vcode</button>
             </div>
             <input type="button" id="btnSubmit" class="flex-center" value="submit">
+            <p style="color:#ff1f1c;margin-top:0.05rem;">Reminder：All the withdrawals will be processed from 9:00am to 18:00pm on weekdays.</p>
         </div>
         <div class="withdraw-record">
             <table>
                 <thead>
                 <tr class="flex-center">
-                    <th width="200"><i class="ico-record-icon user-plist time"></i><span>time</span></th>
+                    <th width="220"><i class="ico-record-icon user-plist time"></i><span>time</span></th>
                     <th width="150"><i class="ico-record-icon user-plist num"></i><span>arrive</span></th>
                     <th width="300"><i class="ico-record-icon user-plist num"></i><span>address</span></th>
                     <th width="128"><i class="ico-record-icon user-plist num"></i><span>status</span></th>

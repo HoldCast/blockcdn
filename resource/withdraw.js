@@ -111,16 +111,19 @@ $(function () {
             widthdrawType = '1';
             $('#txtBalance').val(btcCountYe);
             getQueryDraw(widthdrawType);
+            $('#etcTips').css('visibility','hidden');
         }
         else if (type == 'ETH') {
             widthdrawType = '2';
             $('#txtBalance').val(ethCountYe);
             getQueryDraw(widthdrawType);
+            $('#etcTips').css('visibility','hidden');
         }
         else {
             widthdrawType = '3';
             $('#txtBalance').val(bcdnCountYe);
             getQueryDraw(widthdrawType);
+            $('#etcTips').css('visibility','visible');
         }
     });
 
@@ -181,7 +184,7 @@ function getQueryDraw(type) {
                     draw_status == '1' ? isNone = '' : isNone = 'none';
                     var draw_address = withdrawAddress + dataI.draw_address;
                     var trHtml = '<tr>' +
-                        '<th width="200">'+formatDate(dataI.draw_time)+'</th>' +
+                        '<th width="220">'+formatDate(dataI.draw_time)+'</th>' +
                         '<th width="150">'+draw_actual+'</th>' +
                         '<th width="300"><a style="color: #5454FF;text-decoration:underline;" href="'+ draw_address +'" target="_blank">'+dataI.draw_address+'</a></th>' +
                         '<th width="128">'+drawStatus(draw_status)+'</th>' +
