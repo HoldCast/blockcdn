@@ -368,9 +368,8 @@
                 <h1 class="box_title">阅读白皮书，开启科技之旅</h1>
                 <p class="title_text">阅读白皮书了解BlockCDN更多细节</p>
                 <div class="email_ipt clearfix">
-                    <input class="am-fl" type="text" placeholder="输入你的邮箱地址">
-                    <a class="am-fl" id="email_ding" href="javascript:void(0);">订阅</a>
-
+                    <input class="am-fl" type="text" id="dingEmail" placeholder="输入你的邮箱地址">
+                    <a class="am-fl" href="javascript:emailDing();">订阅</a>
                 </div>
                 <a href="http://www.blockcdn.org/file/BlockCDN1.2.pdf">白皮书下载</a>
             </div>
@@ -620,7 +619,7 @@
     </div>
 </div>
 
-<div class="am-modal am-modal-alert" tabindex="-1" id="my-alert">
+<!--<div class="am-modal am-modal-alert" tabindex="-1" id="my-alert">
     <div class="am-modal-dialog">
         <div class="am-modal-hd">提示消息</div>
         <div class="am-modal-bd">
@@ -630,7 +629,7 @@
             <span class="am-modal-btn">确定</span>
         </div>
     </div>
-</div>
+</div>-->
 <input type="hidden" id="getIndex" val="">
 <body>
 <script src="js/jquery-1.9.1.min.js"></script>
@@ -757,12 +756,12 @@
 
 
 //    打开关闭提示
-                $('#email_ding').click(function () {
+               /* $('#email_ding').click(function () {
                     $('#my-alert').modal({closeViaDimmer: false});
                 })
                 $('.am-modal-btn').click(function () {
                     $('#my-alert').modal('close');
-                });
+                });*/
 //倒计时
                 $(".count_down").countDown({
                     startTimeStr: '2017/07/20 00:00:00',//开始时间

@@ -52,7 +52,6 @@ function buyRecord(type) {
             var nowTimeNumber = Date.parse(new Date());
             var lastTimeNumber = Date.parse(new Date(lastTime));
             console.log(nowTimeNumber,lastTimeNumber);
-            //var
             if (json.status == 0) {
                 var data = json.data;
                 $('#withdrawRecord').empty();
@@ -75,6 +74,7 @@ function buyRecord(type) {
             else if (json.status == 420) {
                 var tips = util.getLan("add14");
                 if(nowTimeNumber > lastTimeNumber){
+                //if(true){
                     tips = util.getLan("add15");
                 }
                 util.layerAlert("", tips, 1,function(){

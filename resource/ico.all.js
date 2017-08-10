@@ -64,9 +64,13 @@ function getRecord(type) {
                 for (var i = 0; i < list.length; i++) {
                     var item = list[i];
                     var num = i + 1 + ((page-1) * 20);
+                    var address = item.eth_address;
+                    if (type == 'btc') {
+                        address = item.btc_address
+                    }
                     var trHtml = '<tr>' +
                         '<td class="td-2">' + num + '</td>' +
-                        '<td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>' +
+                        '<td class="td-6">' + address + '</td>' +
                         '<td class="td-2">' + item.bcdn + '</td>' +
                         '</tr>';
                     $('#' + type + 'Record').append(trHtml);
