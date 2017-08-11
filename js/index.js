@@ -35,14 +35,26 @@ function lanChange(type) {
 
 function emailDing() {
     var email = $('#dingEmail').val();
-    test(email);
+    if(email){
+        test(email);
+    }
+
 }
 
 function test(temp) {
+    var lanType = $('#dingEmailTips').attr('type');
+    var emailCheck = '请输入正确的邮箱格式';
+    var dingSuccess = '订阅成功!';
+    if(lanType == 'en'){
+        emailCheck = 'Please enter the correct mailbox format';
+        dingSuccess = 'Subscription success';
+    }
     //对电子邮件的验证
     var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
     if (!myreg.test(temp)) {
-        alert('提示\n\n请输入有效的E_mail！');
+        $('#dingEmailTips').text(emailCheck);
+        $('#my-alert').modal({closeViaDimmer: false});
+        $('#dingEmail').val('');
         return false;
     }else{
         $.ajax({
@@ -54,6 +66,14 @@ function test(temp) {
             type: 'post',
             success: function(json){
                 console.log('邮件:', json);
+                if(json.code == 0){
+                    $('#dingEmailTips').text(temp+' ' + dingSuccess);
+                    $('#my-alert').modal({closeViaDimmer: false});
+                    $('#dingEmail').val('');
+                    $('#dingSure').off('click').on('click',function(){
+
+                    });
+                }
             }
         });
     }

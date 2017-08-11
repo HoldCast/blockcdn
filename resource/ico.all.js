@@ -69,7 +69,7 @@ function getRecord(type) {
                         address = item.btc_address
                     }
                     var trHtml = '<tr>' +
-                        '<td class="td-2">' + num + '</td>' +
+                        '<td class="td-1">' + num + '</td>' +
                         '<td class="td-6">' + address + '</td>' +
                         '<td class="td-2">' + item.bcdn + '</td>' +
                         '</tr>';
