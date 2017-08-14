@@ -74,7 +74,7 @@ function formatDate(str) {
     if(hour < 10) hour = '0' + hour;
     if(minute < 10) minute = '0' + minute;
     if(second < 10) second = '0' + second;
-    return year + "-" + month + "-" + date + "   " + hour + ":" + minute + ":" + second;
+    return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
 }
 
 //获取余额

@@ -1,9 +1,10 @@
 var rateData = {};
 var pageType = getQueryString('type') || '1';
-var lastTime = '2017-08-12 18:30:00';
+var lastTime = '2017-08-14 13:25:00';
 var nowTimeNumber = Date.parse(new Date());
 var lastTimeNumber = Date.parse(new Date(lastTime));
 console.log(nowTimeNumber,lastTimeNumber);
+console.log('现在时间:',formatDate(nowTimeNumber),'最后时间:',formatDate(lastTimeNumber));
 $(function () {
     $('#icoBtn1').off('click').on('click', function () {
         $('.withdraw-btn').removeClass('active');
