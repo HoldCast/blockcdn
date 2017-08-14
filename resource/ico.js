@@ -1,5 +1,9 @@
 var rateData = {};
 var pageType = getQueryString('type') || '1';
+var lastTime = '2017-08-12 18:30:00';
+var nowTimeNumber = Date.parse(new Date());
+var lastTimeNumber = Date.parse(new Date(lastTime));
+console.log(nowTimeNumber,lastTimeNumber);
 $(function () {
     $('#icoBtn1').off('click').on('click', function () {
         $('.withdraw-btn').removeClass('active');
@@ -20,8 +24,11 @@ $(function () {
     //点击锁定
     $('#icoSubmit').off('click').on('click', function () {
         var txtFinancesCount = $('#txtFinancesCount').val();
-        rateData.txtFinancesCount = txtFinancesCount;
-        moneyBuy(rateData);
+        if(txtFinancesCount){
+            rateData.txtFinancesCount = txtFinancesCount;
+            moneyBuy(rateData);
+        }
+
     });
 
     $('#icoBtn' + pageType).click();
@@ -46,12 +53,7 @@ function buyRecord(type) {
             user_name: localStorage.user_name
         },
         success: function (json) {
-            console.log('购买记录:', json);
-            //json.status = 420
-            var lastTime = '2017-08-11 19:00:00';
-            var nowTimeNumber = Date.parse(new Date());
-            var lastTimeNumber = Date.parse(new Date(lastTime));
-            console.log(nowTimeNumber,lastTimeNumber);
+            console.log('购买记录:', type,json);
             if (json.status == 0) {
                 var data = json.data;
                 $('#withdrawRecord').empty();
@@ -74,7 +76,6 @@ function buyRecord(type) {
             else if (json.status == 420) {
                 var tips = util.getLan("add14");
                 if(nowTimeNumber > lastTimeNumber){
-                //if(true){
                     tips = util.getLan("add15");
                 }
                 util.layerAlert("", tips, 1,function(){
@@ -136,6 +137,15 @@ function moneyBuy(rateData) {
             else if (json.status == 420) {
                 util.layerAlert("", util.getLan("add5"), 2);
             }
+            else if (json.status == 430) {
+                util.layerAlert("", util.getLan("add16"), 2);
+            }
+            else if (json.status == 434) {
+                util.layerAlert("", util.getLan("add17"), 2);
+            }
+            else if (json.status == 435) {
+                util.layerAlert("", util.getLan("add16"), 2);
+            }
             else {
                 util.layerAlert("", json.message, 2);
             }
@@ -173,8 +183,18 @@ function getRate(type) {
                 $('#btcbalance').val(data.money);
                 $('#icoCount').text(data.max_buy);
             }
+            //未开放购买的时间
             else if (json.status == 420) {
-                util.layerAlert("", util.getLan("add5"), 2);
+                var tips = util.getLan("add14");
+                if(nowTimeNumber > lastTimeNumber){
+                    tips = util.getLan("add15");
+                }
+                util.layerAlert("", tips, 1,function(){
+                    $('#icoSubmit').css({
+                        background:'#ccc',
+                        borderColor: '#ccc'
+                    }).off('click');
+                });
             }
             else if (json.status == 431 || json.status == 402 || json.status == 430) {
                 console.log('message:', json.message);
