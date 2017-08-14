@@ -63,25 +63,29 @@ var login = {
                     else if (data.status == 405) {
                         util.layerAlert("", util.getLan("add19"), 2);
                         $("#login-password").val("");
+                        $("#login-imgCode").val("");
                         getImgVcode();
                     }
                     //406表示验证码错误
                     else if (data.status == 406) {
                         util.layerAlert("", util.getLan("add21"), 2);
+                        $("#login-imgCode").val("");
                         getImgVcode();
                     }
                     //432表示验证码超时
                     else if (data.status == 432) {
                         util.layerAlert("", util.getLan("add20"), 2);
+                        $("#login-imgCode").val("");
                         getImgVcode();
                     }
                     else {
                         util.layerAlert("", data.message, 2);
                         $("#login-password").val("");
+                        $("#login-imgCode").val("");
                         getImgVcode();
                     }
                 },
-                enter: true,
+                enter: true
             });
         }
     },
