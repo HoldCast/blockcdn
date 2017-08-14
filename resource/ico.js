@@ -1,6 +1,6 @@
 var rateData = {};
 var pageType = getQueryString('type') || '1';
-var lastTime = '2017-08-14 13:25:00';
+var lastTime = '2017-08-15 00:05:00';
 var nowTimeNumber = Date.parse(new Date());
 var lastTimeNumber = Date.parse(new Date(lastTime));
 console.log(nowTimeNumber,lastTimeNumber);
@@ -146,6 +146,15 @@ function moneyBuy(rateData) {
             }
             else if (json.status == 435) {
                 util.layerAlert("", util.getLan("add16"), 2);
+            }
+            else if (json.status == 437) {
+                var tips = util.getLan("add14");
+                util.layerAlert("", tips, 1,function(){
+                    $('#icoSubmit').css({
+                        background:'#ccc',
+                        borderColor: '#ccc'
+                    }).off('click');
+                });
             }
             else {
                 util.layerAlert("", json.message, 2);
