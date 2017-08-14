@@ -16,6 +16,10 @@ var language = {
     "add15": "ICO has finished. Thanks for your participation!",
     "add16": "Negative number is unavailable.",
     "add17": "Please type the legal character",
+    "add18": "User not exist",
+    "add19": "Wrong password",
+    "add20": "The code is time out",
+    "add21": "Wrong code",
 
 
 

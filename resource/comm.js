@@ -4,6 +4,7 @@ var logInUrl = "http://211.149.175.73:8089/login";//网站用户登陆
 var cPassWordUrl = "http://211.149.175.73:8089/user/changePassWord";// 修改密码
 var rPassWordUrl = "http://211.149.175.73:8089/resetPassword";// 重置密码
 var logOutUrl = "http://211.149.175.73:8089/user/logOut";// 用户退出
+var vCodeImgUrl = "http://211.149.175.73:8089/login/getVertifyCode";//  获取验证码 利用img的，src标签直接指向该地址
 
 var exchangeUrl = "http://211.149.175.73:8089/coupon/exchange";// 前台兑换优惠券
 var queryCouponUrl = "http://211.149.175.73:8089/coupon/queryCouponByUser";// 前台个人中心查看自己的优惠券;

@@ -148,14 +148,23 @@
                 <img src="../resource/user-account.png">
                 <input type="text" id="login-account" placeholder="请输入邮箱">
             </div>
-            <!--<input id="register-imgcode" class="form-control login-ipt" type="text" placeholder="请输入图片验证码"/>
-            <img class="btn btn-imgcode register-imgmsg" th:src="@{/servlet/ValidateImageServlet.html}"/>-->
+
 
             <!--<input type="text" id="register-email-code" placeholder="请输入验证码"/>
-            <button id="btn-sendemailcode" data-msgtype="203" data-tipsid="register-email" class="btn btn-sendemailcode register-msg">获取验证码</button>-->
+            <button id="btn-sendemailcode" data-msgtype="203" data-tipsid="register-email" class="btn btn-sendemailcode register-msg">获取验证码</button>
+            -->
             <div>
                 <img src="../resource/user-password.png">
                 <input type="password" id="login-password" placeholder="请输入密码">
+            </div>
+            <div>
+                <img src="../resource/user-vcode.png">
+                <input id="login-imgCode" class="form-control login-ipt" type="text" placeholder="请输入图片验证码"/>
+                <img src=""
+                     style="left: auto;right: 0;width: auto;height: 0.41rem;top: 0;cursor: pointer;"
+                     id="loginVcodeImg">
+                <!--<button style="text-align: center" id="btnSendEmailCode" data-msgtype="203" data-tipsid="register-email">获取验证码</button>-->
+                <!--<img class="btn btn-imgcode" id="loginVcodeImg"/>-->
             </div>
             <button id="login-submit" style="text-align: center">登录</button>
             <input id="forwardUrl" type="hidden" value="">
