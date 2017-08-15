@@ -2,7 +2,6 @@ var getTotalUrl = "http://211.149.175.73:8089/getTotal";//前台查看购币的�
 var getBtcBuyUrl = "http://211.149.175.73:8089/getBtcBuyHistory";// 首页查看btc的购买记录
 var getEthBuyUrl = "http://211.149.175.73:8089/getEthBuyHistory";// 首页查看eth的购买记录
 
-var pageSize = 20;
 var btcPageNum = 1;
 var ethPageNum = 1;
 $(function () {

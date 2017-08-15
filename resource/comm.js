@@ -161,8 +161,8 @@ function getBalance() {
                             location.href = 'exchange.html';
                         }
                         else {
-                            disableHandle();
-                            return false;
+                            //disableHandle();
+                            //return false;
                             location.href = 'deposit.html?type=' + fid;
                         }
                     });
