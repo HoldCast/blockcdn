@@ -163,7 +163,7 @@ em,i{font-style: normal;}
 .email_contact{position: relative;margin-top: 50px;background: url(../images/emailbg.png) no-repeat;background-size: cover;}
 .email_box{}
 .email_box img{width: auto;height: 450px;}
-.email_ipt_text{margin-top: 40px;}
+.email_ipt_text{margin-top: 40px;width: 70%;}
 .email_box .page_content_center{padding: 70px 0px;height: 100%;}
 .email_ipt_text>h1{color: #ffffff;font-size: 39px;font-weight: normal;margin-top: 20px;}
 .email_ipt_text>p{color: #ffffff;font-size: 16px;font-weight: normal;}
@@ -395,8 +395,11 @@ em,i{font-style: normal;}
     .table_box .td-1{width: 15%;text-align: center;}
     .table_box .td-2{width: 25%;text-align: center;}
     .table_box .td-6{width: 60%;text-align: center;border-left: 2px solid #ffffff;border-right: 2px solid #ffffff}
+    #loginVcodeImg{width: auto!important;height: 40px!important;}
 }
-
+.add_content{background: #0084bf;padding: 40px 0px;width: 100%;margin: 20px 0px;}
+.add_content img{width: 90%;margin: 0 auto;display: block}
+.add2_box{padding-top: 50px;}
 @media screen and (min-width:900px){
 
 }

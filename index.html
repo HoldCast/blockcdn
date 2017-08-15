@@ -116,17 +116,20 @@
             <li>
                 <h2>早鸟</h2>
                 <p>奖励比例：Get <em>15</em>% bonus</p>
-                <span>2017/8/15 08:00~2017/8/17 08:00</span>
+                <!--<span>2017/8/15 08:00~2017/8/17 08:00</span>-->
+                <span>时间待定</span>
             </li>
             <li class="set_pad">
                 <h2>锁定</h2>
                 <p>奖励比例：Get <em>8</em>% bonus</p>
-                <span>2017/8/23 08:00~2017/8/25 08:00</span>
+                <!--<span>2017/8/23 08:00~2017/8/25 08:00</span>-->
+                <span>时间待定</span>
             </li>
             <li class="set_pad">
                 <h2>ICO时间</h2>
                 <p>奖励比例：Get <em>0</em>% bonus</p>
-                <span>2017/8/30 08:00~2017/9/30 08:00</span>
+                <!--<span>2017/8/30 08:00~2017/9/30 08:00</span>-->
+                <span>时间待定</span>
             </li>
             <li>
                 <a href="javascript:userInfoGet();" class="join_btn">点击参与</a>
@@ -296,7 +299,13 @@
          </table>
      </div>
      <a href="infopage.html" class="load_more">查看更多</a>-->
-
+</div>
+<div class="add_content">
+    <div class="page_content_center">
+        <img src="images/adds_ch.png" alt="">
+    </div>
+</div>
+<div class="page_content_center">
 
     <div class="feature_come">
         <div class="feature_title">
@@ -433,7 +442,11 @@
         </div>
     </div>
 </div>
-
+<div class="add2_box">
+    <div class="page_content_center">
+        <img src="images/add2_zh.png" alt="">
+    </div>
+</div>
 <div class="team_box">
     <div class="page_content_center">
         <h1 class="box_title">团队介绍</h1>
@@ -838,7 +851,7 @@
         location.href = 'html/login.html';
     }
     function getNews() {
-        var newsUrl = "https://211.149.175.73:8089/news/getFaceNews";// 前台查看新闻
+        var newsUrl = "http://211.149.175.73:8089/news/getFaceNews";// 前台查看新闻
         $.ajax({
             url: newsUrl,
             type: 'post',

@@ -125,17 +125,20 @@
             <li>
                 <h2>early bird</h2>
                 <p>proportion of award：Get <em>15</em>% bonus</p>
-                <span>2017/8/15 08:00~2017/8/17 08:00</span>
+                <!--<span>2017/8/15 08:00~2017/8/17 08:00</span>-->
+                <span>undetermined</span>
             </li>
             <li class="set_pad">
                 <h2>lock-in</h2>
                 <p>proportion of award：Get <em>8</em>% bonus</p>
-                <span>2017/8/23 08:00~2017/8/25 08:00</span>
+                <!--<span>2017/8/23 08:00~2017/8/25 08:00</span>-->
+                <span>undetermined</span>
             </li>
             <li class="set_pad">
                 <h2>ICO</h2>
                 <p>proportion of award：Get <em>0</em>% bonus</p>
-                <span>2017/8/30 08:00~2017/9/30 08:00</span>
+                <!--<span>2017/8/30 08:00~2017/9/30 08:00</span>-->
+                <span>undetermined</span>
             </li>
             <li>
                 <a href="javascript:userInfoGet();" class="join_btn">click to join</a>
@@ -308,8 +311,13 @@
          </table>
      </div>
      <a href="infopage.html" class="load_more">查看更多</a>-->
-
-
+</div>
+<div class="add_content">
+    <div class="page_content_center">
+        <img src="images/add_en.png" alt="">
+    </div>
+</div>
+<div class="page_content_center">
     <div class="feature_come">
         <div class="feature_title">
             <h1 class="box_title" style="font-weight: normal;">The particular core advantage takes the leading position.</h1>
@@ -392,7 +400,7 @@
             <img src="images/down2.jpg" alt="">
             <a href="http://www.blockcdn.org/file/BcdnMiner for linux.rar">
                 <img src="images/white2.png" alt="">
-                <p>download Liunx miner</p>
+                <p>download Linux miner</p>
             </a>
         </li>
         <li>
@@ -449,7 +457,11 @@
         </div>
     </div>
 </div>
-
+<div class="add2_box">
+    <div class="page_content_center">
+        <img src="images/add2_en.png" alt="">
+    </div>
+</div>
 <div class="team_box">
     <div class="page_content_center">
         <h1 class="box_title">Team</h1>
@@ -833,25 +845,25 @@
         //获取用户信息
         var userName = localStorage.user_name;
         if (userName) {
-            location.href = 'html/assets.html';
+            location.href = 'html_en/assets.html';
         }
         else {
-            location.href = 'html/login.html';
+            location.href = 'html_en/login.html';
         }
     }
     function userInfoGet() {
         //获取用户信息
         var userName = localStorage.user_name;
         if (userName) {
-            location.href = 'html/assets.html';
+            location.href = 'html_en/assets.html';
         }
         else {
-            location.href = 'html/login.html';
+            location.href = 'html_en/login.html';
         }
     }
     function logOut() {
         localStorage.clear();
-        location.href = 'html/login.html';
+        location.href = 'html_en/login.html';
     }
     function getNews() {
         var newsUrl = "http://211.149.175.73:8089/news/getFaceNews";// 前台查看新闻
