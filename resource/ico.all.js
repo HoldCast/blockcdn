@@ -41,12 +41,6 @@ function getRecord(type) {
         url = getEthBuyUrl;
         page = ethPageNum;
     }
-    var data = [
-        {add: 'dadasdasdasd', count: 199},
-        {add: 'dadasdasdasd', count: 410},
-        {add: 'dadasdasdasd', count: 428},
-    ];
-
     $.ajax({
         url: url,
         type: 'post',
@@ -60,7 +54,12 @@ function getRecord(type) {
                 var data = json.data;
                 var hasMore = data.hasMore;
                 var list = data.list;
-                for (var i = 0; i < list.length; i++) {
+                var listLen = list.length;
+                var icoCountType = $('#icoCountType').val();
+                if(icoCountType == 'homePage'){
+                    listLen = 10;
+                }
+                for (var i = 0; i < listLen; i++) {
                     var item = list[i];
                     var num = i + 1 + ((page-1) * 20);
                     var address = item.eth_address;

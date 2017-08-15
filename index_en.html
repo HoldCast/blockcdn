@@ -23,11 +23,11 @@
     <div class="page_content nav-menu clearfix">
         <a href="http://www.blockcdn.org/" class="pc_logo am-fl"><img src="images/logo.png" alt=""></a>
         <ul class="nav pc_hd_menus am-fr clearfix">
-            <li class="active"><a href="#index" class="scroll">Home</a></li>
-            <li><a href="#feature" class="scroll">Investment</a></li>
-            <li><a href="#book" class="scroll">White Paper</a></li>
-            <li><a href="#mechin" class="scroll">Miner</a></li>
-            <li><a href="#news" class="scroll">News</a></li>
+            <li class="active"><a href="index_en.html#index" class="scroll">Home</a></li>
+            <li><a href="index_en.html#feature" class="scroll">Investment</a></li>
+            <li><a href="index_en.html#book" class="scroll">White Paper</a></li>
+            <li><a href="index_en.html#mechin" class="scroll">Miner</a></li>
+            <li><a href="index_en.html#news" class="scroll">News</a></li>
             <li id="userLogin"><a href="html_en/login.html">User Center</a></li>
             <li id="userInfo">
                 <a href="html_en/assets.html"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>
@@ -164,153 +164,64 @@
         <p class="text_left am-fl"><span id="total_bcdn">0</span><em>Total Investors</em></p>
         <p class="text_right am-fr"><span id="totals" data-type="400000000">400,000,000</span><em>BCDN</em></p>
     </div>
+    <input type="text" id="icoCountType" value="homePage">
+    <div class="touzi_info clearfix">
+        <div class="touzi-btn left am-fl active">
+            <img class="shap_img" src="images/shapes.png" alt="">
+            <div class="touzi_type clearfix">
+                <img class="am-fl" src="images/bit.png" alt="">
+                <div class="am-fl">
+                    <p class="type_top_text">BITCOIN</p>
+                    <p class="type_btm_text" id="btcAll">0</p>
+                </div>
+                <div class="am-fl">
+                    <p class="type_top_text"><!--7416699.65USD--></p>
+                    <p class="type_btm_text">1BTC=61000BCDN</p>
+                </div>
+            </div>
 
-    <!-- <div class="touzi_info clearfix">
-         <div class="touzi-btn left am-fl active">
-             <img class="shap_img" src="images/shapes.png" alt="">
-             <div class="touzi_type clearfix">
-                 <img class="am-fl" src="images/bit.png" alt="">
-                 <div class="am-fl">
-                     <p class="type_top_text">BITCOIN</p>
-                     <p class="type_btm_text">3819</p>
-                 </div>
-                 <div class="am-fl">
-                     <p class="type_top_text">7416699.65USD</p>
-                     <p class="type_btm_text">1BTC = 61000BCDN</p>
-                 </div>
-             </div>
-         </div>
-         <div class="touzi-btn right am-fr">
-             <img class="shap_img" src="images/shapes.png" alt="">
-             <div class="touzi_type clearfix">
-                 <img class="am-fl" src="images/eth.png" alt="">
-                 <div class="am-fl">
-                     <p class="type_top_text">ETHEREUM</p>
-                     <p class="type_btm_text">3819</p>
-                 </div>
-                 <div class="am-fl">
-                     <p class="type_top_text">7416699.65USD</p>
-                     <p class="type_btm_text">1ETH = 5000BCDN</p>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <p class="touzi_result">投资明细</p>
+        </div>
+        <div class="touzi-btn right am-fr">
+            <img class="shap_img" src="images/shapes.png" alt="">
+            <div class="touzi_type clearfix">
+                <img class="am-fl" src="images/eth.png" alt="">
+                <div class="am-fl">
+                    <p class="type_top_text">ETHEREUM</p>
+                    <p class="type_btm_text" id="ethAll">0</p>
+                </div>
+                <div class="am-fl">
+                    <p class="type_top_text"><!--7416699.65USD--></p>
+                    <p class="type_btm_text">1ETH=5000BCDN</p>
+                </div>
+            </div>
+        </div>
+    </div>
+     <p class="touzi_result">Meine Einzahlungen</p>
      <div class="investment_table active">
          <table class="table_box">
              <thead>
                  <tr>
-                     <th class="td-1 red">序号</th>
-                     <th class="td-6 green">钱包地址</th>
-                     <th class="td-2 perpul">数量</th>
+                     <th class="td-1 red">Num</th>
+                     <th class="td-6 green">Address</th>
+                     <th class="td-2 perpul">Count</th>
                  </tr>
              </thead>
-             <tbody>
-                 <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>
-                 <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr> <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr> <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>
-                 <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>
-                 <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>
-                 <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>
-                    <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>   <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>   <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>   <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>
-             </tbody>
+             <tbody id="btcRecord"></tbody>
          </table>
      </div>
      <div class="investment_table">
          <table class="table_box">
              <thead>
              <tr>
-                 <th class="td-1 red">序号</th>
-                 <th class="td-6 green">钱包地址</th>
-                 <th class="td-2 perpul">数量</th>
+                 <th class="td-1 red">Num</th>
+                 <th class="td-6 green">Address</th>
+                 <th class="td-2 perpul">Count</th>
              </tr>
              </thead>
-             <tbody>
-                <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>
-                <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>   <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>   <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>   <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>   <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>   <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>   <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>   <tr>
-                     <td class="td-1">01</td>
-                     <td class="td-6">4D1F4G1T4R5D2D4F1E4S54D1F4G1T4R5D2D4F1E4S5HJ</td>
-                     <td class="td-2">1252</td>
-                 </tr>
-             </tbody>
+             <tbody id="ethRecord"></tbody>
          </table>
      </div>
-     <a href="infopage.html" class="load_more">查看更多</a>-->
+     <a href="infopage_en.html" class="load_more">More</a>
 </div>
 <div class="add_content">
     <div class="page_content_center">
@@ -657,6 +568,8 @@
 <script src="js/jquery.smooth-scroll.min.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>
 <script src="js/index.js"></script>
+<script src="resource/ico.all.js"></script>
+<script type="text/javascript" src="//player.youku.com/jsapi"></script>
 
 
 <script>
@@ -786,8 +699,8 @@
                     $('.touzi-btn').removeClass('active');
                     $(this).addClass('active');
                     var index = $(this).index();
-                    $('.investment_table').removeClass('.active');
-                    $('.investment_table').eq(index).addClass('.active');
+                    $('.investment_table').removeClass('active');
+                    $('.investment_table').eq(index).addClass('active');
                 });
 
                 $('.pc_hd_menus>li').click(function () {

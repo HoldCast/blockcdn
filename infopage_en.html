@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>ICO详情</title>
+    <title>ICO Details</title>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -18,27 +18,27 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-<div class="pc_header">
-    <div class="page_content clearfix">
+<div class="pc_header" id="navigation">
+    <div class="page_content nav-menu clearfix">
         <a href="http://www.blockcdn.org/" class="pc_logo am-fl"><img src="images/logo.png" alt=""></a>
         <ul class="nav pc_hd_menus am-fr clearfix">
-            <li class="active"><a href="index.html#index" class="scroll">首页</a></li>
-            <li><a href="index.html#feature" class="scroll">投资</a></li>
-            <li><a href="index.html#book" class="scroll">白皮书</a></li>
-            <li><a href="index.html#mechin" class="scroll">矿机</a></li>
-            <li><a href="index.html#news" class="scroll">新闻报道</a></li>
-            <li id="userLogin"><a href="html/login.html">用户中心</a></li>
+            <li class="active"><a href="index_en.html#index" class="scroll">Home</a></li>
+            <li><a href="index_en.html#feature" class="scroll">Investment</a></li>
+            <li><a href="index_en.html#book" class="scroll">White Paper</a></li>
+            <li><a href="index_en.html#mechin" class="scroll">Miner</a></li>
+            <li><a href="index_en.html#news" class="scroll">News</a></li>
+            <li id="userLogin"><a href="html_en/login.html">User Center</a></li>
             <li id="userInfo">
-                <a href="html/assets.html"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>
-                <a href="javascript:logOut();" class="logOut">退出</a>
+                <a href="html_en/assets.html"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>
+                <a href="javascript:logOut();" class="logOut">Log out</a>
             </li>
-            <li><a href="javascript:lanChange('en_US')">English</a></li>
+            <li><a href="javascript:lanChange('zh_CN')">中文</a></li>
         </ul>
     </div>
 </div>
 <div class="mobile_header">
     <div class="page_content clearfix">
-        <a href="" class="pc_logo am-fl" ><img src="images/logo.png" alt=""></a>
+        <a href="http://www.blockcdn.org/" class="pc_logo am-fl"><img src="images/logo.png" alt=""></a>
         <a class="header-back" id="off-canvas"><i><img src="images/menu.png" alt=""></i></a>
     </div>
 </div>
@@ -48,13 +48,20 @@
         <div class="am-offcanvas-content">
             <i class="canvas-close"><img src="images/close.png" alt=""></i>
             <ul class="canvas-menu">
-                <li><a href="javascript:void(0)" data-id="home"><span>首页</span><i class="next"><img src="images/next-btns.png" alt=""></i></a></li>
-                <li><a href="javascript:void(0)" data-id="service"><span>投资</span><i class="next"><img src="images/next-btns.png" alt=""></i></a></li>
-                <li><a href="javascript:void(0)" data-id="anli"><span>白皮书</span><i class="next"><img src="images/next-btns.png" alt=""></i></a></li>
-                <li><a href="javascript:void(0)" data-id="clients"><span>矿机</span><i class="next"><img src="images/next-btns.png" alt=""></i></a></li>
-                <li><a href="javascript:void(0)" data-id="clients"><span>新闻报道</span><i class="next"><img src="images/next-btns.png" alt=""></i></a></li>
-                <li><a href="" data-id="clients" target="_blank"><span>用户中心</span><i class="next"><img src="images/next-btns.png" alt=""></i></a></li>
-                <li><a href="javascript:void(0)" data-id="clients"><span>English</span><i class="next"><img src="images/next-btns.png" alt=""></i></a></li>
+                <li><a href="http://www.blockcdn.org/" data-id="home"><span>Home</span><i class="next"><img
+                        src="images/next-btns.png" alt=""></i></a></li>
+                <li><a href="#feature" data-id="service"><span>Investment</span><i class="next"><img src="images/next-btns.png"
+                                                                                                     alt=""></i></a></li>
+                <li><a href="#book" data-id="anli"><span>White Paper</span><i class="next"><img src="images/next-btns.png"
+                                                                                                alt=""></i></a></li>
+                <li><a href="#mechin" data-id="clients"><span>Miner</span><i class="next"><img src="images/next-btns.png"
+                                                                                               alt=""></i></a></li>
+                <li><a href="#news" data-id="clients"><span>News</span><i class="next"><img src="images/next-btns.png"
+                                                                                            alt=""></i></a></li>
+                <li><a href="http://www.blockcdn.org/html_en/login.html" data-id="clients"><span>User Center</span><i
+                        class="next"><img src="images/next-btns.png" alt=""></i></a></li>
+                <li><a href="javascript:lanChange('zh_CN')" data-id="clients"><span>中文</span><i class="next"><img src="images/next-btns.png"
+                                                                                                                  alt=""></i></a></li>
             </ul>
         </div>
     </div>
@@ -82,9 +89,9 @@
           <table class="table_box">
               <thead>
               <tr>
-                  <th class="td-1 red">序号</th>
-                  <th class="td-6 green">钱包地址</th>
-                  <th class="td-2 perpul">数量</th>
+                  <th class="td-1 red">Num</th>
+                  <th class="td-6 green">Address</th>
+                  <th class="td-2 perpul">Count</th>
               </tr>
               </thead>
           </table>
@@ -114,9 +121,9 @@
           <table class="table_box">
               <thead>
               <tr>
-                  <th class="td-1 red">序号</th>
-                  <th class="td-6 green">钱包地址</th>
-                  <th class="td-2 perpul">数量</th>
+                  <th class="td-1 red">Num</th>
+                  <th class="td-6 green">Address</th>
+                  <th class="td-2 perpul">Count</th>
               </tr>
               </thead>
           </table>
@@ -179,7 +186,7 @@
     }
     function logOut() {
         localStorage.clear();
-        location.href = 'html/login.html';
+        location.href = 'html_en/login.html';
     }
 
 </script>
