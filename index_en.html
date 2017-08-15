@@ -161,8 +161,8 @@
     </div>
     <div class="jindu_text clearfix">
         <img src="images/blackline.png" alt="">
-        <p class="text_left am-fl"><span>0</span><em>Total Investors</em></p>
-        <p class="text_right am-fr"><span>400,000,000</span><em>BCDN</em></p>
+        <p class="text_left am-fl"><span id="total_bcdn">0</span><em>Total Investors</em></p>
+        <p class="text_right am-fr"><span id="totals" data-type="400000000">400,000,000</span><em>BCDN</em></p>
     </div>
 
     <!-- <div class="touzi_info clearfix">
@@ -815,8 +815,30 @@
         });
         getUserInfo();
         getNews();
+//        getBSDN();
     }
+    function getBSDN() {
+        var newsUrl = "http://211.149.175.73:8089/getBuyBcdnTotal";// 前台查看新闻
+        $.ajax({
+            url: newsUrl,
+            type: 'post',
+            dataType: 'json',
+            data: {
 
+            },
+            success: function (json) {
+                var status = json.status;
+                if (status == 0) {
+                    console.log(json);
+                    $('#total_bcdn').text(json.data.bcdn);
+                    var totals = parseInt($('#totals').attr('data-type'));
+                    var persent = json.data.bcdn/totals*100;
+                    $('.step_img').css('left',(persent - 2) + '%');
+                    $('.step3').css('width',persent + '%');
+                }
+            }
+        });
+    }
     function scrollFunc(e) {
         e = e || window.event;
 
