@@ -1,6 +1,6 @@
-var getTotalUrl = "http://211.149.175.73:8089/getTotal";//前台查看购币的总金额
-var getBtcBuyUrl = "http://211.149.175.73:8089/getBtcBuyHistory";// 首页查看btc的购买记录
-var getEthBuyUrl = "http://211.149.175.73:8089/getEthBuyHistory";// 首页查看eth的购买记录
+var getTotalUrl = "https://ssl.blockcdn.org/getTotal";//前台查看购币的总金额
+var getBtcBuyUrl = "https://ssl.blockcdn.org/getBtcBuyHistory";// 首页查看btc的购买记录
+var getEthBuyUrl = "https://ssl.blockcdn.org/getEthBuyHistory";// 首页查看eth的购买记录
 
 var btcPageNum = 1;
 var ethPageNum = 1;

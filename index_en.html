@@ -95,7 +95,7 @@
 <div class="page_content_center" id="feature">
     <div class="feature_come">
         <div class="feature_title">
-            <h1>ICO is coming</h1>
+            <h1>Early bird is coming</h1>
             <img src="images/shenglue.png" alt="">
         </div>
         <div class="daojishi">
@@ -125,8 +125,8 @@
             <li>
                 <h2>early bird</h2>
                 <p>proportion of award：Get <em>15</em>% bonus</p>
-                <!--<span>2017/8/15 08:00~2017/8/17 08:00</span>-->
-                <span>undetermined</span>
+                <span>2017/8/24 20:00~2017/8/27 20:00</span>
+                <!--<span>undetermined</span>-->
             </li>
             <li class="set_pad">
                 <h2>lock-in</h2>
@@ -146,9 +146,9 @@
         </ul>
     </div>
     <p class="jin_top_text" style="text-align: right">
-        <span>whenever it reaches on $500000 in the early bird stage, it will be end.</span>
+        <span>Early bird period：80 million BCDN tokens will be sold. It may end when reaches the target.</span>
         <br>
-        <span>whenever it reaches on $1500000 in the lock stage, it will be end.</span>
+        <span>Lock-in period ：120 million BCDN tokens will be sold . It may end when reaches the target.</span>
     </p>
     <div class="jindutiao">
         <!--<div class="steps step1" style="width: 75%"></div>
@@ -161,8 +161,8 @@
     </div>
     <div class="jindu_text clearfix">
         <img src="images/blackline.png" alt="">
-        <p class="text_left am-fl"><span id="total_bcdn">0</span><em>Total Investors</em></p>
-        <p class="text_right am-fr"><span id="totals" data-type="400000000">400,000,000</span><em>BCDN</em></p>
+        <p class="text_left am-fl"><span id="total_bcdn">0</span><em>BCDN Gave out</em></p>
+        <p class="text_right am-fr"><span id="totals" data-type="400000000">400000000</span><em>BCDN</em></p>
     </div>
     <!--<input type="text" id="icoCountType" value="homePage">
     <div class="touzi_info clearfix">
@@ -568,6 +568,7 @@
 <script src="js/jquery.smooth-scroll.min.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>
 <script src="js/index.js"></script>
+<script src="js/accounting.min.js"></script>
 <script src="resource/ico.all.js"></script>
 <script type="text/javascript" src="//player.youku.com/jsapi"></script>
 
@@ -687,7 +688,7 @@
 //倒计时
                 $(".count_down").countDown({
                     startTimeStr: '2017/07/20 00:00:00',//开始时间
-                    endTimeStr: '2017/07/20 12:14:00',//结束时间
+                    endTimeStr: '2017/08/24 20:00:00',//结束时间
                     daySelector: ".day_num",
                     hourSelector: ".hour_num",
                     minSelector: ".min_num",
@@ -724,6 +725,10 @@
                 $('.er_box').click(function () {
                     $(this).fadeOut(200);
                 });
+
+
+
+                $('#totals').text(accounting.formatNumber($('#totals').text()));
             }
         });
         getUserInfo();
@@ -731,7 +736,7 @@
 //        getBSDN();
     }
     function getBSDN() {
-        var newsUrl = "http://211.149.175.73:8089/getBuyBcdnTotal";// 前台查看新闻
+        var newsUrl = "https://ssl.blockcdn.org/getBuyBcdnTotal";// 前台获取进度条数据
         $.ajax({
             url: newsUrl,
             type: 'post',
@@ -742,8 +747,7 @@
             success: function (json) {
                 var status = json.status;
                 if (status == 0) {
-                    console.log(json);
-                    $('#total_bcdn').text(json.data.bcdn);
+                    $('#total_bcdn').text(accounting.formatNumber(json.data.bcdn, 7, ","));
                     var totals = parseInt($('#totals').attr('data-type'));
                     var persent = json.data.bcdn/totals*100;
                     $('.step_img').css('left',(persent - 2) + '%');
@@ -801,7 +805,7 @@
         location.href = 'html_en/login.html';
     }
     function getNews() {
-        var newsUrl = "http://211.149.175.73:8089/news/getFaceNews";// 前台查看新闻
+        var newsUrl = "https://ssl.blockcdn.org/news/getFaceNews";// 前台查看新闻
         $.ajax({
             url: newsUrl,
             type: 'post',

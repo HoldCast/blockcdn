@@ -1,6 +1,6 @@
 项目说明:
 
-1.接口地址: http://211.149.175.73:8089/welcome
+1.接口地址: https://ssl.blockcdn.org/welcome
 
 2.前台登录: http://211.149.175.73/user/html/login.html
 

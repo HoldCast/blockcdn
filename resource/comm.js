@@ -1,22 +1,22 @@
-var vCodeUrl = "http://211.149.175.73:8089/sendVcode";//获取验证码
-var registerUrl = "http://211.149.175.73:8089/register";//注册
-var logInUrl = "http://211.149.175.73:8089/login";//网站用户登陆
-var cPassWordUrl = "http://211.149.175.73:8089/user/changePassWord";// 修改密码
-var rPassWordUrl = "http://211.149.175.73:8089/resetPassword";// 重置密码
-var logOutUrl = "http://211.149.175.73:8089/user/logOut";// 用户退出
-var vCodeImgUrl = "http://211.149.175.73:8089/login/getVertifyCode";//  获取验证码 利用img的，src标签直接指向该地址
+var vCodeUrl = "https://ssl.blockcdn.org/sendVcode";//获取验证码
+var registerUrl = "https://ssl.blockcdn.org/register";//注册
+var logInUrl = "https://ssl.blockcdn.org/login";//网站用户登陆
+var cPassWordUrl = "https://ssl.blockcdn.org/user/changePassWord";// 修改密码
+var rPassWordUrl = "https://ssl.blockcdn.org/resetPassword";// 重置密码
+var logOutUrl = "https://ssl.blockcdn.org/user/logOut";// 用户退出
+var vCodeImgUrl = "https://ssl.blockcdn.org/login/getVertifyCode";//  获取验证码 利用img的，src标签直接指向该地址
 
-var exchangeUrl = "http://211.149.175.73:8089/coupon/exchange";// 前台兑换优惠券
-var queryCouponUrl = "http://211.149.175.73:8089/coupon/queryCouponByUser";// 前台个人中心查看自己的优惠券;
-var assetUrl = "http://211.149.175.73:8089/money/queryUserAsset";// 用户提现时展现用户的资产信息(注意此接口针对BTC和ETH、BCDN提现时展现);
-var withdrawUrl = "http://211.149.175.73:8089/money/draw";// 用户提现
-var cancelDrawUrl = "http://211.149.175.73:8089/money/cancelDraw";// 用户取消提现
-var queryDrawUrl = "http://211.149.175.73:8089/money/queryDrawInfoByUser";// 前台根据用户查看提现记录
-var queryChargeUrl = "http://211.149.175.73:8089/money/queryRechargeInfoByUser";// 前台根据用户查看充值充值信息
+var exchangeUrl = "https://ssl.blockcdn.org/coupon/exchange";// 前台兑换优惠券
+var queryCouponUrl = "https://ssl.blockcdn.org/coupon/queryCouponByUser";// 前台个人中心查看自己的优惠券;
+var assetUrl = "https://ssl.blockcdn.org/money/queryUserAsset";// 用户提现时展现用户的资产信息(注意此接口针对BTC和ETH、BCDN提现时展现);
+var withdrawUrl = "https://ssl.blockcdn.org/money/draw";// 用户提现
+var cancelDrawUrl = "https://ssl.blockcdn.org/money/cancelDraw";// 用户取消提现
+var queryDrawUrl = "https://ssl.blockcdn.org/money/queryDrawInfoByUser";// 前台根据用户查看提现记录
+var queryChargeUrl = "https://ssl.blockcdn.org/money/queryRechargeInfoByUser";// 前台根据用户查看充值充值信息
 //购币, ico锁定
-var moneyRateUrl = "http://211.149.175.73:8089/moneyRate/getNowMoneyRate";// 前台根据货币类型查看当前汇率信息
-var moneyBuyUrl = "http://211.149.175.73:8089/moneyRate/buy";//
-var queryAllBuyUrl = "http://211.149.175.73:8089/moneyRate/getBuyHistoryByUser";// 后台查看用户兑换信息
+var moneyRateUrl = "https://ssl.blockcdn.org/moneyRate/getNowMoneyRate";// 前台根据货币类型查看当前汇率信息
+var moneyBuyUrl = "https://ssl.blockcdn.org/moneyRate/buy";//
+var queryAllBuyUrl = "https://ssl.blockcdn.org/moneyRate/getBuyHistoryByUser";// 后台查看用户兑换信息
 var btcCountYe = 0, ethCountYe = 0, bcdnCountYe = 0;
 var btcCountDj = 0, ethCountDj = 0, bcdnCountDj = 0;
 var btcCountZl = 0, ethCountZl = 0, bcdnCountZl = 0;
