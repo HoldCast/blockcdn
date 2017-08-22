@@ -1,7 +1,7 @@
 var language = {
     "add1": "Please enter the exchange code",
     "add2": "success",
-    "add3": "As the risk of BTC split, it is suspending deposit and withdraw.",
+    "add3": "We will open the withdrawal after Crowdsale.",
     "add4": "Please login again.",
     "add5": "Not available for purchase",
     "add6": "success",
