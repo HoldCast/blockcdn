@@ -246,7 +246,7 @@ em,i{font-style: normal;}
 
 .investment_table{display: none;}
 .investment_table.active{display: block;}
-.jin_top_text{font-size: 18px;color: #797979;text-align: right;margin: 20px 0px 0px;}
+.jin_top_text{font-size: 16px;color: #797979;text-align: right;margin: 20px 0px 0px;}
 .jin_top_text em{margin: 0px 10px;}
 .inner_page{padding-top: 90px;}
 .inner_page>img{margin-bottom: 30px;}
