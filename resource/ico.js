@@ -1,10 +1,7 @@
 var rateData = {};
 var pageType = getQueryString('type') || '1';
 var lastTime = '2017-08-15 00:35:00';
-var nowTimeNumber = Date.parse(new Date());
-var lastTimeNumber = Date.parse(new Date(lastTime));
-console.log(nowTimeNumber,lastTimeNumber);
-console.log('现在的时间:',formatDate(nowTimeNumber),'最后的时间:',formatDate(lastTimeNumber));
+
 $(function () {
     $('#icoBtn1').off('click').on('click', function () {
         $('.withdraw-btn').removeClass('active');
@@ -146,6 +143,8 @@ function moneyBuy(rateData) {
             }
             else if (json.status == 435) {
                 util.layerAlert("", util.getLan("add16"), 2);
+            }else if (json.status == 440) {
+                util.layerAlert("", util.getLan("add22"), 2);
             }
             else if (json.status == 437) {
                 var tips = util.getLan("add14");
@@ -182,6 +181,9 @@ function getRate(type) {
         },
         success: function (json) {
             console.log('汇率信息:' + type, json);
+            var nowTimeNumber = Date.parse(new Date());
+            var lastTimeNumber = json.data.last_time;
+            console.log('现在的时间:',formatDate(nowTimeNumber),'最后的时间:',formatDate(lastTimeNumber));
             if (json.status == 0) {
                 var data = json.data.moneyRate;
                 rateData.type = data.type;

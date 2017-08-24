@@ -97,7 +97,7 @@ em,i{font-style: normal;}
 
 .feature_come{padding-top: 100px;text-align: center}
 .feature_title img{width: auto;display: inline-block;}
-.feature_title h1{font-size: 36px;color: #929292;}
+.feature_title h1{font-size: 32px;color: #929292;}
 .count_down{position: absolute;top: 0px;left: 0px;width: 100%;text-align: center;margin-top: -15px;}
 .count_down span{font-size: 68px;color: #26a8dc;display: inline-block;width: 24%;text-align: center;}
 
@@ -304,7 +304,25 @@ em,i{font-style: normal;}
 .logOut{position: absolute;top: -60px;left: 0px;text-align: center;color: #000000!important;display: block;line-height: 60px!important;background: #26a8dc;width: 100%;font-size: 14px;opacity: 0;text-decoration: underline;height: 60px!important;}
 .pc_hd_menus>li:hover .logOut{top: 90px;opacity: 1;}
 #youkuplayer{float: left;}
+
+
+.add_logo{padding: 40px 0px 0px;}
+.add_links{text-align: center;}
+.add_links a{width: 33%;display: inline-block;padding: 15px;}
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width:900px){
+
+    .add_links a{width: 100%;display: block;padding: 10px;}
     .mobile_header{display: block;}
     .pc_header{display: none;}
     .black_sky{display: none;}

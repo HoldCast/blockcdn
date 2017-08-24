@@ -9,6 +9,7 @@ $(function () {
     getBtcRecord(btcPageNum);
     getEthRecord(ethPageNum);
     getMore();
+    birdTips();
 });
 
 function getMore() {
@@ -113,4 +114,41 @@ function getTotal() {
             }
         }
     });
+}
+
+
+function birdTips(){
+    var firstTime = '2017.7.20 00:00:00';
+    var lastTime = '2017.8.24 20:00:00';
+    var nowTimeNumber = Date.parse(new Date());
+    var lastTimeNumber = Date.parse(new Date(lastTime));
+    var firstTimeNumber = Date.parse(new Date(firstTime));
+    console.log('现在时间:',formatDate(nowTimeNumber),'结束时间:',formatDate(lastTimeNumber));
+    var birdTips = '';
+    if(nowTimeNumber < firstTimeNumber){
+        birdTips = util.getLan("add23");
+    }
+    else if(nowTimeNumber >= firstTimeNumber && nowTimeNumber <= lastTimeNumber){
+        birdTips = util.getLan("add24");
+    }
+    else if(nowTimeNumber > lastTimeNumber){
+        birdTips = util.getLan("add25");
+    }
+    $('#birdTips').text(birdTips);
+}
+
+function formatDate(str) {
+    var now = new Date(parseInt(str));
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var date = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    if(month < 10) month = '0' + month;
+    if(date < 10) date = '0' + date;
+    if(hour < 10) hour = '0' + hour;
+    if(minute < 10) minute = '0' + minute;
+    if(second < 10) second = '0' + second;
+    return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
 }

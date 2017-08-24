@@ -12,7 +12,8 @@ var language = {
     "add11": "canceled",
     "add12": "rejected",
     "add13": "cancel",
-    "add14": "It’s not the time to purchase . Please do the locking in the following time. <br>Early bird :2017.8.15  08:00－2017.8.17  08：00 <br>Lock-in:2017.8.23  08:00－2017.8.25  08：00 <br>ICO:2017.8.30  08:00－2017.9.30  08：00",
+    //"add14": "It’s not the time to purchase . Please do the locking in the following time. <br>Early bird :2017.8.15  08:00－2017.8.17  08：00 <br>Lock-in:2017.8.23  08:00－2017.8.25  08：00 <br>ICO:2017.8.30  08:00－2017.9.30  08：00",
+    "add14": "It is not the time to purchase, please do it on time.",
     "add15": "ICO has finished. Thanks for your participation!",
     "add16": "Negative number is unavailable and the balance is greater than zero.",
     "add17": "Please type the legal character",
@@ -20,10 +21,10 @@ var language = {
     "add19": "Wrong password",
     "add20": "The code is time out",
     "add21": "Wrong code",
-
-
-
-
+    "add22": "Sold out！ Thanks for your participation！",
+    "add23": "Early bird is coming.",
+    "add24": "Early bird is ongoing. Countdown:",
+    "add25": "Sold out ! Early bird has finished.",
 
 
 
