@@ -147,8 +147,8 @@ function getBalance() {
 
                     //点击提现
                     $('#assetsTable .withdraw-btn').off('click').on('click',function(){
-                        disableHandle();
-                        return false;
+                        //disableHandle();
+                        //return false;
                         var $this = $(this);
                         var fid = $this.attr('fid');
                         location.href = 'withdraw.html?type=' + fid;
