@@ -120,6 +120,9 @@ $(function () {
             $('#etcTips').css('visibility','hidden');
         }
         else {
+            util.layerAlert("", util.getLan("add26"), 1, function () {
+                //location.href = 'login.html';
+            });
             widthdrawType = '3';
             $('#txtBalance').val(bcdnCountYe);
             getQueryDraw(widthdrawType);

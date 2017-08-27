@@ -25,6 +25,7 @@ var language = {
     "add23": "Early bird is coming.",
     "add24": "Early bird is ongoing. Countdown:",
     "add25": "Sold out ! Early bird has finished.",
+    "add26": " Please type the correct ETH wallet address,Do not use the Exchange address. Or you will lose BCDN and be responsible for your wrong operation.",
 
 
 
