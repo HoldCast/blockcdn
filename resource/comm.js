@@ -17,6 +17,8 @@ var queryChargeUrl = "https://ssl.blockcdn.org/money/queryRechargeInfoByUser";//
 var moneyRateUrl = "https://ssl.blockcdn.org/moneyRate/getNowMoneyRate";// 前台根据货币类型查看当前汇率信息
 var moneyBuyUrl = "https://ssl.blockcdn.org/moneyRate/buy";//
 var queryAllBuyUrl = "https://ssl.blockcdn.org/moneyRate/getBuyHistoryByUser";// 后台查看用户兑换信息
+var queryReturnMoney = "https://ssl.blockcdn.org/money/searchUserReturn";// 前台查看退币信息
+var returnMoney = "https://ssl.blockcdn.org/money/returnMoney";// 前台用户进行退币
 var btcCountYe = 0, ethCountYe = 0, bcdnCountYe = 0;
 var btcCountDj = 0, ethCountDj = 0, bcdnCountDj = 0;
 var btcCountZl = 0, ethCountZl = 0, bcdnCountZl = 0;
@@ -145,6 +147,14 @@ function getBalance() {
                     $('#bcdnDj').text(bcdnCountDj);
                     $('#bcdnZl').text(bcdnCountZl);
 
+                    //点击退币
+                    $('#assetsTable .refund-btn').off('click').on('click',function(){
+                        //disableHandle();
+                        //return false;
+                        var $this = $(this);
+                        var fid = $this.attr('fid');
+                        location.href = 'refund.html?type=' + fid;
+                    });
                     //点击提现
                     $('#assetsTable .withdraw-btn').off('click').on('click',function(){
                         //disableHandle();
@@ -163,7 +173,9 @@ function getBalance() {
                         else {
                             //disableHandle();
                             //return false;
-                            location.href = 'deposit.html?type=' + fid;
+                            var data_la = $(this).attr('data-la');
+                            alertMsg(data_la,fid);
+                            // location.href = 'deposit.html?type=' + fid;
                         }
                     });
                 }

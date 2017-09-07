@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-dpr="1">
 <head>
-    <title>Deposit</title>
+    <title>Coin return</title>
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -39,6 +39,13 @@
         input, textarea, select, button, meter, progress {
             -webkit-writing-mode: horizontal-tb;
         }
+        .withdraw-cancel{
+            border: 0.01rem solid #aaa;
+            padding: 0.02rem 0.08rem;
+            border-radius: 0.03rem;
+            cursor: pointer;
+            font-weight: normal;
+        }
     </style>
     <!--<meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">-->
     <script type="application/javascript">
@@ -67,7 +74,7 @@
                     width = widthBase * dpr;
                 }
                 if (dpr != 1) {
-                    //scale = scale-0.1;
+                    scale = scale-0.1;
                 }
                 docEl.style.fontSize = (100 * (width / widthBase) * (scale)) + 'px';
             };
@@ -140,6 +147,7 @@
 
 
 
+
 <div class="container-full user-banner">
     <div class="container flex-center">
         <div class="user-top flex-center flex-direction">
@@ -161,77 +169,71 @@
 
     <div class="flex-left flex-direction user-left-menu">
         <a href="assets.html"><img src="../resource/zichan.png" alt=""> personal assets</a>
-        <a href="javascript:void(0);"  onclick="alertMsg('en');" class="active"><img src="../resource/chongzhi.png" alt=""> deposit</a>
-        <!--<a href="javascript:disableHandle();" class="active"><img src="../resource/chongzhi.png" alt=""> deposit</a>-->
+        <a href="javascript:void(0);"  onclick="alertMsg('en');"><img src="../resource/chongzhi.png" alt=""> deposit</a>
+        <!--<a href="javascript:disableHandle();"><img src="../resource/chongzhi.png" alt=""> deposit</a>-->
         <a href="withdraw.html"><img src="../resource/tixian.png" alt=""> withdraw</a>
-        <!--<a href="javascript:disableHandle();"><img src="../resource/tixian.png" alt=""> withdraw</a>-->
-        <a href="exchange.html"><img src="../resource/duihuan.png" alt=""> exchange</a>
+        <!--<a href="javascript:disableHandle();" class="active"><img src="../resource/tixian.png" alt=""> withdraw</a>-->
+        <a href="exchange.html" ><img src="../resource/duihuan.png" alt=""> exchange</a>
         <!--<a href="ico.html"><img src="../resource/lock.png" alt=""> invest</a>-->          <a href="javascript:void(0);"><img src="../resource/lock.png" alt=""> invest</a>
         <a href="modifyPassword.html"><img src="../resource/mima.png" alt=""> password</a>
-        <a href="refund.html"><img src="../resource/lock.png" alt=""> coin return</a>
+        <a href="refund.html" class="active"><img src="../resource/lock.png" alt=""> coin return</a>
     </div>
 
-    <div class="recharge-box">
-        <div class="nav-box flex-center">
-            <a href="javascript:" type="BTC" id="depositBtn1" class="flex-center active deposit-btn">
+    <div class="flex-right  user-content-right flex-direction">
+        <div class="withdraw-nav flex-center">
+            <a  href="javascript:"  type="BTC" id="withdrawBtn1" class="flex-center active withdraw-btn">
                 <img class="black" src="../resource/201706101049017_CI0f8.png">
                 <img class="white" src="../resource/201706101049017_CI0f81.png">
-                <span>exchange BTC</span>
+                <span>withdraw BTC</span>
             </a>
-            <!--<a href="http://BCDNchain.com/deposit/coin_deposit.html?symbol=2" class="flex-center  endLine  ">
-                <img src="./deposit_files/201706101049002_dKxmV.png"><span>BCDN充值</span>
-            </a>-->
-            <a href="javascript:;" type="ETH" id="depositBtn2" class="flex-center deposit-btn">
+            <a href="javascript:" type="ETH" id="withdrawBtn2" class="flex-center withdraw-btn">
                 <img class="black" src="../resource/201706101048037_uvtGO.png">
-                <img class="white" src="../resource/201706101048037_uvtGO1.png"><span>exchange ETH</span>
+                <img class="white" src="../resource/201706101048037_uvtGO1.png">
+                <span>withdraw ETH</span>
             </a>
-            <!--<a href="/" class="flex-center endLine">BTC充值</a>
-            <a href="/" class="flex-center endLine">BTC充值</a>
-            <a href="/" class="flex-center">BTC充值</a>-->
         </div>
-        <div class="address-box flex-center flex-direction" id="BTCArea">
-            <div class="top-box flex-center">
-                <div class="qr-dode-big-box flex-center">
-                    <div id="BTCqrCodeBox" class="flex-center"></div>
-                </div>
+        <div class="flex-direction withdraw-box flex-center">
+            <div class="input-box flex-center">
+                <span>account balances</span>
+                <input type="text" id="txtBalance" readonly="readonly" value="">
             </div>
-            <p class="hint flex-center">
-                <i class="warning-icon"></i>
-                <span>BTC address</span>
-            </p>
-            <p class="recharge-address flex-center" id="BTCStr" style="margin-bottom:0.08rem;"></p>
-            <p style="color:#ff1f1c;margin-bottom:0.3rem;">
-                For your security of deposit,we have sent the  address to your e-mail .Please check them whether they are the same.
-            </p>
-        </div>
-
-        <div class="address-box flex-center flex-direction" id="ETHArea" style="display: none;">
-            <div class="top-box flex-center">
-                <div class="qr-dode-big-box flex-center">
-                    <div id="ETHqrCodeBox" class="flex-center"></div>
-                </div>
+            <div class="input-box flex-center" style="margin-bottom:0.08rem;">
+                <span>withdraw add</span>
+                <input type="text" id="txtText">
             </div>
-            <p class="hint flex-center">
-                <i class="warning-icon"></i>
-                <span>ETH address</span>
+            <!--<p class="recharge-address flex-center" id="BTCStr" style="margin-bottom:0.08rem;"></p>-->
+            <p style="color:#ff1f1c;margin-bottom:0.21rem;visibility: hidden" id="etcTips">
+                Please fill in the correct ETH address.
             </p>
-            <p class="recharge-address flex-center" id="ETHStr" style="margin-bottom:0.08rem;"></p>
-            <p style="color:#ff1f1c;margin-bottom:0.3rem;">
-                For your security of deposit,we have sent the  address to your e-mail .Please check them whether they are the same.
-            </p>
+            <div class="input-box flex-center" style="margin-bottom: 0rem;">
+                <span>withdraw count</span>
+                <input type="text" id="txtAmount" readonly="readonly">
+            </div>
+            <div class="mobile_only" style="font-size:0.18rem;color:#030335;min-width:4.82rem;padding-left:0.18rem;margin-top: 0.1rem;margin-bottom: 0.20rem;">
+                <em style="line-height: 25px;font-style: normal;float: left;display: block;">arrive: </em>
+                <span style="display:inline-block;min-width:1.4rem;line-height: 25px;float: left;display: block;height: 25px;" id="sjtx"></span>
+                <em style="color: red;font-size: 0.16rem;font-style: normal;line-height: 25px;float: left;display: block;">acceptance fee: </em>
+                <span style="display:inline-block;min-width:1.4rem;font-size:0.16rem;color: red;line-height: 25px;float: left;display: block" id="sxf"></span></div>
+            <div class="input-box flex-center">
+                <span>email vcode</span>
+                <input type="text" id="txtCode">
+                <button style="text-align: center" id="btnSendEmailCode" data-msgtype="203" data-tipsid="register-email">get vcode</button>
+            </div>
+            <input type="button" id="btnSubmit" class="flex-center" value="submit">
+            <p style="color:#ff1f1c;margin-top:0.05rem;">Reminder：All the withdrawals will be processed from 9:00am to 18:00pm on weekdays.</p>
         </div>
-        <div class="recharge-record">
+        <div class="withdraw-record">
             <table>
                 <thead>
                 <tr class="flex-center">
-                    <th width="220"><i class="financial-record user-plist time"></i><span>time</span></th>
-                    <th width="200"><i class="financial-record user-plist num"></i><span>count</span></th>
-                    <th width="220"><i class="financial-record user-plist num"></i><span>address</span></th>
-                    <th width="212"><i class="financial-record user-plist num"></i><span>status</span></th>
+                    <th width="220"><i class="ico-record-icon user-plist time"></i><span>time</span></th>
+                    <th width="150"><i class="ico-record-icon user-plist num"></i><span>arrive</span></th>
+                    <th width="300"><i class="ico-record-icon user-plist num"></i><span>address</span></th>
+                    <th width="228"><i class="ico-record-icon user-plist num"></i><span>status</span></th>
+                    <!--<th width="100"><i class="ico-record-icon user-plist num"></i><span>operation</span></th>-->
                 </tr>
                 </thead>
-                <tbody class="flex-direction" id="financialRecord">
-                </tbody>
+                <tbody class="flex-direction" id="withdrawRecord"></tbody>
             </table>
         </div>
     </div>
@@ -241,12 +243,12 @@
 <script type="text/javascript" src="../resource/layer.js"></script>
 <script type="text/javascript" src="../resource/util.js"></script>
 <script type="text/javascript" src="../resource/comm.js?v=2"></script>
-<script type="text/javascript" src="../resource/language_en_US.js"></script>
+<script type="text/javascript" src="../resource/language_en_US.js?v=2"></script>
 <script type="text/javascript" src="../resource/login.js?v=4"></script>
 <script type="text/javascript" src="../resource/msg.js"></script>
-<script type="text/javascript" src="../resource/jquery.qrcode.min.js"></script>
-<script type="text/javascript" src="../resource/account.js"></script>
+<script type="text/javascript" src="../resource/refund.js?v=1.0.0.2"></script>
 <script>
+
     //    <!--手机侧边栏-->
     $('#off-canvas').click(function () {
         $('#offcanvas').toggleClass('show');
@@ -257,8 +259,6 @@
     $('.canvas_bg').click(function () {
         $('#offcanvas').toggleClass('show');
     });
-
-
 </script>
 </body>
 </html>

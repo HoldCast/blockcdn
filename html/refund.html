@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-dpr="1">
 <head>
-    <title>用户登录</title>
+    <title>退币</title>
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="../resource/comm.css">
     <link rel="stylesheet" href="../resource/layer.css">
     <link rel="stylesheet" href="../resource/user.css">
-
     <style>
         input, textarea, select, button {
             text-rendering: auto;
@@ -39,6 +38,13 @@
 
         input, textarea, select, button, meter, progress {
             -webkit-writing-mode: horizontal-tb;
+        }
+        .withdraw-cancel{
+            border: 0.01rem solid #aaa;
+            padding: 0.02rem 0.08rem;
+            border-radius: 0.03rem;
+            cursor: pointer;
+            font-weight: normal;
         }
     </style>
     <!--<meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">-->
@@ -59,8 +65,8 @@
             }
             var metaEl = doc.createElement('meta');
             metaEl.name = 'viewport';
-         /*   metaEl.content = 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale;
-            docEl.firstElementChild.appendChild(metaEl);*/
+//            metaEl.content = 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale;
+//            docEl.firstElementChild.appendChild(metaEl);
 
             var recalc = function () {
                 var width = docEl.clientWidth;
@@ -68,7 +74,7 @@
                     width = widthBase * dpr;
                 }
                 if (dpr != 1) {
-                    //scale = scale-0.1;
+                    scale = scale-0.1;
                 }
                 docEl.style.fontSize = (100 * (width / widthBase) * (scale)) + 'px';
             };
@@ -86,7 +92,7 @@
     <link rel="stylesheet" href="../resource/user.css">
     <link rel="stylesheet" href="../resource/layer.css" id="layuicss-skinlayercss">
 </head>
-<body style="padding-top: 55px;">
+<body class="mobile_padding">
 <div class="pc_header" id="navigation">
     <div class="page_content nav-menu clearfix">
         <a href="http://www.blockcdn.org/" class="pc_logo am-fl" ><img src="../images/logo.png" alt=""></a>
@@ -96,15 +102,16 @@
             <li><a href="../index.html#book" class="scroll">白皮书</a></li>
             <li><a href="../index.html#mechin" class="scroll">矿机</a></li>
             <li><a href="../index.html#news" class="scroll">新闻报道</a></li>
-            <li class="active"><a href="javascript:userInfo()" >用户中心</a></li>
-            <li id="userInfo">
-                <!--<a href="javascript:void(0);" target="_blank"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>-->
+            <!--<li class="active-ck"><a href="javascript:userInfo()" >用户中心</a></li>-->
+            <li class="active" id="userInfo">
+                <a href="javascript:userInfo();" target="_blank"><span id="userMc"> </span> <i style="font-size: 18px;">▾</i></a>
                 <a href="javascript:logOut();" class="logOut">退出</a>
             </li>
             <li><a href="javascript:lanChange('en_US')">English</a></li>
         </ul>
     </div>
 </div>
+
 
 <div class="mobile_header">
     <div class="page_content clearfix">
@@ -138,59 +145,108 @@
 </div>
 
 
-<div id="userContentBox" class="user-content container-full flex-center">
-    <div class="content-box">
-        <div class="logo-box  flex-center">
-            <img src="../resource/logo.png" height="31" width="90">
-        </div>
-        <div class="submit-box">
-            <div>
-                <img src="../resource/user-account.png">
-                <input type="text" id="login-account" placeholder="请输入邮箱">
-            </div>
 
-
-            <!--<input type="text" id="register-email-code" placeholder="请输入验证码"/>
-            <button id="btn-sendemailcode" data-msgtype="203" data-tipsid="register-email" class="btn btn-sendemailcode register-msg">获取验证码</button>
-            -->
-            <div>
-                <img src="../resource/user-password.png">
-                <input type="password" id="login-password" placeholder="请输入密码">
-            </div>
-            <div>
-                <img src="../resource/user-vcode.png">
-                <input id="login-imgCode" class="form-control login-ipt" type="text" placeholder="请输入图片验证码"/>
-                <img src=""
-                     style="left: auto;right: 0;width: auto;height: 0.41rem;top: 0;cursor: pointer;"
-                     id="loginVcodeImg">
-                <!--<button style="text-align: center" id="btnSendEmailCode" data-msgtype="203" data-tipsid="register-email">获取验证码</button>-->
-                <!--<img class="btn btn-imgcode" id="loginVcodeImg"/>-->
-            </div>
-            <button id="login-submit" style="text-align: center">登录</button>
-            <input id="forwardUrl" type="hidden" value="">
-        </div>
-        <div class="flex">
-            <a href="findback.html" class="user-login flex-left" style="color:#ffffff!important;">忘记密码？</a>
-            <!--<a href="register.html" class="user-login flex-right" style="color:#ffffff!important;">注册账号 &gt;&gt;</a>-->
+<div class="container-full user-banner">
+    <div class="container flex-center">
+        <div class="user-top flex-center flex-direction">
+            <i class="user-face user-plist"></i>
+            <span class="user-balance flex-center">账户余额（<span id="iconType">BCDN</span>）</span>
+            <span class="user-balance-amount flex-center" id="iconNumber">0</span>
+            <span class="user-login-name flex-center">用户名:<span id="userName"></span></span>
         </div>
     </div>
 </div>
-<p class="bottom_text" style="position: fixed;width: 100%;left: 0px;bottom: 0px;">Copyright ©2016 BlockCDN. All Rights Reserved. Legal</p>
+<div class="container-full user-split flex-center">
+    <div class="user-split-content flex-center">
+        <span class="user-lastTime flex-left">上次登录时间: <span id="createTime"></span></span>
+        <span class="user-lastTime flex-center" id="uid"></span>
+        <a class="user-logout flex-right" href="javascript:logOut()">退出登录 &gt;&gt;</a>
+    </div>
+</div>
+
+<div class="container user-content-box">
+
+    <div class="flex-left flex-direction user-left-menu">
+        <a href="assets.html" ><img src="../resource/zichan.png" alt=""> 个人资产</a>
+        <a href="javascript:void(0);"  onclick="alertMsg('zh');"><img src="../resource/chongzhi.png" alt=""> 充值</a>
+        <!--<a href="javascript:disableHandle();"><img src="../resource/chongzhi.png" alt=""> 充值</a>-->
+        <a href="withdraw.html"><img src="../resource/tixian.png" alt=""> 提现</a>
+        <!--<a href="javascript:disableHandle();"><img src="../resource/tixian.png" alt=""> 提现</a>-->
+        <a href="exchange.html"><img src="../resource/duihuan.png" alt=""> BCDN兑换</a>
+        <!--<a href="ico.html"><img src="../resource/lock.png" alt=""> 投资</a>-->         <a href="javascript:void(0);"><img src="../resource/lock.png" alt=""> 投资</a>
+        <a href="modifyPassword.html"><img src="../resource/mima.png" alt=""> 修改密码</a>
+        <a href="refund.html" class="active"><img src="../resource/lock.png" alt=""> 退币</a>
+    </div>
+
+    <div class="flex-right  user-content-right flex-direction">
+        <div class="withdraw-nav flex-center">
+            <a  href="javascript:"  type="BTC" id="withdrawBtn1" class="flex-center active withdraw-btn">
+                <img class="black" src="../resource/201706101049017_CI0f8.png">
+                <img class="white" src="../resource/201706101049017_CI0f81.png">
+                <span>BTC退币</span>
+            </a>
+            <a href="javascript:" type="ETH" id="withdrawBtn2" class="flex-center withdraw-btn">
+                <img class="black" src="../resource/201706101048037_uvtGO.png">
+                <img class="white" src="../resource/201706101048037_uvtGO1.png">
+                <span>ETH退币</span>
+            </a>
+        </div>
+        <div class="flex-direction withdraw-box flex-center">
+            <div class="input-box flex-center">
+                <span>可退余额</span>
+                <input type="text" id="txtBalance" readonly="readonly" value="">
+            </div>
+            <div class="input-box flex-center" style="margin-bottom:0.08rem;">
+                <span>退币地址</span>
+                <input type="text" id="txtText">
+            </div>
+            <!--<p class="recharge-address flex-center" id="BTCStr" style="margin-bottom:0.08rem;"></p>-->
+            <p style="color:#ff1f1c;margin-bottom:0.21rem;visibility: hidden" id="etcTips">
+                请正确填写你的ETH钱包地址
+            </p>
+            <div class="input-box flex-center" style="margin-bottom: 0rem;">
+                <span>退币数量</span>
+                <input type="text" id="txtAmount" readonly="readonly">
+            </div>
+            <div class="mobile_only" style="font-size:0.18rem;color:#030335;min-width:4.82rem;padding-left:0.18rem;margin-top: 0.1rem;margin-bottom: 0.20rem;">
+                <em style="line-height: 25px;font-style: normal;float: left;display: block;">实际到账: </em>
+                <span style="display:inline-block;min-width:1.4rem;line-height: 25px;float: left;display: block;height: 25px;" id="sjtx"></span>
+                <em style="color: red;font-size: 0.16rem;font-style: normal;line-height: 25px;float: left;display: block;">网络手续费: </em>
+                <span style="display:inline-block;min-width:1.4rem;font-size:0.16rem;color: red;line-height: 25px;float: left;display: block" id="sxf"></span></div>
+            <div class="input-box flex-center">
+                <span>邮箱验证码</span>
+                <input type="text" id="txtCode">
+                <button style="text-align: center" id="btnSendEmailCode" data-msgtype="203" data-tipsid="register-email">获取验证码</button>
+            </div>
+            <input type="button" id="btnSubmit" class="flex-center" value="提交退币订单">
+            <!--<p style="color:#ff1f1c;margin-top:0.05rem;">特别提示：所有提现将在周一至周五的9点到18点予以处理。</p>-->
+        </div>
+        <div class="withdraw-record">
+            <table>
+                <thead>
+                <tr class="flex-center">
+                    <th width="200"><i class="ico-record-icon user-plist time"></i><span>时间</span></th>
+                    <th width="150"><i class="ico-record-icon user-plist num"></i><span>退币金额</span></th>
+                    <th width="300"><i class="ico-record-icon user-plist num"></i><span>地址</span></th>
+                    <th width="228"><i class="ico-record-icon user-plist num"></i><span>状态</span></th>
+                    <!--<th width="100"><i class="ico-record-icon user-plist num"></i><span>操作</span></th>-->
+                </tr>
+                </thead>
+                <tbody class="flex-direction" id="withdrawRecord"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<p class="bottom_text">Copyright ©2016 BlockCDN. All Rights Reserved. Legal</p>
 <script type="text/javascript" src="../resource/jquery.min.js"></script>
 <script type="text/javascript" src="../resource/layer.js"></script>
 <script type="text/javascript" src="../resource/util.js"></script>
 <script type="text/javascript" src="../resource/comm.js?v=2"></script>
-<script type="text/javascript" src="../resource/language_zh_CN.js"></script>
+<script type="text/javascript" src="../resource/language_zh_CN.js?v=2"></script>
 <script type="text/javascript" src="../resource/login.js?v=4"></script>
 <script type="text/javascript" src="../resource/msg.js"></script>
+<script type="text/javascript" src="../resource/refund.js?v=1.0.0.1"></script>
 <script>
-
-    var win_height  = parseInt($(window).height());
-    var page_he = win_height - 160;
-    $('#userContentBox').css({
-        'height':page_he
-    });
-
 
     //    <!--手机侧边栏-->
     $('#off-canvas').click(function () {
@@ -202,8 +258,6 @@
     $('.canvas_bg').click(function () {
         $('#offcanvas').toggleClass('show');
     });
-
-
 </script>
 </body>
 </html>

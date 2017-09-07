@@ -184,13 +184,14 @@
 <div class="container user-content-box">
     <div class="flex-left flex-direction user-left-menu">
         <a href="assets.html" class="active"><img src="../resource/zichan.png" alt=""> personal assets</a>
-        <a href="deposit.html"><img src="../resource/chongzhi.png" alt=""> deposit</a>
+        <a href="javascript:void(0);"  onclick="alertMsg('en');"><img src="../resource/chongzhi.png" alt=""> deposit</a>
         <!--<a href="javascript:disableHandle();"><img src="../resource/chongzhi.png" alt=""> deposit</a>-->
         <a href="withdraw.html"><img src="../resource/tixian.png" alt=""> withdraw</a>
         <!--<a href="javascript:disableHandle();"><img src="../resource/tixian.png" alt=""> withdraw</a>-->
         <a href="exchange.html"><img src="../resource/duihuan.png" alt=""> exchange</a>
         <!--<a href="ico.html"><img src="../resource/lock.png" alt=""> invest</a>-->          <a href="javascript:void(0);"><img src="../resource/lock.png" alt=""> invest</a>
         <a href="modifyPassword.html"><img src="../resource/mima.png" alt=""> password</a>
+        <a href="refund.html"><img src="../resource/lock.png" alt=""> coin return</a>
     </div>
 
     <div class="user-content-right">
@@ -199,40 +200,42 @@
                 <thead>
                 <tr class="flex-center">
                     <th width="150"><i class="ico-record-icon user-plist coin"></i><span>currency name</span></th>
-                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>available balance</span></th>
-                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>frozen capital</span></th>
-                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>total</span></th>
-                    <th width="180"><i class="ico-record-icon user-plist num"></i><span>operation</span></th>
+                    <th width="150"><i class="ico-record-icon user-plist num"></i><span>available balance</span></th>
+                    <th width="150"><i class="ico-record-icon user-plist num"></i><span>frozen capital</span></th>
+                    <th width="150"><i class="ico-record-icon user-plist num"></i><span>total</span></th>
+                    <th width="270"><i class="ico-record-icon user-plist num"></i><span>operation</span></th>
                     <!--<th width="100"><i class="ico-record-icon user-plist num"></i><span th:utext="#{user.ico.record.page5}">状态</span></th>-->
                 </tr>
                 </thead>
                 <tbody class="flex-direction" id="assetsTable">
                 <tr>
                     <th width="150">BTC</th>
-                    <th width="180" id="btcKy">0</th>
-                    <th width="180" id="btcDj">0</th>
-                    <th width="180" id="btcZl">0</th>
-                    <th width="180">
+                    <th width="150" id="btcKy">0</th>
+                    <th width="150" id="btcDj">0</th>
+                    <th width="150" id="btcZl">0</th>
+                    <th width="270">
                         <span class="td-btn withdraw-btn" fid="1">withdraw</span>
-                        <span class="td-btn deposit-btn" fid="1">deposit</span>
+                        <span class="td-btn deposit-btn" fid="1"  data-la="en">deposit</span>
+                        <span class="td-btn refund-btn" fid="1" data-la="en">refund</span>
                     </th>
                 </tr>
                 <tr>
                     <th width="150">ETH</th>
-                    <th width="180" id="ethKy">0</th>
-                    <th width="180" id="ethDj">0</th>
-                    <th width="180" id="ethZl">0</th>
-                    <th width="180">
+                    <th width="150" id="ethKy">0</th>
+                    <th width="150" id="ethDj">0</th>
+                    <th width="150" id="ethZl">0</th>
+                    <th width="270">
                         <span class="td-btn withdraw-btn" fid="2">withdraw</span>
-                        <span class="td-btn deposit-btn" fid="2">deposit</span>
+                        <span class="td-btn deposit-btn" fid="2"  data-la="en">deposit</span>
+                        <span class="td-btn refund-btn" fid="2" data-la="en">refund</span>
                     </th>
                 </tr>
                 <tr>
                     <th width="150">BCDN</th>
-                    <th width="180" id="bcdnKy">0</th>
-                    <th width="180" id="bcdnDj">0</th>
-                    <th width="180" id="bcdnZl">0</th>
-                    <th width="180">
+                    <th width="150" id="bcdnKy">0</th>
+                    <th width="150" id="bcdnDj">0</th>
+                    <th width="150" id="bcdnZl">0</th>
+                    <th width="270">
                         <span class="td-btn withdraw-btn" fid="3">withdraw</span>
                         <span class="td-btn deposit-btn" fid="3">exchange</span>
                     </th>
@@ -246,9 +249,9 @@
 <script type="text/javascript" src="../resource/jquery.min.js"></script>
 <script type="text/javascript" src="../resource/layer.js"></script>
 <script type="text/javascript" src="../resource/util.js"></script>
-<script type="text/javascript" src="../resource/comm.js?v=1"></script>
+<script type="text/javascript" src="../resource/comm.js?v=2"></script>
 <script type="text/javascript" src="../resource/language_en_US.js"></script>
-<script type="text/javascript" src="../resource/login.js"></script>
+<script type="text/javascript" src="../resource/login.js?v=4"></script>
 <script type="text/javascript" src="../resource/msg.js"></script>
 <script>
     //    <!--手机侧边栏-->
