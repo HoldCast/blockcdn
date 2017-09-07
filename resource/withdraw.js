@@ -89,6 +89,10 @@ $(function () {
     });
     $("#btnSubmit").on("click", function () {
         withdraw.submit()
+    }).prop('disabled',true).css({
+        background: '#ccc',
+        border: '1px solid #ccc',
+        cursor: 'not-allowed'
     });
     $("#txtAmount").on("keypress", function (event) {
         //return util.goIngKeypress(this, event, 4);

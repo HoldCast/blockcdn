@@ -38,7 +38,7 @@ var withdraw = {
                 "draw_address": txtText,
                 "draw_count": txtAmount,
                 "vcode": txtCode,
-                "type": widthdrawType
+                "money_type": widthdrawType
             })
         };
         var callback = function (data) {
