@@ -27,6 +27,11 @@ var withdraw = {
             util.layerAlert("", util.getLan("user.tips.29"), 2);
             return;
         }
+        if (parseFloat(txtBalance) <= 0){
+            util.layerAlert("", util.getLan("user.tips.29"), 2);
+            return;
+        }
+
         //提现类型，1是btc，2是eth，3是bcdn
         var param = {
             sessionid: localStorage.sessionid,

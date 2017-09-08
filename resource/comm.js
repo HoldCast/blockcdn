@@ -27,6 +27,7 @@ var cancelReturnMoneyUrl = "https://ssl.blockcdn.org/money/cancelReturnMoney";//
 var btcCountYe = 0, ethCountYe = 0, bcdnCountYe = 0;
 var btcCountDj = 0, ethCountDj = 0, bcdnCountDj = 0;
 var btcCountZl = 0, ethCountZl = 0, bcdnCountZl = 0;
+var btcCountTb = 0, ethCountTb = 0, bcdnCountTb = 0;
 
 $(function () {
     $(".lan-tab-hover").on("click", function () {
@@ -113,6 +114,10 @@ function getBalance() {
                 btcCountZl = data.btc_total;//btcCountYe + btcCountDj;,,
                 ethCountZl = data.eth_total;//ethCountYe + ethCountDj;
                 bcdnCountZl = data.bcdn_total;//bcdnCountYe + bcdnCountDj;
+                //退币
+                btcCountTb = data.return_btc || 0;
+                ethCountTb = data.return_eth || 0;
+                bcdnCountTb = data.return_bcdn || 0;
                 $('#iconNumber').text(bcdnCountYe);
                 if ($('#BTCArea').length) {
                     var BTCStr = data.btc_address;
@@ -143,14 +148,17 @@ function getBalance() {
                     $('#btcKy').text(btcCountYe);
                     $('#btcDj').text(btcCountDj);
                     $('#btcZl').text(btcCountZl);
+                    $('#btcTb').text(btcCountTb);
 
                     $('#ethKy').text(ethCountYe);
                     $('#ethDj').text(ethCountDj);
                     $('#ethZl').text(ethCountZl);
+                    $('#ethTb').text(ethCountTb);
 
                     $('#bcdnKy').text(bcdnCountYe);
                     $('#bcdnDj').text(bcdnCountDj);
                     $('#bcdnZl').text(bcdnCountZl);
+                    $('#bcdnTb').text(bcdnCountTb);
 
                     //点击退币
                     $('#assetsTable .refund-btn').off('click').on('click',function(){
