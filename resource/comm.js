@@ -17,8 +17,13 @@ var queryChargeUrl = "https://ssl.blockcdn.org/money/queryRechargeInfoByUser";//
 var moneyRateUrl = "https://ssl.blockcdn.org/moneyRate/getNowMoneyRate";// 前台根据货币类型查看当前汇率信息
 var moneyBuyUrl = "https://ssl.blockcdn.org/moneyRate/buy";//
 var queryAllBuyUrl = "https://ssl.blockcdn.org/moneyRate/getBuyHistoryByUser";// 后台查看用户兑换信息
-var queryReturnMoney = "https://ssl.blockcdn.org/money/getRecordbyuser";// 前台查看退币信息
+
+//退币
+var getUserMoneyUrl = "https://ssl.blockcdn.org/money/getUserMoney"; //前台查看用户可退币实际金额
+var queryReturnMoney = "https://ssl.blockcdn.org/money/getReturnRecordByUser";// 前台查看退币信息
 var returnMoney = "https://ssl.blockcdn.org/money/returnMoney";// 前台用户进行退币
+var cancelReturnMoneyUrl = "https://ssl.blockcdn.org/money/cancelReturnMoney";// 前台用户进行退币
+
 var btcCountYe = 0, ethCountYe = 0, bcdnCountYe = 0;
 var btcCountDj = 0, ethCountDj = 0, bcdnCountDj = 0;
 var btcCountZl = 0, ethCountZl = 0, bcdnCountZl = 0;

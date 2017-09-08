@@ -212,7 +212,10 @@
                 <em style="line-height: 25px;font-style: normal;float: left;display: block;">实际到账: </em>
                 <span style="display:inline-block;min-width:1.4rem;line-height: 25px;float: left;display: block;height: 25px;" id="sjtx"></span>
                 <em style="color: red;font-size: 0.16rem;font-style: normal;line-height: 25px;float: left;display: block;">网络手续费: </em>
-                <span style="display:inline-block;min-width:1.4rem;font-size:0.16rem;color: red;line-height: 25px;float: left;display: block" id="sxf"></span></div>
+                <span style="display:inline-block;min-width:1.4rem;font-size:0.16rem;color: red;line-height: 25px;float: left;display: block" id="sxf"></span>
+                <input type="hidden" id="sxfValue">
+                <input type="hidden" id="sxfDw">
+            </div>
             <div class="input-box flex-center">
                 <span>邮箱验证码</span>
                 <input type="text" id="txtCode">
@@ -228,8 +231,8 @@
                     <th width="200"><i class="ico-record-icon user-plist time"></i><span>时间</span></th>
                     <th width="150"><i class="ico-record-icon user-plist num"></i><span>退币金额</span></th>
                     <th width="300"><i class="ico-record-icon user-plist num"></i><span>地址</span></th>
-                    <th width="228"><i class="ico-record-icon user-plist num"></i><span>状态</span></th>
-                    <!--<th width="100"><i class="ico-record-icon user-plist num"></i><span>操作</span></th>-->
+                    <th width="128"><i class="ico-record-icon user-plist num"></i><span>状态</span></th>
+                    <th width="100"><i class="ico-record-icon user-plist num"></i><span>操作</span></th>
                 </tr>
                 </thead>
                 <tbody class="flex-direction" id="withdrawRecord"></tbody>

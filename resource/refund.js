@@ -35,18 +35,32 @@ var withdraw = {
             user_name: localStorage.user_name,
             data: JSON.stringify({
                 "user_name": localStorage.user_name,
-                "draw_address": txtText,
-                "draw_count": txtAmount,
-                "vcode": txtCode,
+                "address": txtText,
+                //"draw_count": txtAmount,
+                "code": txtCode,
                 "money_type": widthdrawType
             })
         };
         var callback = function (data) {
             if (data.status == 0) {
                 util.layerAlert("", util.getLan("user.tips.30"), 1, function(){
-                    location.href = 'withdraw.html?type=' + widthdrawType;
+                    location.href = 'refund.html?type=' + widthdrawType;
                 });
-            } else {
+            } 
+            //验证码超时
+            else if(data.status == 432){
+                util.layerAlert("", util.getLan("add20"), 2);
+            }
+            //验证码错误
+            else if(data.status == 406){
+                util.layerAlert("", util.getLan("add21"), 2);
+            }
+            else if (data.status == 431 || data.status == 402 || data.status == 430) {
+                util.layerAlert("", util.getLan("add4"), 2, function () {
+                    location.href = 'login.html';
+                });
+            }
+            else {
                 util.layerAlert("", data.message, 2);
             }
         };
@@ -67,7 +81,7 @@ var withdraw = {
             var callback = function (data) {
                 if (data.status == 0) {
                     util.layerAlert("", util.getLan("add7"), 1, function () {
-                        location.href = 'withdraw.html?type=' + widthdrawType;
+                        location.href = 'refund.html?type=' + widthdrawType;
                     });
                 }
                 else {
@@ -75,7 +89,7 @@ var withdraw = {
                 }
             };
             util.network({
-                url: cancelDrawUrl,
+                url: cancelReturnMoneyUrl,
                 param: param,
                 success: callback,
             });
@@ -108,19 +122,20 @@ $(function () {
         $('#txtAmount').val('');
         $('#txtCode').val('');
         if (type == 'BTC') {
+            $('#sxfValue').val(0.0005);
             widthdrawType = '1';
-            $('#txtBalance').val(btcCountYe);
-            $('#txtAmount').val(btcCountYe);
+            getUserMoney(widthdrawType);
             getQueryDraw(widthdrawType);
             $('#etcTips').css('visibility','hidden');
         }
         else if (type == 'ETH') {
+            $('#sxfValue').val(0.005);
             widthdrawType = '2';
-            $('#txtBalance').val(ethCountYe);
-            $('#txtAmount').val(ethCountYe);
+            getUserMoney(widthdrawType);
             getQueryDraw(widthdrawType);
             $('#etcTips').css('visibility','hidden');
         }
+        /*
         else {
             util.layerAlert("", util.getLan("add26"), 1, function () {
                 //location.href = 'login.html';
@@ -130,6 +145,7 @@ $(function () {
             getQueryDraw(widthdrawType);
             $('#etcTips').css('visibility','visible');
         }
+        */
     });
 
     setTimeout(function(){
@@ -139,6 +155,53 @@ $(function () {
 
 
 });
+
+function getUserMoney(widthdrawType){
+    $.ajax({
+        url: getUserMoneyUrl,
+        type: 'post',
+        dataType: 'json',
+        data: {
+            sessionid: localStorage.sessionid,
+            token: localStorage.token,
+            timestamp: new Date().getTime(),
+            user_name: localStorage.user_name,
+            data: JSON.stringify({user_name: localStorage.user_name})
+        },
+        success: function(json){
+            console.log('可退币实际金额:',json);
+            if (json.status == 0){
+                var data = json.data;
+                var btc = data.btc;
+                var eth = data.eth;
+                if(widthdrawType == '1'){
+                    $('#txtBalance').val(btc);
+                    $('#txtAmount').val(btc);
+                }
+                else if(widthdrawType == '2'){
+                    $('#txtBalance').val(eth);
+                    $('#txtAmount').val(eth);
+                }
+                var sxfValue = $('#sxfValue').val();
+                var val = $('#txtBalance').val();
+                var sjje = (val*1000000 - sxfValue*1000000)/1000000;
+                if (sjje < 0) {
+                    sjje = 0;
+                }
+                $('#sjtx').text(sjje);
+            }
+            else if (json.status == 431 || json.status == 402 || json.status == 430) {
+                console.log('message:', json.message);
+                util.layerAlert("", util.getLan("add4"), 2, function () {
+                    location.href = 'login.html';
+                });
+            }
+            else {
+                util.layerAlert("", json.message, 2);
+            }
+        }
+    });
+}
 
 function getQueryDraw(type) {
     $.ajax({
@@ -150,7 +213,7 @@ function getQueryDraw(type) {
             token: localStorage.token,
             timestamp: new Date().getTime(),
             user_name: localStorage.user_name,
-            data: JSON.stringify({user_name: localStorage.user_name, type: type})
+            data: JSON.stringify({user_name: localStorage.user_name, money_type: type})
         },
         success: function (json) {
             console.log('退币记录:', type, json);
@@ -175,31 +238,31 @@ function getQueryDraw(type) {
                 sxf = 5;
                 sxfDw = ' BCDN/' + dw;
             }
+            $('#sxfValue').val(sxf);
             if (json.status == 0) {
                 var data = json.data;
                 $('#withdrawRecord').empty();
                 for (var i=0;i<data.length;i++){
                     var dataI = data[i];
-                    var draw_status = dataI.draw_status;
-                    var draw_actual = dataI.draw_actual;
+                    var draw_status = dataI.status;
+                    var draw_actual = dataI.return_actual;
                     if (draw_actual < 0) {
                         draw_actual=0;
                     }
                     var isNone = '';
                     draw_status == '1' ? isNone = '' : isNone = 'none';
-                    var draw_address = withdrawAddress + dataI.draw_address;
+                    var draw_address = withdrawAddress + dataI.address;
                     var trHtml = '<tr>' +
-                        '<th width="220">'+formatDate(dataI.draw_time)+'</th>' +
+                        '<th width="220">'+formatDate(dataI.return_time)+'</th>' +
                         '<th width="150">'+draw_actual+'</th>' +
-                        '<th width="300"><a style="color: #5454FF;text-decoration:underline;" href="'+ draw_address +'" target="_blank">'+dataI.draw_address+'</a></th>' +
-                        '<th width="228">'+drawStatus(draw_status)+'</th>' +
-                        /*'<th width="100">' +
+                        '<th width="300"><a style="color: #5454FF;text-decoration:underline;" href="'+ draw_address +'" target="_blank">'+dataI.address+'</a></th>' +
+                        '<th width="128">'+drawStatus(draw_status)+'</th>' +
+                        '<th width="100">' +
                         '<span class="withdraw-cancel" style="display:'+isNone+'" fid="'+dataI.id+'">'+util.getLan("add13")+'</span>' +
-                        '</th>' +*/
+                        '</th>' +
                         '</tr>';
                     $('#withdrawRecord').append(trHtml);
                 }
-
 
                 $('#sxf').text(sxf + sxfDw);
                 $('#txtAmount').off('change').on('change',function(){

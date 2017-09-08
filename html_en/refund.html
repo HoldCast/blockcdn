@@ -194,11 +194,11 @@
         </div>
         <div class="flex-direction withdraw-box flex-center">
             <div class="input-box flex-center">
-                <span>account balances</span>
+                <span>refundable balance</span>
                 <input type="text" id="txtBalance" readonly="readonly" value="">
             </div>
             <div class="input-box flex-center" style="margin-bottom:0.08rem;">
-                <span>withdraw add</span>
+                <span>refund add</span>
                 <input type="text" id="txtText">
             </div>
             <!--<p class="recharge-address flex-center" id="BTCStr" style="margin-bottom:0.08rem;"></p>-->
@@ -206,14 +206,17 @@
                 Please fill in the correct ETH address.
             </p>
             <div class="input-box flex-center" style="margin-bottom: 0rem;">
-                <span>withdraw count</span>
+                <span>refund count</span>
                 <input type="text" id="txtAmount" readonly="readonly">
             </div>
             <div class="mobile_only" style="font-size:0.18rem;color:#030335;min-width:4.82rem;padding-left:0.18rem;margin-top: 0.1rem;margin-bottom: 0.20rem;">
                 <em style="line-height: 25px;font-style: normal;float: left;display: block;">arrive: </em>
                 <span style="display:inline-block;min-width:1.4rem;line-height: 25px;float: left;display: block;height: 25px;" id="sjtx"></span>
                 <em style="color: red;font-size: 0.16rem;font-style: normal;line-height: 25px;float: left;display: block;">acceptance fee: </em>
-                <span style="display:inline-block;min-width:1.4rem;font-size:0.16rem;color: red;line-height: 25px;float: left;display: block" id="sxf"></span></div>
+                <span style="display:inline-block;min-width:1.4rem;font-size:0.16rem;color: red;line-height: 25px;float: left;display: block" id="sxf"></span>
+                <input type="hidden" id="sxfValue">
+                <input type="hidden" id="sxfDw">
+            </div>
             <div class="input-box flex-center">
                 <span>email vcode</span>
                 <input type="text" id="txtCode">
@@ -229,8 +232,8 @@
                     <th width="220"><i class="ico-record-icon user-plist time"></i><span>time</span></th>
                     <th width="150"><i class="ico-record-icon user-plist num"></i><span>arrive</span></th>
                     <th width="300"><i class="ico-record-icon user-plist num"></i><span>address</span></th>
-                    <th width="228"><i class="ico-record-icon user-plist num"></i><span>status</span></th>
-                    <!--<th width="100"><i class="ico-record-icon user-plist num"></i><span>operation</span></th>-->
+                    <th width="128"><i class="ico-record-icon user-plist num"></i><span>status</span></th>
+                    <th width="100"><i class="ico-record-icon user-plist num"></i><span>operation</span></th>
                 </tr>
                 </thead>
                 <tbody class="flex-direction" id="withdrawRecord"></tbody>
